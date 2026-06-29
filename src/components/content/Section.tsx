@@ -6,12 +6,20 @@ interface SectionProps {
   className?: string;
   /** Background tone. */
   tone?: "white" | "muted" | "brand" | "dark";
+  /**
+   * Feather the bottom edge into white so a dark section eases into the light
+   * section below. Default true; set false when the next block is also dark
+   * (e.g. the final CTA sits directly above the navy footer).
+   */
+  blendBottom?: boolean;
   id?: string;
 }
 
+// `muted` is a vertical white→off-white→white gradient so the section melts into
+// the white sections around it instead of showing a hard color seam.
 const tones = {
   white: "bg-white",
-  muted: "bg-slate-50",
+  muted: "bg-gradient-to-b from-white via-slate-50 to-white",
   brand:
     "bg-gradient-to-br from-brand-700 via-brand-600 to-ocean-600 text-white",
   dark: "bg-brand-950 text-white",
@@ -22,11 +30,30 @@ export function Section({
   children,
   className,
   tone = "white",
+  blendBottom = true,
   id,
 }: SectionProps) {
+  // Dark/brand sections get soft light "feathers" at their edges so they emerge
+  // from (and dissolve back into) the light sections around them — no hard line.
+  const dark = tone === "brand" || tone === "dark";
   return (
-    <section id={id} className={cn(tones[tone], "py-12 sm:py-20", className)}>
-      <div className="mx-auto w-full max-w-6xl px-5 sm:px-6 lg:px-8">
+    <section
+      id={id}
+      className={cn(tones[tone], "py-12 sm:py-20", dark && "relative", className)}
+    >
+      {dark && (
+        <div
+          aria-hidden="true"
+          className="pointer-events-none absolute inset-x-0 top-0 h-12 bg-gradient-to-b from-white/90 to-transparent sm:h-16"
+        />
+      )}
+      {dark && blendBottom && (
+        <div
+          aria-hidden="true"
+          className="pointer-events-none absolute inset-x-0 bottom-0 h-12 bg-gradient-to-t from-white/90 to-transparent sm:h-16"
+        />
+      )}
+      <div className="relative z-10 mx-auto w-full max-w-6xl px-5 sm:px-6 lg:px-8">
         {children}
       </div>
     </section>

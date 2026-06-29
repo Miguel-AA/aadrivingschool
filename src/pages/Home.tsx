@@ -350,7 +350,7 @@ export function Home() {
       </Section>
 
       {/* 11. Final CTA */}
-      <Section tone="brand">
+      <Section tone="brand" blendBottom={false}>
         <Reveal className="mx-auto max-w-3xl text-center">
           <h2 className="text-2xl font-bold sm:text-3xl lg:text-4xl">
             {t("finalCta.heading")}

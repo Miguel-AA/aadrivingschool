@@ -53,6 +53,9 @@ export function Hero({
         <div className="absolute -right-20 top-1/3 h-72 w-72 rounded-full bg-accent-200/40 blur-3xl animate-float" />
         <div className="absolute -bottom-24 left-1/4 h-72 w-72 rounded-full bg-accent-100/50 blur-3xl animate-float-slow" />
         <div className="absolute inset-0 bg-dot-grid text-slate-300/30" />
+        {/* Fade the whole decorative backdrop to white at the bottom so the hero
+            dissolves into the section below with no hard seam. */}
+        <div className="absolute inset-x-0 bottom-0 h-32 bg-gradient-to-b from-transparent to-white" />
       </div>
 
       <div className="mx-auto w-full max-w-6xl px-5 py-12 sm:px-6 sm:py-20 lg:grid lg:grid-cols-[1.05fr_0.95fr] lg:items-center lg:gap-12 lg:px-8 lg:py-24">
