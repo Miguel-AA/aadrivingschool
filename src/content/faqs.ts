@@ -10,27 +10,27 @@ const faqs: Faq[] = [
   // Global
   {
     id: "global-official",
-    question: loc("Are you a DMV office or a state-approved school?"),
+    question: loc("Are regulated courses included in the platform roadmap?"),
     answer: loc(
-      "No. We are an independent help center. We are not the Florida DMV/FLHSMV, a court, or a testing site, and we do not claim state approval. For regulated courses we connect you to an approved provider, and we always point you to official state sources for current requirements.",
+      "Yes. Florida Top 1 Driving School is being built with a compliance-aware roadmap for regulated driving education. Any regulated course delivery will follow applicable Florida approval, licensing, and operating requirements before being offered as an official state-regulated course. The platform is an independent service and is not the Florida DMV/FLHSMV, a court, or a testing site.",
     ),
     scope: "global",
     sortOrder: 1,
   },
   {
     id: "global-spanish",
-    question: loc("Do you offer help in Spanish?"),
+    question: loc("Is the platform bilingual (English & Spanish)?"),
     answer: loc(
-      "Yes. Our site, key guides, and concierge support are available in English and Spanish, including WhatsApp help.",
+      "Yes. English and Spanish are part of the core experience — the site, guides, course finder, and concierge support, including WhatsApp. Spanish-first learning paths are on the roadmap.",
     ),
     scope: "global",
     sortOrder: 2,
   },
   {
     id: "global-guarantee",
-    question: loc("Can you guarantee I'll pass or that points will be removed?"),
+    question: loc("Does the platform guarantee exam or ticket outcomes?"),
     answer: loc(
-      "No. We can't guarantee exam results, ticket dismissal, point removal, reinstatement, or an insurance discount. Those outcomes are decided by the state, courts, or your insurer. We provide preparation, guidance, and connections to approved providers.",
+      "No. Exam results, ticket dismissal, point removal, reinstatement, and insurance discounts are decided by the state, courts, or your insurer. The platform provides structured preparation, guidance, and a compliance-aware path to approved course delivery.",
     ),
     scope: "global",
     sortOrder: 3,

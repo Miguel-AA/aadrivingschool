@@ -9,7 +9,7 @@ const packages: Package[] = [
   {
     id: "first-time-adult",
     slug: "first-time-adult",
-    title: loc("First-Time Florida Driver Package"),
+    title: loc("First-Time Driver Pathway"),
     targetUser: loc("For adults starting the Florida license process"),
     shortDescription: loc(
       "A guided starting point for adults beginning the Florida license process, with the TLSAE path, permit prep, and a DMV-ready checklist.",
@@ -28,7 +28,7 @@ const packages: Package[] = [
   {
     id: "teen-permit",
     slug: "teen-permit",
-    title: loc("Teen Permit Preparation Package"),
+    title: loc("Teen Permit Pathway"),
     targetUser: loc("For parents helping a teen prepare for the learner's permit"),
     shortDescription: loc(
       "A clear path for parents helping a teen prepare for the learner's permit — teen path guidance, practice support, and permit prep.",
@@ -47,7 +47,7 @@ const packages: Package[] = [
   {
     id: "spanish-help",
     slug: "spanish-help",
-    title: loc("Spanish Guidance Package"),
+    title: loc("Spanish-Speaking Driver Pathway"),
     targetUser: loc("For drivers who prefer support and explanations in Spanish"),
     shortDescription: loc(
       "Support and explanations in Spanish: a course recommendation for your situation, permit prep support, and a WhatsApp option.",
@@ -66,7 +66,7 @@ const packages: Package[] = [
   {
     id: "ticket-solution",
     slug: "ticket-solution",
-    title: loc("Ticket Help Support Package"),
+    title: loc("Ticket Education Pathway"),
     targetUser: loc("For drivers who need help understanding ticket-related education options"),
     shortDescription: loc(
       "Help understanding traffic school and ticket-related education options, with a situation review and a clear next-step explanation.",
@@ -85,7 +85,7 @@ const packages: Package[] = [
   {
     id: "license-reinstatement",
     slug: "license-reinstatement",
-    title: loc("License Reinstatement Package"),
+    title: loc("License Reinstatement Pathway"),
     targetUser: loc("Drivers with a suspended license"),
     shortDescription: loc(
       "For suspension situations: the ADI path (if applicable), a first-steps guide, and a checklist.",
@@ -103,7 +103,7 @@ const packages: Package[] = [
   {
     id: "55-plus-discount",
     slug: "55-plus-discount",
-    title: loc("55+ Insurance Discount Package"),
+    title: loc("55+ Mature Driver Pathway"),
     targetUser: loc("Mature drivers age 55+"),
     shortDescription: loc(
       "The Mature Driver course path plus guidance on submitting completion to your insurer. Any discount is set by your insurer.",
@@ -121,7 +121,7 @@ const packages: Package[] = [
   {
     id: "new-to-florida",
     slug: "new-to-florida",
-    title: loc("New to Florida Package"),
+    title: loc("New to Florida Pathway"),
     targetUser: loc("New residents and international drivers"),
     shortDescription: loc(
       "A route recommendation, a document checklist, and permit/license guidance for getting set up in Florida.",

@@ -1,9 +1,9 @@
 import {
   ArrowRight,
-  Award,
   BookOpen,
   ClipboardCheck,
   Languages,
+  LayoutDashboard,
   ShieldAlert,
   Users,
   type LucideIcon,
@@ -18,12 +18,12 @@ type ServiceItem = { key: string; title: string; body: string };
 
 // Per-service icon + destination (services map to existing pages/courses).
 const META: Record<string, { icon: LucideIcon; href: string }> = {
-  tlsae: { icon: BookOpen, href: "/courses/tlsae" },
+  tlsae: { icon: BookOpen, href: "/courses" },
   permit: { icon: ClipboardCheck, href: "/permit-test-prep" },
-  teen: { icon: Users, href: "/courses/dets" },
   spanish: { icon: Languages, href: "/spanish-help" },
+  teen: { icon: Users, href: "/courses/dets" },
   ticket: { icon: ShieldAlert, href: "/ticket-help" },
-  insurance: { icon: Award, href: "/55-plus-driver" },
+  insurance: { icon: LayoutDashboard, href: "/contact" },
 };
 
 /** "Services We Help With" — professional solution list (not an ecommerce grid). */

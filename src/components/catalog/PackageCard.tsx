@@ -35,7 +35,17 @@ const BADGES: Record<
 };
 
 /** Situation-based package card. One package per page should be "most-popular". */
-export function PackageCard({ pkg }: { pkg: Package }) {
+export function PackageCard({
+  pkg,
+  hidePrice = false,
+  ctaLabel,
+}: {
+  pkg: Package;
+  /** Hide the price (used by the investor-demo "pathways" grid). */
+  hidePrice?: boolean;
+  /** Override the CTA label (e.g. "Explore pathway"). */
+  ctaLabel?: string;
+}) {
   const locale = useLocale();
   const t = useTranslations("common");
   const price = formatPrice(pkg.priceUsd, locale);
@@ -108,10 +118,10 @@ export function PackageCard({ pkg }: { pkg: Package }) {
               : "bg-brand-50 text-brand-700 group-hover:bg-brand-100",
           )}
         >
-          {price ? t("cta.viewDetails") : t("cta.requestInfo")}
+          {ctaLabel ?? (price ? t("cta.viewDetails") : t("cta.requestInfo"))}
           <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
         </span>
-        {price && (
+        {!hidePrice && price && (
           <span className="shrink-0 text-base font-semibold text-slate-900">
             {price}
           </span>

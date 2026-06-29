@@ -4,10 +4,13 @@ import {
   Compass,
   Languages,
   Layers,
+  LayoutDashboard,
   ListChecks,
   MapPin,
   ShieldAlert,
   ShieldCheck,
+  Smartphone,
+  TrendingUp,
   Users,
 } from "lucide-react";
 import { useLocale, useTranslations } from "@/i18n";
@@ -32,6 +35,14 @@ type ProblemCard = { title: string; body: string };
 
 const PROBLEM_ICONS = [Car, Users, Languages, ShieldAlert];
 const WHY_ICONS = [MapPin, Languages, Layers, ListChecks];
+const INVESTOR_ICONS = [
+  Smartphone,
+  Languages,
+  Compass,
+  LayoutDashboard,
+  TrendingUp,
+  ShieldCheck,
+];
 
 export function Home() {
   const t = useTranslations("home");
@@ -46,6 +57,7 @@ export function Home() {
   const finderPills = t.raw<string[]>("finder.pills");
   const localPoints = t.raw<string[]>("local.points");
   const whyCards = t.raw<ProblemCard[]>("whyUs.cards");
+  const investorCards = t.raw<ProblemCard[]>("investorHighlights.items");
   const steps = [
     { title: t("howItWorks.step1Title"), body: t("howItWorks.step1Body") },
     { title: t("howItWorks.step2Title"), body: t("howItWorks.step2Body") },
@@ -60,7 +72,7 @@ export function Home() {
       <Hero
         eyebrow={t("hero.eyebrow")}
         title={t("hero.title")}
-        highlight="Permit Prep"
+        highlight="Online Driving School Platform"
         subtitle={t("hero.subtitle")}
         badges={trust}
         aside={<HeroShowcase />}
@@ -69,16 +81,16 @@ export function Home() {
             <CTAButton
               href="/quiz"
               eventName={EVENTS.CTA_CLICK}
-              eventProps={{ source: "home_hero", target: "quiz" }}
+              eventProps={{ source: "home_hero", target: "demo" }}
               size="lg"
               className="w-full sm:w-auto"
             >
               {t("hero.primaryCta")}
             </CTAButton>
             <CTAButton
-              href="/spanish-help"
+              href="/courses"
               eventName={EVENTS.CTA_CLICK}
-              eventProps={{ source: "home_hero", target: "spanish-help" }}
+              eventProps={{ source: "home_hero", target: "pathways" }}
               variant="secondary"
               size="lg"
               className="w-full sm:w-auto"
@@ -168,7 +180,7 @@ export function Home() {
         <CatalogGrid>
           {packages.map((pkg, i) => (
             <Reveal key={pkg.id} delay={i * 80}>
-              <PackageCard pkg={pkg} />
+              <PackageCard pkg={pkg} hidePrice ctaLabel={t("packages.cta")} />
             </Reveal>
           ))}
         </CatalogGrid>
@@ -236,7 +248,40 @@ export function Home() {
         </div>
       </Section>
 
-      {/* 8. Local / Trust */}
+      {/* 8. Investor demo highlights — premium dark band */}
+      <Section tone="dark">
+        <Reveal>
+          <SectionHeading
+            eyebrow={t("investorHighlights.eyebrow")}
+            title={t("investorHighlights.heading")}
+            subtitle={t("investorHighlights.subheading")}
+            tone="dark"
+            centered
+          />
+        </Reveal>
+        <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+          {investorCards.map((card, i) => (
+            <Reveal key={card.title} delay={i * 70}>
+              <div className="h-full rounded-2xl border border-white/10 bg-white/5 p-6 transition-colors duration-200 hover:border-accent-400/40 hover:bg-white/[0.07]">
+                <span className="grid h-11 w-11 place-items-center rounded-xl bg-accent-500/15 text-accent-300 ring-1 ring-inset ring-accent-400/20">
+                  <Icon
+                    icon={INVESTOR_ICONS[i] ?? Smartphone}
+                    className="h-5 w-5"
+                  />
+                </span>
+                <h3 className="mt-4 text-base font-semibold text-white">
+                  {card.title}
+                </h3>
+                <p className="mt-2 text-sm leading-relaxed text-brand-100/80">
+                  {card.body}
+                </p>
+              </div>
+            </Reveal>
+          ))}
+        </div>
+      </Section>
+
+      {/* 9. Local / Trust */}
       <Section>
         <Reveal>
           <div className="overflow-hidden rounded-3xl border border-brand-100 bg-gradient-to-br from-brand-50 via-white to-accent-50/50 p-7 shadow-sm sm:p-10">
@@ -297,7 +342,7 @@ export function Home() {
             <CTAButton
               href="/quiz"
               eventName={EVENTS.CTA_CLICK}
-              eventProps={{ source: "home_final", target: "quiz" }}
+              eventProps={{ source: "home_final", target: "demo" }}
               variant="primary"
               size="lg"
               className="w-full sm:w-auto"
@@ -305,14 +350,24 @@ export function Home() {
               {t("finalCta.primaryCta")}
             </CTAButton>
             <CTAButton
-              href="/contact"
+              href="/contact?intent=investor"
               eventName={EVENTS.CTA_CLICK}
-              eventProps={{ source: "home_final", target: "contact" }}
+              eventProps={{ source: "home_final", target: "investor" }}
               variant="secondary"
               size="lg"
               className="w-full sm:w-auto"
             >
               {t("finalCta.secondaryCta")}
+            </CTAButton>
+            <CTAButton
+              href="/contact"
+              eventName={EVENTS.CTA_CLICK}
+              eventProps={{ source: "home_final", target: "contact" }}
+              variant="secondary"
+              size="lg"
+              className="w-full border-white/30 bg-transparent text-white hover:border-white/50 hover:bg-white/10 sm:w-auto"
+            >
+              {t("finalCta.tertiaryCta")}
             </CTAButton>
           </div>
         </Reveal>

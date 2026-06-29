@@ -1,178 +1,214 @@
 {
   "hero": {
-    "eyebrow": "Florida Top 1 Driving School · West Palm Beach & statewide",
-    "title": "Florida Driving Courses, Permit Prep & Bilingual Support",
-    "subtitle": "Florida Top 1 Driving School helps drivers and families choose the right course, prepare for the permit process, and get clear support in English or Spanish.",
-    "primaryCta": "Find My Best Option",
-    "secondaryCta": "Get Help in Spanish",
+    "eyebrow": "Florida Top 1 Driving School · Online driving education platform",
+    "title": "A Complete Online Driving School Platform for Florida Drivers",
+    "subtitle": "Florida Top 1 Driving School is building a modern, bilingual driving education platform for Florida — combining online learning, permit preparation, student pathways, progress tracking, and support in English and Spanish.",
+    "primaryCta": "View Platform Demo",
+    "secondaryCta": "Explore Driver Pathways",
     "trust": [
-      "Serving West Palm Beach & Florida statewide",
-      "English & Spanish support",
-      "Remote guidance available",
-      "Approved-provider course options"
+      "Built in West Palm Beach",
+      "Designed for Florida statewide",
+      "English & Spanish experience",
+      "Compliance-aware course roadmap"
     ],
     "showcase": {
-      "title": "What can we help with?",
-      "footnote": "Start the 60-second Course Finder",
-      "items": [
-        { "label": "Course Finder", "desc": "Your best starting point" },
-        { "label": "Permit Prep", "desc": "Practice for the FL exam" },
-        { "label": "Spanish Help", "desc": "Soporte en español" },
-        { "label": "Ticket Guidance", "desc": "Understand your options" }
+      "title": "Student Pathway",
+      "badge": "Product preview",
+      "footnote": "One guided, trackable, bilingual journey",
+      "steps": [
+        "Create student profile",
+        "Select program",
+        "Complete lessons",
+        "Track progress",
+        "Get bilingual support",
+        "Prepare for DMV steps"
       ]
     }
   },
   "problem": {
-    "eyebrow": "Who We Help",
-    "title": "Getting a Florida license can feel confusing. We make the next step clear.",
-    "body": "Whether you are starting for the first time, helping your teen, handling a ticket, or looking for help in Spanish, we guide you toward the right option before you waste time on the wrong one.",
+    "eyebrow": "The Market Opportunity",
+    "title": "Florida drivers need a simpler way to start, study, track progress, and get support.",
+    "body": "Many first-time drivers, parents, and Spanish-speaking users face confusion around course requirements, permit preparation, ticket education, and next steps. Florida Top 1 Driving School is being built to bring that process into one organized digital platform.",
     "cards": [
       {
         "title": "First-Time Drivers",
-        "body": "Know what course, permit prep, and steps you need before visiting the DMV."
+        "body": "A large, recurring market that needs a clear starting point, a course path, and permit preparation."
       },
       {
         "title": "Parents of Teen Drivers",
-        "body": "Get a clear path for your teen's permit, practice, and license preparation."
+        "body": "Families who want a guided, trackable path through permit, practice, and license steps."
       },
       {
         "title": "Spanish-Speaking Drivers",
-        "body": "Receive guidance in Spanish so you can move forward with confidence."
+        "body": "An underserved segment that needs a true bilingual experience — not a translated afterthought."
       },
       {
         "title": "Drivers With Tickets",
-        "body": "Understand your traffic school options and what steps may apply to your situation."
+        "body": "Recurring demand for structured traffic-school and ticket-education guidance."
       }
     ]
   },
   "finder": {
-    "eyebrow": "Course Finder",
-    "heading": "Not sure what you need? Start with the Course Finder.",
-    "body": "Answer a few quick questions and we'll recommend the best starting point based on your situation — first license, learner's permit, ticket, insurance discount, or Spanish-language help.",
-    "cta": "Start Course Finder",
+    "eyebrow": "Guided Enrollment",
+    "heading": "A guided enrollment experience for every driver type.",
+    "body": "The platform is designed to identify each user's situation — first-time driver, teen permit, Spanish-speaking applicant, ticket education, or permit prep — and guide them into the right learning path.",
+    "cta": "Preview Course Finder",
     "pills": [
-      "First license",
-      "Permit prep",
-      "Ticket help",
-      "Spanish support",
-      "Insurance discount"
+      "First-time driver",
+      "Teen permit",
+      "Spanish-speaking",
+      "Ticket education",
+      "Permit prep"
     ]
   },
   "services": {
-    "heading": "Services We Help With",
-    "title": "Choose the right support for your Florida driving situation.",
-    "subheading": "Start with the Course Finder if you are not sure what you need, or explore the most common ways we help Florida drivers and families.",
+    "heading": "Platform Capabilities",
+    "title": "A complete digital experience for driving education.",
+    "subheading": "Florida Top 1 Driving School is being built as a complete digital experience for driving education, preparation, bilingual support, and student progress.",
     "learnMore": "Learn more",
     "items": [
       {
         "key": "tlsae",
-        "title": "TLSAE / Drug & Alcohol Course",
-        "body": "For first-time Florida drivers who need the required Traffic Law and Substance Abuse Education course."
+        "title": "Online Course Delivery",
+        "body": "Structured digital learning paths designed for Florida driving education."
       },
       {
         "key": "permit",
-        "title": "Florida Permit Test Prep",
-        "body": "Practice questions, study guidance, and preparation support before taking the Florida knowledge exam."
-      },
-      {
-        "key": "teen",
-        "title": "Teen Driver Support",
-        "body": "Guidance for parents and teens navigating permit preparation, practice requirements, and next steps."
+        "title": "Permit Test Preparation",
+        "body": "Practice tools and study support for Florida permit readiness."
       },
       {
         "key": "spanish",
-        "title": "Spanish Driving Help",
-        "body": "Spanish-language support for understanding requirements, courses, documents, and the next step."
+        "title": "Bilingual Student Support",
+        "body": "English and Spanish guidance built into the core user experience."
+      },
+      {
+        "key": "teen",
+        "title": "Teen Driver Pathways",
+        "body": "Guided flows for parents and teens preparing for the permit process."
       },
       {
         "key": "ticket",
-        "title": "Ticket Help Guidance",
-        "body": "Educational support for drivers who need help understanding traffic school options after receiving a ticket."
+        "title": "Ticket Education Support",
+        "body": "A structured experience for drivers who need traffic-school related education."
       },
       {
         "key": "insurance",
-        "title": "Insurance Discount Course Guidance",
-        "body": "Help identifying defensive driving options that may qualify for insurance-related benefits."
+        "title": "Progress Tracking Dashboard",
+        "body": "A future student dashboard for lessons, completion status, support, and next steps."
       }
     ]
   },
   "packages": {
-    "eyebrow": "Guided Packages",
-    "heading": "Recommended Starting Packages",
-    "subheading": "Simple starting points built around the most common situations Florida drivers face."
+    "eyebrow": "Driver Pathways",
+    "heading": "Driver Pathways We Are Building",
+    "subheading": "Each pathway is a guided journey — from first contact to DMV-ready — tailored to a specific Florida driver type.",
+    "cta": "Explore pathway"
   },
   "howItWorks": {
-    "eyebrow": "How We Help",
-    "heading": "Three steps to your clear next move",
-    "step1Title": "Tell us your situation",
-    "step1Body": "Share whether you are a first-time driver, parent, ticket holder, or Spanish-speaking applicant.",
-    "step2Title": "Get a clear recommendation",
-    "step2Body": "We explain what course, prep, or support option makes sense for your case.",
-    "step3Title": "Move forward with confidence",
-    "step3Body": "Start the right course or preparation path with guidance along the way."
+    "eyebrow": "How the Platform Works",
+    "heading": "One guided journey, from profile to DMV-ready",
+    "step1Title": "Create a student profile",
+    "step1Body": "Each driver starts from their situation — first-time, teen, ticket, or Spanish-speaking — to enter the right pathway.",
+    "step2Title": "Choose a learning pathway",
+    "step2Body": "The platform matches each profile to the right path: online education, permit prep, and bilingual support.",
+    "step3Title": "Learn, track, and prepare",
+    "step3Body": "Move through lessons, track progress, and get DMV-ready with bilingual support along the way."
   },
   "whyUs": {
-    "eyebrow": "Why Florida Top 1",
-    "heading": "Why drivers choose Florida Top 1 Driving School",
-    "subheading": "We focus on clear explanations, Florida-specific driving course guidance, and support for English and Spanish speakers.",
+    "eyebrow": "Why It Can Win",
+    "heading": "Why this platform can win",
+    "subheading": "A Florida-first, bilingual, digital-first model built to scale.",
     "cards": [
       {
-        "title": "Florida-focused guidance",
-        "body": "We explain course and permit options based on common Florida driver situations."
+        "title": "Florida-focused from day one",
+        "body": "Built around the needs of Florida drivers, families, and first-time applicants."
       },
       {
-        "title": "English and Spanish support",
-        "body": "Get help in the language you feel most comfortable using."
+        "title": "Bilingual by design",
+        "body": "English and Spanish support are part of the core experience, not an afterthought."
       },
       {
-        "title": "Built for real situations",
-        "body": "First license, teen permit, ticket school, insurance discount options, or general course guidance."
+        "title": "One organized journey",
+        "body": "Courses, prep, support, and progress tracking live in one guided flow."
       },
       {
-        "title": "Simple next steps",
-        "body": "We help you understand where to start before spending time or money on the wrong option."
+        "title": "Built for scale",
+        "body": "The platform can expand from West Palm Beach to statewide digital education."
+      }
+    ]
+  },
+  "investorHighlights": {
+    "eyebrow": "Investor Demo Highlights",
+    "heading": "What this demo shows",
+    "subheading": "A first look at the experience, the model, and where the platform is going.",
+    "items": [
+      {
+        "title": "Digital-first experience",
+        "body": "A modern, mobile-first driving school experience built for online delivery."
+      },
+      {
+        "title": "Bilingual user journey",
+        "body": "An English / Spanish experience designed for an underserved Florida market."
+      },
+      {
+        "title": "Course finder & enrollment",
+        "body": "A guided flow that routes each driver type into the right pathway."
+      },
+      {
+        "title": "Progress-tracking roadmap",
+        "body": "A planned student dashboard for lessons, completion, and support activity."
+      },
+      {
+        "title": "Statewide expansion potential",
+        "body": "A repeatable model that scales from West Palm Beach across Florida."
+      },
+      {
+        "title": "Compliance-aware roadmap",
+        "body": "Regulated course delivery planned around Florida approval and licensing."
       }
     ]
   },
   "local": {
-    "eyebrow": "Local & Bilingual",
-    "heading": "Local guidance. Clear next steps. Support in your language.",
-    "body": "Florida Top 1 Driving School serves drivers in West Palm Beach and across Florida with remote guidance, bilingual support, and simple explanations of the driving-course process. Our goal is to help you understand your options before you spend time or money on the wrong course.",
+    "eyebrow": "Local Roots, Statewide Vision",
+    "heading": "Starting in West Palm Beach. Built for Florida statewide.",
+    "body": "Florida Top 1 Driving School is being built from West Palm Beach with a statewide digital model: bilingual enrollment, online learning paths, permit preparation, student support, and future course delivery aligned with Florida requirements.",
     "points": [
-      "Based in Florida",
-      "Serving West Palm Beach and statewide",
-      "English and Spanish support",
-      "Remote help available",
-      "Built for first-time drivers, parents, and Spanish-speaking users"
+      "Based in West Palm Beach",
+      "Statewide digital model",
+      "English & Spanish experience",
+      "Online learning pathways",
+      "Compliance-aware roadmap"
     ],
-    "disclaimer": "Courses may be delivered through approved third-party providers when required. Florida Top 1 Driving School provides guidance, preparation materials, and support to help users select the appropriate path."
+    "disclaimer": "Compliance roadmap: Florida Top 1 Driving School is being developed with a compliance-aware roadmap. Any regulated course delivery will follow applicable Florida approval, licensing, and operating requirements before being offered as an official state-regulated course."
   },
   "testimonials": {
     "heading": "Built for real Florida drivers and families",
-    "subheading": "Our support is designed for people who want simple answers, clear next steps, and help in the language they are most comfortable with.",
+    "subheading": "The platform is designed around the people it serves — first-time drivers, parents, and Spanish-speaking users who want a clear, modern experience.",
     "items": [
       {
-        "quote": "I wasn't sure if I needed the TLSAE course or permit prep first. They explained the process clearly and helped me choose the right starting point.",
+        "quote": "I wasn't sure where to start with my permit. A guided path like this would have made the whole process obvious.",
         "role": "First-time driver"
       },
       {
-        "quote": "As a parent, I needed to know what my teen had to complete first. The guidance made the process much easier.",
+        "quote": "As a parent, I want one place to see what my teen needs to complete and how they're progressing.",
         "role": "Parent"
       },
       {
-        "quote": "Me explicaron en español qué curso necesitaba y cuál era el próximo paso para prepararme para el permiso.",
+        "quote": "Tener todo el proceso explicado en español, en un solo lugar, cambia completamente la experiencia.",
         "role": "Spanish-speaking user"
       }
     ]
   },
   "faq": {
     "eyebrow": "Common Questions",
-    "heading": "Answers before you start"
+    "heading": "Platform & compliance questions"
   },
   "finalCta": {
-    "heading": "Ready to find the right driving course or support option?",
-    "body": "Start with a quick recommendation and get a clear path based on your situation.",
-    "primaryCta": "Find My Best Option",
-    "secondaryCta": "Contact Us in Spanish"
+    "heading": "See the platform vision for Florida driver education.",
+    "body": "Explore the demo, request an investor overview, or reach the team building Florida's bilingual online driving school.",
+    "primaryCta": "View Platform Demo",
+    "secondaryCta": "Request Investor Overview",
+    "tertiaryCta": "Contact the Team"
   }
 }
