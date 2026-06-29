@@ -1,0 +1,36 @@
+{
+  "heading": "Tell us a bit about you",
+  "subheading": "We'll follow up with the right next step. Fields marked * are required.",
+  "fields": {
+    "name": "Full name",
+    "phone": "Phone",
+    "email": "Email",
+    "city": "City",
+    "language": "Preferred language",
+    "situation": "How can we help? (optional)",
+    "consent": "I agree to be contacted about my request and have read the privacy note."
+  },
+  "languageOptions": {
+    "en": "English",
+    "es": "Spanish"
+  },
+  "submit": "Send my request",
+  "submitting": "Sending…",
+  "success": {
+    "heading": "Thanks — we got your request!",
+    "body": "We'll reach out shortly with your next step. Prefer to talk now? Message us on WhatsApp."
+  },
+  "error": {
+    "heading": "Something went wrong",
+    "body": "Please try again, or contact us directly.",
+    "fallback": "If this keeps happening, email us at {email} or message us on WhatsApp."
+  },
+  "validation": {
+    "name": "Please enter your name.",
+    "phone": "Please enter a valid phone number.",
+    "email": "Please enter a valid email address.",
+    "city": "Please enter your city.",
+    "consent": "Please agree to be contacted so we can help."
+  },
+  "privacyNote": "We only collect what we need to help you, and we never sell your information."
+}

@@ -1,0 +1,30 @@
+{
+  "common": {
+    "relatedCourses": "[ES] Related courses & prep",
+    "relatedPackages": "[ES] Recommended packages",
+    "faqHeading": "[ES] Questions",
+    "ctaHeading": "[ES] Ready for the right next step?",
+    "ctaBody": "[ES] Send us a message and we'll help you get started."
+  },
+  "spanish": {
+    "eyebrow": "[ES] Spanish Help",
+    "title": "[ES] Florida driving help in Spanish",
+    "subtitle": "[ES] From your first permit to handling a ticket, we explain Florida's steps in Spanish and support you over WhatsApp. Educational guidance and approved-provider connections — no outcome is guaranteed.",
+    "primaryCta": "[ES] Get Help in Spanish",
+    "whatsappCta": "[ES] Chat on WhatsApp"
+  },
+  "permit": {
+    "eyebrow": "[ES] Permit Test Prep",
+    "title": "[ES] Prepare for the Florida permit exam with confidence",
+    "subtitle": "[ES] Practice questions, road-sign drills, and clear explanations for the Class E knowledge exam — in English and Spanish. This is educational prep, not the official exam.",
+    "primaryCta": "[ES] Get Permit Prep",
+    "secondaryCta": "[ES] Practice in Spanish"
+  },
+  "ticket": {
+    "eyebrow": "[ES] Ticket Help",
+    "title": "[ES] Got a traffic ticket? Understand your options first.",
+    "subtitle": "[ES] We explain the Basic Driver Improvement (BDI) path and your next steps. Eligibility and any effect on points are decided by the court or clerk — always follow the instructions you received.",
+    "primaryCta": "[ES] Check My Options",
+    "secondaryCta": "[ES] Ask a question"
+  }
+}

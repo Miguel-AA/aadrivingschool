@@ -1,0 +1,36 @@
+{
+  "courses": {
+    "metaTitle": "Florida Driving Courses & Permit Prep",
+    "metaDescription": "Browse Florida driving courses and prep — TLSAE, teen driver education, driver improvement, 55+, permit test prep, and bilingual support.",
+    "title": "Courses & Prep",
+    "subtitle": "Regulated courses are delivered through approved providers. Prep products are our own educational materials. Not sure what you need? Use the Course Finder.",
+    "regulatedHeading": "Regulated courses",
+    "regulatedSubheading": "Delivered through approved providers (partner-provided).",
+    "proprietaryHeading": "Prep & guides",
+    "proprietarySubheading": "Our own educational study materials and guidance.",
+    "packagesHeading": "Packages",
+    "packagesSubheading": "Bundles built around your situation."
+  },
+  "courseDetail": {
+    "whoHeading": "Who is this for?",
+    "includesHeading": "What's included",
+    "faqHeading": "Questions",
+    "relatedHeading": "You might also need",
+    "packageIncludesHeading": "What's in this package",
+    "leadHeading": "Get started",
+    "leadBody": "Tell us a bit about you and we'll help with the next step.",
+    "durationLabel": "Time",
+    "priceLabel": "Price"
+  },
+  "quiz": {
+    "metaTitle": "Find My Course",
+    "metaDescription": "Answer a few quick questions and get a clear recommendation for the right Florida driving course or package."
+  },
+  "contact": {
+    "metaTitle": "Contact Us",
+    "metaDescription": "Get bilingual help choosing the right Florida driving course. Contact us by form, phone, email, or WhatsApp.",
+    "title": "Contact us",
+    "subtitle": "Tell us your situation and we'll point you to the right next step — in English or Spanish.",
+    "otherWaysHeading": "Other ways to reach us"
+  }
+}

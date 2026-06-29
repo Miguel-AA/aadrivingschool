@@ -1,0 +1,54 @@
+{
+  "brandTagline": "[ES] Florida Driver Help Center",
+  "skipToContent": "[ES] Skip to content",
+  "openMenu": "[ES] Open menu",
+  "closeMenu": "[ES] Close menu",
+  "nav": {
+    "courses": "[ES] Courses",
+    "packages": "[ES] Packages",
+    "permitPrep": "[ES] Permit Prep",
+    "spanishHelp": "[ES] Spanish Help",
+    "ticketHelp": "[ES] Ticket Help",
+    "newToFlorida": "[ES] New to Florida",
+    "quiz": "[ES] Find My Course",
+    "contact": "[ES] Contact"
+  },
+  "cta": {
+    "findMyCourse": "[ES] Find My Course",
+    "startNow": "[ES] Start Now",
+    "learnMore": "[ES] Learn More",
+    "getHelpSpanish": "[ES] Get Help in Spanish",
+    "chatWhatsApp": "[ES] Chat on WhatsApp",
+    "requestInfo": "[ES] Request Info",
+    "getStarted": "[ES] Get Started",
+    "viewAllCourses": "[ES] View All Courses",
+    "viewDetails": "[ES] View Details",
+    "askWhatINeed": "[ES] Ask What I Need",
+    "contactUs": "[ES] Contact Us"
+  },
+  "languageToggle": {
+    "label": "[ES] Language",
+    "en": "[ES] English",
+    "es": "[ES] Español",
+    "switchTo": "[ES] Switch to {language}"
+  },
+  "footer": {
+    "tagline": "[ES] Online Florida driving courses, permit preparation, and license support — in English and Spanish.",
+    "exploreHeading": "[ES] Explore",
+    "supportHeading": "[ES] Support",
+    "legalHeading": "[ES] Legal",
+    "privacy": "[ES] Privacy",
+    "terms": "[ES] Terms",
+    "rights": "[ES] © {year} {name}. All rights reserved."
+  },
+  "whatsapp": {
+    "defaultMessage": "[ES] Hi! I'd like help choosing the right Florida driving course.",
+    "courseMessage": "[ES] Hi! I have a question about the {item} course.",
+    "recommendationMessage": "[ES] Hi! The Course Finder recommended {item}. Can you help me get started?"
+  },
+  "notFound": {
+    "title": "[ES] Page not found",
+    "body": "[ES] Sorry, we couldn't find that page. Let's get you back on track.",
+    "cta": "[ES] Go to homepage"
+  }
+}

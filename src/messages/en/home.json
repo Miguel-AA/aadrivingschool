@@ -1,0 +1,43 @@
+{
+  "hero": {
+    "eyebrow": "Florida Driver Help Center",
+    "title": "Online Florida driving courses and license help — in English and Spanish",
+    "subtitle": "Not sure which course you need? We help you find the right path — first-time license, teen permit, ticket, suspension, 55+ discount, or new to Florida — and connect you to approved providers and bilingual support.",
+    "primaryCta": "Find My Course",
+    "secondaryCta": "Get Help in Spanish"
+  },
+  "finder": {
+    "heading": "Tell us your situation. We'll point you to the right path.",
+    "body": "Answer a few quick questions and get a clear recommendation — no guessing course names.",
+    "cta": "Take the 1-minute quiz"
+  },
+  "popularCourses": {
+    "heading": "Popular courses & prep",
+    "subheading": "Regulated courses are delivered through approved providers. Prep products are our own educational materials."
+  },
+  "packages": {
+    "heading": "Packages built around your situation",
+    "subheading": "Bundles that combine the right course path with prep, guidance, and support."
+  },
+  "howItWorks": {
+    "heading": "How it works",
+    "step1Title": "1. Tell us your situation",
+    "step1Body": "Use the Course Finder or contact us in English or Spanish.",
+    "step2Title": "2. Get the right path",
+    "step2Body": "We recommend the correct course, prep, and checklist for you.",
+    "step3Title": "3. Get started with support",
+    "step3Body": "Enroll through an approved provider or grab our prep — with help along the way."
+  },
+  "trust": {
+    "heading": "Clear, honest, and local",
+    "body": "We're an independent help center focused on West Palm Beach and all of Florida. We don't claim state approval, and we never promise outcomes we can't control — we make the process simpler and bilingual."
+  },
+  "faq": {
+    "heading": "Frequently asked questions"
+  },
+  "leadCta": {
+    "heading": "Not sure where to start?",
+    "body": "Send us a quick message and we'll point you to the right next step.",
+    "cta": "Contact us"
+  }
+}

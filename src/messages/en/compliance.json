@@ -1,0 +1,17 @@
+{
+  "heading": "Important information",
+  "labels": {
+    "partner-provided": "Partner-Provided",
+    "educational-guide": "Educational Guide",
+    "not-official-dmv": "Not Official DMV",
+    "no-guarantee": "No Guarantee"
+  },
+  "statements": {
+    "partner-provided": "This regulated course is delivered through an approved course provider. We are not the provider and do not issue course completion ourselves.",
+    "educational-guide": "This is an educational preparation product — not an official state course or exam.",
+    "not-official-dmv": "We are not the Florida DMV/FLHSMV, a court, or a testing site, and we do not claim state approval.",
+    "no-guarantee": "We do not guarantee exam results, ticket dismissal, point removal, license reinstatement, or insurance discounts. Those outcomes are decided by the state, courts, or your insurer."
+  },
+  "providerAttribution": "Course provided by {provider}.",
+  "globalFooter": "Florida Driver Help Center is an independent service. We are not affiliated with the Florida DMV/FLHSMV, are not a court or testing site, and do not provide legal advice. We connect users to approved course providers and offer educational preparation and guidance. No outcome is guaranteed. Always confirm current requirements with official state sources."
+}

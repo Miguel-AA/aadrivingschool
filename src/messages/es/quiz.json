@@ -1,0 +1,21 @@
+{
+  "title": "[ES] Find My Course",
+  "intro": "[ES] Answer a few quick questions and we'll point you to the right path. This is guidance to help you choose — no outcome is guaranteed.",
+  "start": "[ES] Start",
+  "next": "[ES] Next",
+  "back": "[ES] Back",
+  "seeResult": "[ES] See my recommendation",
+  "progress": "[ES] Question {current} of {total}",
+  "selectPrompt": "[ES] Choose one to continue.",
+  "result": {
+    "heading": "[ES] Here's what we recommend",
+    "reasonHeading": "[ES] Why this fits",
+    "fallbackReason": "[ES] Based on your answers, this is a great place to start. If you're not sure, contact us and we'll help you choose.",
+    "recommendedCourse": "[ES] Recommended course",
+    "recommendedPackage": "[ES] Recommended package",
+    "viewDetails": "[ES] View details",
+    "getStarted": "[ES] Send my info to get started",
+    "askWhatsApp": "[ES] Ask on WhatsApp",
+    "retake": "[ES] Start over"
+  }
+}

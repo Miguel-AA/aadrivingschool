@@ -1,0 +1,21 @@
+{
+  "title": "Find My Course",
+  "intro": "Answer a few quick questions and we'll point you to the right path. This is guidance to help you choose — no outcome is guaranteed.",
+  "start": "Start",
+  "next": "Next",
+  "back": "Back",
+  "seeResult": "See my recommendation",
+  "progress": "Question {current} of {total}",
+  "selectPrompt": "Choose one to continue.",
+  "result": {
+    "heading": "Here's what we recommend",
+    "reasonHeading": "Why this fits",
+    "fallbackReason": "Based on your answers, this is a great place to start. If you're not sure, contact us and we'll help you choose.",
+    "recommendedCourse": "Recommended course",
+    "recommendedPackage": "Recommended package",
+    "viewDetails": "View details",
+    "getStarted": "Send my info to get started",
+    "askWhatsApp": "Ask on WhatsApp",
+    "retake": "Start over"
+  }
+}
