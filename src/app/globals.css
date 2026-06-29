@@ -8,26 +8,26 @@
   --font-display:
     var(--font-jakarta), var(--font-inter), ui-sans-serif, system-ui, sans-serif;
 
-  /* Brand palette — Coastal Florida teal (primary) */
-  --color-brand-50: #f0fdfa;
-  --color-brand-100: #ccfbf1;
-  --color-brand-200: #99f6e4;
-  --color-brand-300: #5eead4;
-  --color-brand-400: #2dd4bf;
-  --color-brand-500: #14b8a6;
-  --color-brand-600: #0d9488;
-  --color-brand-700: #0f766e;
-  --color-brand-800: #115e59;
-  --color-brand-900: #134e4a;
-  --color-brand-950: #042f2e;
+  /* Brand palette — Dark Navy Blue (authority: headers, text, strong sections) */
+  --color-brand-50: #eef2f9;
+  --color-brand-100: #d9e2f1;
+  --color-brand-200: #b3c4e3;
+  --color-brand-300: #8aa3d3;
+  --color-brand-400: #5e7dbf;
+  --color-brand-500: #3f5fa6;
+  --color-brand-600: #314b85;
+  --color-brand-700: #283d6b;
+  --color-brand-800: #1f2f52;
+  --color-brand-900: #16223d;
+  --color-brand-950: #0b1322;
 
-  /* Ocean (cyan) — used in gradients alongside brand teal */
-  --color-ocean-300: #67e8f9;
-  --color-ocean-400: #22d3ee;
-  --color-ocean-500: #06b6d4;
-  --color-ocean-600: #0891b2;
+  /* Ocean (azure) — pairs with navy in gradients/decoration */
+  --color-ocean-300: #7cc0f0;
+  --color-ocean-400: #4aa3e8;
+  --color-ocean-500: #2b86d4;
+  --color-ocean-600: #1e6fb8;
 
-  /* Accent — warm sun / coral */
+  /* Accent — Warm Orange (action: primary buttons, highlights, CTAs) */
   --color-accent-50: #fff7ed;
   --color-accent-100: #ffedd5;
   --color-accent-200: #fed7aa;
@@ -127,13 +127,12 @@ h4 {
 
 /* --- Utilities --------------------------------------------------------- */
 
-/* Gradient text helper */
+/* Gradient text helper — warm orange highlight on navy headlines */
 .text-gradient {
   background-image: linear-gradient(
     100deg,
-    var(--color-brand-600),
-    var(--color-ocean-500) 55%,
-    var(--color-accent-500)
+    var(--color-accent-500),
+    var(--color-accent-600)
   );
   -webkit-background-clip: text;
   background-clip: text;

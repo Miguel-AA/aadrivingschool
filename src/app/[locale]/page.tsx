@@ -1,30 +1,28 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
+import { Car, Check, Languages, ShieldAlert, Users } from "lucide-react";
 import { hasLocale } from "next-intl";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 import { routing, type Locale } from "@/i18n/routing";
 import { buildMetadata } from "@/lib/seo/metadata";
-import {
-  getFeaturedCourses,
-  getFeaturedPackages,
-  getGlobalFaqs,
-} from "@/content";
+import { getFeaturedPackages, getGlobalFaqs } from "@/content";
 import { faqJsonLd } from "@/lib/seo/jsonld";
 import { EVENTS } from "@/lib/services/analytics";
 import { Hero } from "@/components/content/Hero";
 import { Section, SectionHeading } from "@/components/content/Section";
 import { CatalogGrid } from "@/components/catalog/CatalogGrid";
-import { CourseCard } from "@/components/catalog/CourseCard";
 import { PackageCard } from "@/components/catalog/PackageCard";
 import { FAQAccordion } from "@/components/content/FAQAccordion";
 import { Reveal } from "@/components/content/Reveal";
-import { Counter } from "@/components/content/Counter";
+import { Icon } from "@/components/content/Icon";
+import { Services } from "@/components/content/Services";
 import { Testimonials } from "@/components/content/Testimonials";
 import { CTAButton } from "@/components/cta/CTAButton";
-import { WhatsAppCTA } from "@/components/cta/WhatsAppCTA";
 import { JsonLd } from "@/components/seo/JsonLd";
 
-type StatItem = { value: number; suffix: string; label: string };
+type ProblemCard = { title: string; body: string };
+
+const PROBLEM_ICONS = [Car, Users, Languages, ShieldAlert];
 
 export async function generateMetadata({
   params,
@@ -44,14 +42,13 @@ export default async function HomePage({ params }: PageProps<"/[locale]">) {
   if (!hasLocale(routing.locales, locale)) notFound();
   setRequestLocale(locale);
   const t = await getTranslations({ locale, namespace: "home" });
-  const tc = await getTranslations({ locale, namespace: "common" });
 
-  const courses = getFeaturedCourses();
   const packages = getFeaturedPackages();
   const faqs = getGlobalFaqs();
 
-  const badges = t.raw("hero.badges") as string[];
-  const stats = t.raw("stats.items") as StatItem[];
+  const trust = t.raw("hero.trust") as string[];
+  const problemCards = t.raw("problem.cards") as ProblemCard[];
+  const localPoints = t.raw("local.points") as string[];
   const steps = [
     { title: t("howItWorks.step1Title"), body: t("howItWorks.step1Body") },
     { title: t("howItWorks.step2Title"), body: t("howItWorks.step2Body") },
@@ -62,12 +59,13 @@ export default async function HomePage({ params }: PageProps<"/[locale]">) {
     <>
       <JsonLd data={faqJsonLd(faqs, locale)} />
 
+      {/* 1. Hero + trust row */}
       <Hero
         eyebrow={t("hero.eyebrow")}
         title={t("hero.title")}
-        highlight="Florida driving courses"
+        highlight="Permit Prep"
         subtitle={t("hero.subtitle")}
-        badges={badges}
+        badges={trust}
         actions={
           <>
             <CTAButton
@@ -91,26 +89,32 @@ export default async function HomePage({ params }: PageProps<"/[locale]">) {
         }
       />
 
-      {/* Stats band */}
-      <Section tone="dark" className="py-10 sm:py-12">
-        <dl className="grid grid-cols-2 gap-6 sm:grid-cols-4">
-          {stats.map((stat) => (
-            <div key={stat.label} className="text-center">
-              <dt className="sr-only">{stat.label}</dt>
-              <dd>
-                <span className="block text-3xl font-extrabold text-white sm:text-4xl">
-                  <Counter to={stat.value} suffix={stat.suffix} />
+      {/* 2. Problem — connect before selling */}
+      <Section>
+        <Reveal>
+          <SectionHeading title={t("problem.title")} subtitle={t("problem.body")} />
+        </Reveal>
+        <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+          {problemCards.map((card, i) => (
+            <Reveal key={card.title} delay={i * 80}>
+              <div className="h-full rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
+                <span className="grid h-11 w-11 place-items-center rounded-xl bg-accent-50 text-accent-600 ring-1 ring-inset ring-accent-100">
+                  <Icon
+                    icon={PROBLEM_ICONS[i] ?? Car}
+                    className="h-5 w-5"
+                  />
                 </span>
-                <span className="mt-1 block text-sm text-brand-100/80">
-                  {stat.label}
-                </span>
-              </dd>
-            </div>
+                <h3 className="mt-4 text-base font-semibold text-brand-900">
+                  {card.title}
+                </h3>
+                <p className="mt-2 text-sm text-slate-600">{card.body}</p>
+              </div>
+            </Reveal>
           ))}
-        </dl>
+        </div>
       </Section>
 
-      {/* Course finder banner */}
+      {/* 3. Course Finder CTA */}
       <Section tone="brand">
         <Reveal className="flex flex-col items-start justify-between gap-4 sm:flex-row sm:items-center">
           <div>
@@ -121,7 +125,7 @@ export default async function HomePage({ params }: PageProps<"/[locale]">) {
             href="/quiz"
             eventName={EVENTS.CTA_CLICK}
             eventProps={{ source: "home_finder", target: "quiz" }}
-            variant="accent"
+            variant="primary"
             size="lg"
           >
             {t("finder.cta")}
@@ -129,34 +133,10 @@ export default async function HomePage({ params }: PageProps<"/[locale]">) {
         </Reveal>
       </Section>
 
-      {/* Popular courses */}
-      <Section>
-        <Reveal>
-          <SectionHeading
-            title={t("popularCourses.heading")}
-            subtitle={t("popularCourses.subheading")}
-          />
-        </Reveal>
-        <CatalogGrid>
-          {courses.map((course, i) => (
-            <Reveal key={course.id} delay={i * 80}>
-              <CourseCard course={course} />
-            </Reveal>
-          ))}
-        </CatalogGrid>
-        <div className="mt-8">
-          <CTAButton
-            href="/courses"
-            eventName={EVENTS.CTA_CLICK}
-            eventProps={{ source: "home_courses", target: "courses" }}
-            variant="secondary"
-          >
-            {tc("cta.viewAllCourses")}
-          </CTAButton>
-        </div>
-      </Section>
+      {/* 4. Services */}
+      <Services />
 
-      {/* Packages */}
+      {/* 5. Recommended Starting Packages */}
       <Section tone="muted">
         <Reveal>
           <SectionHeading
@@ -173,7 +153,7 @@ export default async function HomePage({ params }: PageProps<"/[locale]">) {
         </CatalogGrid>
       </Section>
 
-      {/* How it works */}
+      {/* 6. How We Help */}
       <Section>
         <Reveal>
           <SectionHeading title={t("howItWorks.heading")} centered />
@@ -182,10 +162,10 @@ export default async function HomePage({ params }: PageProps<"/[locale]">) {
           {steps.map((step, i) => (
             <Reveal key={step.title} delay={i * 90}>
               <div className="h-full rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
-                <span className="grid h-11 w-11 place-items-center rounded-xl bg-gradient-to-br from-brand-600 to-ocean-500 text-lg font-bold text-white">
+                <span className="grid h-11 w-11 place-items-center rounded-xl bg-gradient-to-br from-brand-700 to-brand-900 text-lg font-bold text-white">
                   {i + 1}
                 </span>
-                <h3 className="mt-4 text-lg font-semibold text-slate-900">
+                <h3 className="mt-4 text-lg font-semibold text-brand-900">
                   {step.title}
                 </h3>
                 <p className="mt-2 text-sm text-slate-600">{step.body}</p>
@@ -195,47 +175,75 @@ export default async function HomePage({ params }: PageProps<"/[locale]">) {
         </div>
       </Section>
 
-      {/* Testimonials (sample) */}
-      <Testimonials />
-
-      {/* Trust */}
-      <Section>
-        <Reveal className="mx-auto max-w-2xl text-center">
-          <h2 className="text-2xl font-bold text-slate-900 sm:text-3xl">
-            {t("trust.heading")}
-          </h2>
-          <p className="mt-3 text-slate-600">{t("trust.body")}</p>
-        </Reveal>
+      {/* 7. Local / Trust */}
+      <Section tone="muted">
+        <div className="grid gap-8 lg:grid-cols-2 lg:items-center">
+          <Reveal>
+            <SectionHeading
+              title={t("local.heading")}
+              subtitle={t("local.body")}
+              className="mb-0"
+            />
+          </Reveal>
+          <Reveal delay={120}>
+            <ul className="grid gap-3 sm:grid-cols-2">
+              {localPoints.map((point) => (
+                <li
+                  key={point}
+                  className="flex items-start gap-2 rounded-lg bg-white p-3 text-sm font-medium text-brand-900 shadow-sm ring-1 ring-slate-200"
+                >
+                  <Check
+                    className="mt-0.5 h-4 w-4 shrink-0 text-accent-600"
+                    aria-hidden="true"
+                  />
+                  {point}
+                </li>
+              ))}
+            </ul>
+          </Reveal>
+        </div>
+        <p className="mt-8 text-xs leading-relaxed text-slate-500">
+          {t("local.disclaimer")}
+        </p>
       </Section>
 
-      {/* FAQ */}
-      <Section tone="muted">
+      {/* 8. Testimonials */}
+      <Testimonials />
+
+      {/* 9. FAQ */}
+      <Section>
         <Reveal>
           <SectionHeading title={t("faq.heading")} centered />
         </Reveal>
         <FAQAccordion faqs={faqs} />
       </Section>
 
-      {/* Lead CTA */}
+      {/* 10. Final CTA */}
       <Section tone="brand">
-        <Reveal className="flex flex-col items-start justify-between gap-4 sm:flex-row sm:items-center">
-          <div>
-            <h2 className="text-2xl font-bold sm:text-3xl">
-              {t("leadCta.heading")}
-            </h2>
-            <p className="mt-2 max-w-2xl text-brand-100">{t("leadCta.body")}</p>
-          </div>
-          <div className="flex flex-wrap gap-3">
+        <Reveal className="mx-auto max-w-3xl text-center">
+          <h2 className="text-2xl font-bold sm:text-3xl">
+            {t("finalCta.heading")}
+          </h2>
+          <p className="mt-3 text-brand-100">{t("finalCta.body")}</p>
+          <div className="mt-6 flex flex-wrap justify-center gap-3">
+            <CTAButton
+              href="/quiz"
+              eventName={EVENTS.CTA_CLICK}
+              eventProps={{ source: "home_final", target: "quiz" }}
+              variant="primary"
+              size="lg"
+            >
+              {t("finalCta.primaryCta")}
+            </CTAButton>
             <CTAButton
               href="/contact"
               eventName={EVENTS.CTA_CLICK}
-              eventProps={{ source: "home_lead", target: "contact" }}
-              variant="accent"
+              eventProps={{ source: "home_final", target: "contact" }}
+              variant="secondary"
               size="lg"
             >
-              {t("leadCta.cta")}
+              {t("finalCta.secondaryCta")}
             </CTAButton>
-            <WhatsAppCTA kind="default" variant="secondary" size="lg" />
           </div>
         </Reveal>
       </Section>

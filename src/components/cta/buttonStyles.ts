@@ -7,14 +7,16 @@ const base =
   "inline-flex items-center justify-center gap-2 rounded-xl font-semibold transition-all duration-200 focus-visible:outline-2 focus-visible:outline-offset-2 disabled:cursor-not-allowed disabled:opacity-60 active:translate-y-0";
 
 const variants: Record<ButtonVariant, string> = {
+  // Warm orange = the primary action color everywhere.
   primary:
-    "bg-gradient-to-r from-brand-600 to-ocean-500 text-white shadow-sm shadow-brand-900/10 hover:-translate-y-0.5 hover:shadow-md hover:shadow-brand-900/20 hover:brightness-105 focus-visible:outline-brand-600",
+    "bg-gradient-to-r from-accent-500 to-accent-600 text-white shadow-sm shadow-accent-700/20 hover:-translate-y-0.5 hover:shadow-md hover:shadow-accent-700/30 hover:brightness-105 focus-visible:outline-accent-600",
+  // Navy outline on light backgrounds.
   secondary:
-    "border border-brand-200 bg-white text-brand-700 shadow-sm hover:-translate-y-0.5 hover:border-brand-300 hover:bg-brand-50 focus-visible:outline-brand-600",
+    "border border-brand-200 bg-white text-brand-800 shadow-sm hover:-translate-y-0.5 hover:border-brand-300 hover:bg-brand-50 focus-visible:outline-brand-700",
+  // Navy solid — strong dark alternative.
   accent:
-    "bg-gradient-to-r from-accent-400 to-accent-500 text-slate-900 shadow-sm shadow-accent-700/10 hover:-translate-y-0.5 hover:shadow-md hover:brightness-105 focus-visible:outline-accent-600",
-  ghost:
-    "text-brand-700 hover:bg-brand-50 focus-visible:outline-brand-600",
+    "bg-gradient-to-r from-brand-700 to-brand-900 text-white shadow-sm shadow-brand-950/20 hover:-translate-y-0.5 hover:shadow-md hover:brightness-110 focus-visible:outline-brand-700",
+  ghost: "text-brand-800 hover:bg-brand-50 focus-visible:outline-brand-700",
 };
 
 const sizes: Record<ButtonSize, string> = {

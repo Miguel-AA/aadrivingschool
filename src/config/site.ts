@@ -4,12 +4,12 @@
  * the business before launch (see plan: "Placeholders the user must supply").
  */
 export const siteConfig = {
-  name: "A&A Driving School",
-  shortName: "A&A Driving School",
+  name: "Florida Top 1 Driving School",
+  shortName: "Florida Top 1 Driving School",
   // Working tagline — review/translate before launch.
   description:
-    "A&A Driving School — Florida remote driving courses, permit test preparation, and license support in English and Spanish.",
-  url: process.env.NEXT_PUBLIC_SITE_URL ?? "http://localhost:3000",
+    "Florida Top 1 Driving School helps Florida drivers and families understand the right next step — TLSAE, permit prep, ticket help, and bilingual (English/Spanish) license support.",
+  url: process.env.NEXT_PUBLIC_SITE_URL ?? "https://floridatop1drivingschool.com",
   // Contact / concierge (placeholders).
   whatsappNumber: process.env.NEXT_PUBLIC_WHATSAPP_NUMBER ?? "15555555555",
   supportPhone: process.env.NEXT_PUBLIC_SUPPORT_PHONE ?? "+1-555-555-5555",

@@ -11,13 +11,12 @@ export type NavLabelKey =
 
 type NavLink = { href: string; labelKey: NavLabelKey };
 
-/** Top navigation (concise — mirrors Appendix A). */
+/** Top navigation (concise — per the brand direction). */
 export const navLinks: NavLink[] = [
   { href: "/courses", labelKey: "courses" },
   { href: "/permit-test-prep", labelKey: "permitPrep" },
   { href: "/spanish-help", labelKey: "spanishHelp" },
   { href: "/ticket-help", labelKey: "ticketHelp" },
-  { href: "/new-to-florida", labelKey: "newToFlorida" },
   { href: "/contact", labelKey: "contact" },
 ];
 

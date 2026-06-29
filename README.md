@@ -1,11 +1,12 @@
-# A&A Driving School
+# Florida Top 1 Driving School
 
-A remote-only Florida driving education & license-support platform (*Florida
-Remote Driving School*) — a bilingual (English/Spanish) site that packages
-official/partner courses with proprietary prep and guidance, a Course Finder
-quiz, and lead capture.
+A Florida driving education & license-support platform
+(`floridatop1drivingschool.com`) — a bilingual (English/Spanish) site that helps
+drivers and families understand the right next step (TLSAE, permit prep, ticket
+help, license support), packages official/partner courses with proprietary prep
+and guidance, and includes a Course Finder quiz and lead capture.
 
-> **Compliance:** This site is an independent, remote-only service. It does **not** claim
+> **Compliance:** This site is an independent service. It does **not** claim
 > to be a Florida DMV/FLHSMV, court, or state-approved provider, and it makes
 > **no guarantees** about exam results, ticket dismissal, point removal,
 > reinstatement, or insurance discounts. Regulated courses are presented as

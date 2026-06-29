@@ -1,95 +1,131 @@
 {
   "hero": {
-    "eyebrow": "Florida Remote Driving School · West Palm Beach y todo Florida",
-    "title": "[ES] Online Florida driving courses and license help — in English and Spanish",
-    "subtitle": "[ES] Not sure which course you need? We help you find the right path — first-time license, teen permit, ticket, suspension, 55+ discount, or new to Florida — and connect you to approved providers and bilingual support.",
-    "primaryCta": "[ES] Find My Course",
+    "eyebrow": "Florida Top 1 Driving School · West Palm Beach y todo Florida",
+    "title": "[ES] Florida Driving Courses, Permit Prep, and Bilingual License Support",
+    "subtitle": "[ES] Florida Top 1 Driving School helps drivers and families understand the right next step — from TLSAE and permit prep to Spanish-language guidance, ticket help, and insurance discount course options.",
+    "primaryCta": "[ES] Find My Best Option",
     "secondaryCta": "[ES] Get Help in Spanish",
-    "badges": [
-      "[ES] 100% online & remote",
-      "[ES] Bilingual EN/ES support",
-      "[ES] Approved-provider courses",
-      "[ES] WhatsApp concierge"
+    "trust": [
+      "[ES] Serving West Palm Beach & Florida statewide",
+      "[ES] English & Spanish support",
+      "[ES] Remote guidance available",
+      "[ES] Approved-provider course options"
     ]
   },
-  "stats": {
-    "items": [
+  "problem": {
+    "title": "[ES] Florida driving requirements can be confusing. We make them easier to understand.",
+    "body": "[ES] Whether you are applying for your first license, helping your teen prepare for a permit, handling a ticket, or looking for guidance in Spanish, we help you understand what step comes next.",
+    "cards": [
       {
-        "value": 8,
-        "suffix": "+",
-        "label": "[ES] Course & prep paths"
+        "title": "[ES] First-Time Drivers",
+        "body": "[ES] Know what course, permit prep, and steps you need before visiting the DMV."
       },
       {
-        "value": 2,
-        "suffix": "",
-        "label": "[ES] Languages (EN / ES)"
+        "title": "[ES] Parents of Teen Drivers",
+        "body": "[ES] Get a clear path for your teen's permit, practice, and license preparation."
       },
       {
-        "value": 100,
-        "suffix": "%",
-        "label": "[ES] Online & remote"
+        "title": "[ES] Spanish-Speaking Drivers",
+        "body": "[ES] Receive guidance in Spanish so you can move forward with confidence."
       },
       {
-        "value": 24,
-        "suffix": "/7",
-        "label": "[ES] Ask us anytime"
+        "title": "[ES] Drivers With Tickets",
+        "body": "[ES] Understand your traffic school options and what steps may apply to your situation."
       }
     ]
   },
   "finder": {
-    "heading": "[ES] Tell us your situation. We'll point you to the right path.",
-    "body": "[ES] Answer a few quick questions and get a clear recommendation — no guessing course names.",
-    "cta": "[ES] Take the 1-minute quiz"
+    "heading": "[ES] Not sure what you need? Start with the Course Finder.",
+    "body": "[ES] Answer a few quick questions and we'll recommend the best starting point based on your situation — first license, learner's permit, ticket, insurance discount, or Spanish-language help.",
+    "cta": "[ES] Start Course Finder"
   },
-  "popularCourses": {
-    "heading": "[ES] Popular courses & prep",
-    "subheading": "[ES] Regulated courses are delivered through approved providers. Prep products are our own educational materials."
-  },
-  "packages": {
-    "heading": "[ES] Packages built around your situation",
-    "subheading": "[ES] Bundles that combine the right course path with prep, guidance, and support."
-  },
-  "howItWorks": {
-    "heading": "[ES] How it works",
-    "step1Title": "[ES] Tell us your situation",
-    "step1Body": "[ES] Use the Course Finder or contact us in English or Spanish.",
-    "step2Title": "[ES] Get the right path",
-    "step2Body": "[ES] We recommend the correct course, prep, and checklist for you.",
-    "step3Title": "[ES] Get started with support",
-    "step3Body": "[ES] Enroll through an approved provider or grab our prep — with help along the way."
-  },
-  "testimonials": {
-    "eyebrow": "[ES] What people say",
-    "heading": "[ES] Guidance that makes the next step obvious",
-    "sampleLabel": "[ES] Sample",
+  "services": {
+    "heading": "[ES] Services We Help With",
+    "subheading": "[ES] Choose the support that matches your situation, or start with the Course Finder if you are not sure where to begin.",
+    "learnMore": "[ES] Learn more",
     "items": [
       {
-        "quote": "[ES] The Course Finder told me exactly which course I needed in about two minutes.",
-        "name": "[ES] M. R.",
-        "role": "[ES] First-time driver · West Palm Beach"
+        "key": "tlsae",
+        "title": "[ES] TLSAE / Drug & Alcohol Course",
+        "body": "[ES] For first-time Florida drivers who need the required Traffic Law and Substance Abuse Education course."
       },
       {
-        "quote": "[ES] Getting help in Spanish over WhatsApp made the whole process so much less stressful.",
-        "name": "[ES] J. G.",
-        "role": "[ES] Permit prep · Lake Worth"
+        "key": "permit",
+        "title": "[ES] Florida Permit Test Prep",
+        "body": "[ES] Practice questions, study guidance, and preparation support before taking the Florida knowledge exam."
       },
       {
-        "quote": "[ES] As a parent, the teen guide finally showed me how to actually support my son's practice.",
-        "name": "[ES] D. S.",
-        "role": "[ES] Parent of a teen driver"
+        "key": "teen",
+        "title": "[ES] Teen Driver Support",
+        "body": "[ES] Guidance for parents and teens navigating permit preparation, practice requirements, and next steps."
+      },
+      {
+        "key": "spanish",
+        "title": "[ES] Spanish Driving Help",
+        "body": "[ES] Spanish-language support for understanding requirements, courses, documents, and the next step."
+      },
+      {
+        "key": "ticket",
+        "title": "[ES] Ticket Help Guidance",
+        "body": "[ES] Educational support for drivers who need help understanding traffic school options after receiving a ticket."
+      },
+      {
+        "key": "insurance",
+        "title": "[ES] Insurance Discount Course Guidance",
+        "body": "[ES] Help identifying defensive driving options that may qualify for insurance-related benefits."
       }
     ]
   },
-  "trust": {
-    "heading": "[ES] Clear, honest, and local",
-    "body": "[ES] We're an independent, remote-only driving school serving West Palm Beach and all of Florida. We don't claim state approval, and we never promise outcomes we can't control — we just make the process simpler and bilingual."
+  "packages": {
+    "heading": "[ES] Recommended Starting Packages",
+    "subheading": "[ES] Simple starting points built around the most common situations Florida drivers face."
+  },
+  "howItWorks": {
+    "heading": "[ES] How We Help",
+    "step1Title": "[ES] Tell us your situation",
+    "step1Body": "[ES] Share whether you are a first-time driver, parent, ticket holder, or Spanish-speaking applicant.",
+    "step2Title": "[ES] Get a clear recommendation",
+    "step2Body": "[ES] We explain what course, prep, or support option makes sense for your case.",
+    "step3Title": "[ES] Move forward with confidence",
+    "step3Body": "[ES] Start the right course or preparation path with guidance along the way."
+  },
+  "local": {
+    "heading": "[ES] Local guidance. Clear next steps. Support in your language.",
+    "body": "[ES] Florida Top 1 Driving School serves drivers in West Palm Beach and across Florida with remote guidance, bilingual support, and simple explanations of the driving-course process. Our goal is to help you understand your options before you spend time or money on the wrong course.",
+    "points": [
+      "[ES] Based in Florida",
+      "[ES] Serving West Palm Beach and statewide",
+      "[ES] English and Spanish support",
+      "[ES] Remote help available",
+      "[ES] Built for first-time drivers, parents, and Spanish-speaking users"
+    ],
+    "disclaimer": "[ES] Courses may be delivered through approved third-party providers when required. Florida Top 1 Driving School provides guidance, preparation materials, and support to help users select the appropriate path."
+  },
+  "testimonials": {
+    "heading": "[ES] Built for real Florida drivers and families",
+    "subheading": "[ES] Our support is designed for people who want simple answers, clear next steps, and help in the language they are most comfortable with.",
+    "items": [
+      {
+        "quote": "[ES] They helped me understand what I needed before starting the permit process. Everything was explained clearly.",
+        "role": "[ES] First-time driver"
+      },
+      {
+        "quote": "[ES] As a parent, I needed to know what my teen had to complete first. The guidance made the process much easier.",
+        "role": "[ES] Parent"
+      },
+      {
+        "quote": "[ES] Me explicaron todo en español y pude entender cuál era el próximo paso.",
+        "role": "[ES] Spanish-speaking user"
+      }
+    ]
   },
   "faq": {
     "heading": "[ES] Frequently asked questions"
   },
-  "leadCta": {
-    "heading": "[ES] Not sure where to start?",
-    "body": "[ES] Send us a quick message and we'll point you to the right next step.",
-    "cta": "[ES] Contact us"
+  "finalCta": {
+    "heading": "[ES] Ready to find the right driving course or support option?",
+    "body": "[ES] Start with a quick recommendation and get a clear path based on your situation.",
+    "primaryCta": "[ES] Find My Best Option",
+    "secondaryCta": "[ES] Contact Us in Spanish"
   }
 }
