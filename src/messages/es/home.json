@@ -1,8 +1,8 @@
 {
   "hero": {
     "eyebrow": "Florida Top 1 Driving School · West Palm Beach y todo Florida",
-    "title": "[ES] Florida Driving Courses, Permit Prep, and Bilingual License Support",
-    "subtitle": "[ES] Florida Top 1 Driving School helps drivers and families understand the right next step — from TLSAE and permit prep to Spanish-language guidance, ticket help, and insurance discount course options.",
+    "title": "[ES] Florida Driving Courses, Permit Prep & Bilingual Support",
+    "subtitle": "[ES] Florida Top 1 Driving School helps drivers and families choose the right course, prepare for the permit process, and get clear support in English or Spanish.",
     "primaryCta": "[ES] Find My Best Option",
     "secondaryCta": "[ES] Get Help in Spanish",
     "trust": [
@@ -10,11 +10,22 @@
       "[ES] English & Spanish support",
       "[ES] Remote guidance available",
       "[ES] Approved-provider course options"
-    ]
+    ],
+    "showcase": {
+      "title": "[ES] What can we help with?",
+      "footnote": "[ES] Start the 60-second Course Finder",
+      "items": [
+        { "label": "[ES] Course Finder", "desc": "[ES] Your best starting point" },
+        { "label": "[ES] Permit Prep", "desc": "[ES] Practice for the FL exam" },
+        { "label": "[ES] Spanish Help", "desc": "Soporte en español" },
+        { "label": "[ES] Ticket Guidance", "desc": "[ES] Understand your options" }
+      ]
+    }
   },
   "problem": {
-    "title": "[ES] Florida driving requirements can be confusing. We make them easier to understand.",
-    "body": "[ES] Whether you are applying for your first license, helping your teen prepare for a permit, handling a ticket, or looking for guidance in Spanish, we help you understand what step comes next.",
+    "eyebrow": "[ES] Who We Help",
+    "title": "[ES] Getting a Florida license can feel confusing. We make the next step clear.",
+    "body": "[ES] Whether you are starting for the first time, helping your teen, handling a ticket, or looking for help in Spanish, we guide you toward the right option before you waste time on the wrong one.",
     "cards": [
       {
         "title": "[ES] First-Time Drivers",
@@ -35,13 +46,22 @@
     ]
   },
   "finder": {
+    "eyebrow": "[ES] Course Finder",
     "heading": "[ES] Not sure what you need? Start with the Course Finder.",
     "body": "[ES] Answer a few quick questions and we'll recommend the best starting point based on your situation — first license, learner's permit, ticket, insurance discount, or Spanish-language help.",
-    "cta": "[ES] Start Course Finder"
+    "cta": "[ES] Start Course Finder",
+    "pills": [
+      "[ES] First license",
+      "[ES] Permit prep",
+      "[ES] Ticket help",
+      "[ES] Spanish support",
+      "[ES] Insurance discount"
+    ]
   },
   "services": {
     "heading": "[ES] Services We Help With",
-    "subheading": "[ES] Choose the support that matches your situation, or start with the Course Finder if you are not sure where to begin.",
+    "title": "[ES] Choose the right support for your Florida driving situation.",
+    "subheading": "[ES] Start with the Course Finder if you are not sure what you need, or explore the most common ways we help Florida drivers and families.",
     "learnMore": "[ES] Learn more",
     "items": [
       {
@@ -77,11 +97,13 @@
     ]
   },
   "packages": {
+    "eyebrow": "[ES] Guided Packages",
     "heading": "[ES] Recommended Starting Packages",
     "subheading": "[ES] Simple starting points built around the most common situations Florida drivers face."
   },
   "howItWorks": {
-    "heading": "[ES] How We Help",
+    "eyebrow": "[ES] How We Help",
+    "heading": "[ES] Three steps to your clear next move",
     "step1Title": "[ES] Tell us your situation",
     "step1Body": "[ES] Share whether you are a first-time driver, parent, ticket holder, or Spanish-speaking applicant.",
     "step2Title": "[ES] Get a clear recommendation",
@@ -89,7 +111,31 @@
     "step3Title": "[ES] Move forward with confidence",
     "step3Body": "[ES] Start the right course or preparation path with guidance along the way."
   },
+  "whyUs": {
+    "eyebrow": "[ES] Why Florida Top 1",
+    "heading": "[ES] Why drivers choose Florida Top 1 Driving School",
+    "subheading": "[ES] We focus on clear explanations, Florida-specific driving course guidance, and support for English and Spanish speakers.",
+    "cards": [
+      {
+        "title": "[ES] Florida-focused guidance",
+        "body": "[ES] We explain course and permit options based on common Florida driver situations."
+      },
+      {
+        "title": "[ES] English and Spanish support",
+        "body": "[ES] Get help in the language you feel most comfortable using."
+      },
+      {
+        "title": "[ES] Built for real situations",
+        "body": "[ES] First license, teen permit, ticket school, insurance discount options, or general course guidance."
+      },
+      {
+        "title": "[ES] Simple next steps",
+        "body": "[ES] We help you understand where to start before spending time or money on the wrong option."
+      }
+    ]
+  },
   "local": {
+    "eyebrow": "[ES] Local & Bilingual",
     "heading": "[ES] Local guidance. Clear next steps. Support in your language.",
     "body": "[ES] Florida Top 1 Driving School serves drivers in West Palm Beach and across Florida with remote guidance, bilingual support, and simple explanations of the driving-course process. Our goal is to help you understand your options before you spend time or money on the wrong course.",
     "points": [
@@ -106,7 +152,7 @@
     "subheading": "[ES] Our support is designed for people who want simple answers, clear next steps, and help in the language they are most comfortable with.",
     "items": [
       {
-        "quote": "[ES] They helped me understand what I needed before starting the permit process. Everything was explained clearly.",
+        "quote": "[ES] I wasn't sure if I needed the TLSAE course or permit prep first. They explained the process clearly and helped me choose the right starting point.",
         "role": "[ES] First-time driver"
       },
       {
@@ -114,13 +160,14 @@
         "role": "[ES] Parent"
       },
       {
-        "quote": "[ES] Me explicaron todo en español y pude entender cuál era el próximo paso.",
+        "quote": "Me explicaron en español qué curso necesitaba y cuál era el próximo paso para prepararme para el permiso.",
         "role": "[ES] Spanish-speaking user"
       }
     ]
   },
   "faq": {
-    "heading": "[ES] Frequently asked questions"
+    "eyebrow": "[ES] Common Questions",
+    "heading": "[ES] Answers before you start"
   },
   "finalCta": {
     "heading": "[ES] Ready to find the right driving course or support option?",

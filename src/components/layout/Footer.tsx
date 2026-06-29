@@ -17,7 +17,7 @@ export function Footer() {
         aria-hidden="true"
         className="h-1 w-full bg-gradient-to-r from-brand-500 via-ocean-500 to-accent-500"
       />
-      <div className="mx-auto w-full max-w-6xl px-4 py-14 sm:px-6 lg:px-8">
+      <div className="mx-auto w-full max-w-6xl px-4 pt-14 pb-28 sm:px-6 lg:px-8 lg:pb-14">
         <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-4">
           <div className="lg:col-span-2">
             <Logo tone="dark" />

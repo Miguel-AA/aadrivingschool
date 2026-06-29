@@ -95,6 +95,15 @@ export const CourseSchema = z
   );
 export type Course = z.infer<typeof CourseSchema>;
 
+/** Optional marketing badge shown on a package card. Only ONE package should
+ *  carry "most-popular"; the others are situational accents. */
+export const PackageBadgeSchema = z.enum([
+  "most-popular",
+  "best-spanish",
+  "parent-favorite",
+]);
+export type PackageBadge = z.infer<typeof PackageBadgeSchema>;
+
 export const PackageSchema = z.object({
   id: z.string(),
   slug: z.string(),
@@ -105,6 +114,7 @@ export const PackageSchema = z.object({
   courseIds: z.array(z.string()).default([]), // FK -> courses
   priceUsd: z.number().nullable(),
   featured: z.boolean().default(false),
+  badge: PackageBadgeSchema.nullable().default(null),
 });
 export type Package = z.infer<typeof PackageSchema>;
 

@@ -53,6 +53,7 @@ export default async function LocaleLayout({
   return (
     <html
       lang={locale}
+      suppressHydrationWarning
       className={`${inter.variable} ${jakarta.variable} h-full antialiased`}
     >
       <body className="flex min-h-full flex-col bg-white text-slate-900">
@@ -72,7 +73,7 @@ export default async function LocaleLayout({
             {t("skipToContent")}
           </a>
           <Header />
-          <main id="main-content" className="flex-1 pb-16 lg:pb-0">
+          <main id="main-content" className="flex-1">
             {children}
           </main>
           <Footer />

@@ -54,6 +54,9 @@
     "cta": "[ES] Go to homepage"
   },
   "badges": {
-    "popular": "[ES] Popular"
+    "popular": "[ES] Popular",
+    "mostPopular": "[ES] Most Popular",
+    "bestSpanish": "[ES] Best for Spanish Support",
+    "parentFavorite": "[ES] Parent Favorite"
   }
 }

@@ -36,7 +36,7 @@ export function Services() {
       <Reveal>
         <SectionHeading
           eyebrow={t("services.heading")}
-          title={t("services.heading")}
+          title={t("services.title")}
           subtitle={t("services.subheading")}
         />
       </Reveal>

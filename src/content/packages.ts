@@ -23,6 +23,7 @@ const packages: Package[] = [
     courseIds: ["tlsae", "permit-prep", "dmv-checklist"],
     priceUsd: 39.95,
     featured: true,
+    badge: "most-popular",
   },
   {
     id: "teen-permit",
@@ -41,6 +42,7 @@ const packages: Package[] = [
     courseIds: ["dets", "permit-prep", "parent-teen", "dmv-checklist"],
     priceUsd: 54.95,
     featured: true,
+    badge: "parent-favorite",
   },
   {
     id: "spanish-help",
@@ -59,6 +61,7 @@ const packages: Package[] = [
     courseIds: ["spanish-prep", "permit-prep", "dmv-checklist"],
     priceUsd: 29.95,
     featured: true,
+    badge: "best-spanish",
   },
   {
     id: "ticket-solution",
@@ -77,6 +80,7 @@ const packages: Package[] = [
     courseIds: ["bdi"],
     priceUsd: null,
     featured: true,
+    badge: null,
   },
   {
     id: "license-reinstatement",
@@ -94,6 +98,7 @@ const packages: Package[] = [
     courseIds: ["adi", "suspension-guide", "dmv-checklist"],
     priceUsd: null,
     featured: false,
+    badge: null,
   },
   {
     id: "55-plus-discount",
@@ -111,6 +116,7 @@ const packages: Package[] = [
     courseIds: ["mature55", "defensive-refresher"],
     priceUsd: 24.95,
     featured: false,
+    badge: null,
   },
   {
     id: "new-to-florida",
@@ -128,6 +134,7 @@ const packages: Package[] = [
     courseIds: ["new-to-fl", "dmv-checklist", "permit-prep"],
     priceUsd: 24.95,
     featured: false,
+    badge: null,
   },
 ];
 
