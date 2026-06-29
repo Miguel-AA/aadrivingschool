@@ -55,19 +55,19 @@ export function Hero({
         <div className="absolute inset-0 bg-dot-grid text-slate-300/30" />
       </div>
 
-      <div className="mx-auto w-full max-w-6xl px-4 py-14 sm:px-6 sm:py-20 lg:grid lg:grid-cols-[1.05fr_0.95fr] lg:items-center lg:gap-12 lg:px-8 lg:py-24">
-        <div className="min-w-0 max-w-2xl text-balance">
+      <div className="mx-auto w-full max-w-6xl px-5 py-12 sm:px-6 sm:py-20 lg:grid lg:grid-cols-[1.05fr_0.95fr] lg:items-center lg:gap-12 lg:px-8 lg:py-24">
+        <div className="min-w-0 max-w-2xl text-balance text-center sm:text-left">
           {eyebrow && (
             <span className="inline-flex max-w-full items-center gap-2 rounded-full border border-brand-200 bg-white/70 px-3 py-1 text-[11px] font-semibold text-brand-700 shadow-sm backdrop-blur sm:text-xs">
               <span className="h-1.5 w-1.5 shrink-0 rounded-full bg-accent-500" />
               {eyebrow}
             </span>
           )}
-          <h1 className="mt-5 text-[1.95rem] font-extrabold leading-[1.1] tracking-tight text-slate-900 sm:text-5xl sm:leading-[1.05] lg:text-[3.5rem]">
+          <h1 className="mt-5 text-[2.2rem] font-extrabold leading-[1.05] tracking-tight text-slate-900 sm:text-5xl sm:leading-[1.05] lg:text-[3.5rem]">
             {renderTitle(title, highlight)}
           </h1>
           {subtitle && (
-            <p className="mt-5 max-w-xl text-base text-slate-600 sm:text-lg">
+            <p className="mx-auto mt-5 max-w-xl text-base text-slate-600 sm:mx-0 sm:text-lg">
               {subtitle}
             </p>
           )}
@@ -77,11 +77,15 @@ export function Hero({
             </div>
           )}
           {badges && badges.length > 0 && (
-            <ul className="mt-7 flex flex-wrap gap-x-5 gap-y-2.5">
-              {badges.map((badge) => (
+            <ul className="mt-7 flex flex-wrap justify-center gap-x-5 gap-y-2.5 sm:justify-start">
+              {badges.map((badge, i) => (
                 <li
                   key={badge}
-                  className="flex items-center gap-1.5 text-sm font-medium text-slate-600"
+                  className={cn(
+                    "items-center gap-1.5 text-sm font-medium text-slate-600",
+                    // Keep the mobile hero calm: show at most 3 trust items.
+                    i >= 3 ? "hidden sm:flex" : "flex",
+                  )}
                 >
                   <Check
                     className="h-4 w-4 shrink-0 text-brand-600"

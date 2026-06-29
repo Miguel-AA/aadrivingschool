@@ -2,8 +2,8 @@
   "courses": {
     "metaTitle": "[ES] Florida Driving Courses & Permit Prep",
     "metaDescription": "[ES] Browse Florida driving courses and prep — TLSAE, teen driver education, driver improvement, 55+, permit test prep, and bilingual support.",
-    "title": "[ES] Courses & Prep",
-    "subtitle": "[ES] Regulated courses are delivered through approved providers. Prep products are our own educational materials. Filter by your situation, or use the Course Finder.",
+    "title": "Rutas de educación y herramientas de preparación",
+    "subtitle": "Explora las rutas de aprendizaje, las herramientas de preparación y las experiencias de apoyo que Florida Top 1 Driving School está construyendo para los conductores de Florida.",
     "filtersLabel": "[ES] Filter by your situation",
     "filters": {
       "all": "[ES] All",
@@ -34,9 +34,10 @@
   "contact": {
     "metaTitle": "[ES] Contact Us",
     "metaDescription": "[ES] Get bilingual help choosing the right Florida driving course. Contact us by form, phone, email, or WhatsApp.",
-    "title": "[ES] Contact us",
-    "subtitle": "[ES] Tell us your situation and we'll point you to the right next step — in English or Spanish.",
-    "otherWaysHeading": "[ES] Other ways to reach us"
+    "title": "Contacta a Florida Top 1 Driving School",
+    "subtitle": "Dinos si necesitas apoyo para conducir, ayuda en español, preparación para el permiso o si quieres conocer más sobre la demostración de la plataforma.",
+    "formHeading": "Envíanos tu solicitud",
+    "otherWaysHeading": "Otras formas de contactarnos"
   },
   "checkout": {
     "metaTitle": "[ES] Checkout",
@@ -46,7 +47,7 @@
     "includesHeading": "[ES] What's included",
     "priceLabel": "[ES] Price",
     "totalLabel": "[ES] Total",
-    "note": "[ES] Secure online payment is coming soon. Request enrollment now and we'll help you complete it — including any steps with the approved provider for regulated courses.",
+    "note": "[ES] Secure online payment is coming soon. Request enrollment now and our team will follow up to help you complete the next step.",
     "continueCta": "[ES] Request enrollment",
     "whatsappCta": "[ES] Ask on WhatsApp",
     "emptyTitle": "[ES] Nothing selected yet",

@@ -20,13 +20,13 @@ export function Footer() {
       <div className="mx-auto w-full max-w-6xl px-4 pt-14 pb-28 sm:px-6 lg:px-8 lg:pb-14">
         <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-4">
           <div className="lg:col-span-2">
-            <Logo tone="dark" />
+            <Logo tone="dark" size="lg" />
             <p className="mt-4 max-w-sm text-sm text-slate-400">
               {t("footer.tagline")}
             </p>
           </div>
 
-          <div>
+          <div className="hidden sm:block">
             <h2 className="text-sm font-semibold text-white">
               {t("footer.exploreHeading")}
             </h2>
@@ -90,8 +90,12 @@ export function Footer() {
           </div>
         </div>
 
-        <div className="mt-12 border-t border-white/10 pt-6">
-          <p className="text-xs leading-relaxed text-slate-500">
+        <div className="mt-10 border-t border-white/10 pt-6 sm:mt-12">
+          {/* Shorter compliance note on mobile; full statement from sm up. */}
+          <p className="text-xs leading-relaxed text-slate-500 sm:hidden">
+            {tc("globalFooterShort")}
+          </p>
+          <p className="hidden text-xs leading-relaxed text-slate-500 sm:block">
             {tc("globalFooter")}
           </p>
           <p className="mt-4 text-xs text-slate-500">

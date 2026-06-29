@@ -1,25 +1,37 @@
 import { useTranslations } from "@/i18n";
-import { Link } from "@/i18n/navigation";
-import { navLinks } from "./navLinks";
+import { Link, usePathname } from "@/i18n/navigation";
+import { cn } from "@/lib/utils/cn";
+import { navLinks, isActiveLink } from "./navLinks";
 
-/** Desktop navigation links (server component). */
+/** Desktop navigation links with active-page highlighting. */
 export function Nav() {
   const t = useTranslations("common");
+  const pathname = usePathname();
   return (
     <nav className="hidden items-center gap-6 lg:flex" aria-label="Primary">
-      {navLinks.map((link) => (
-        <Link
-          key={link.href}
-          href={link.href}
-          className="group relative text-sm font-medium text-slate-700 transition-colors hover:text-brand-700"
-        >
-          {t(`nav.${link.labelKey}`)}
-          <span
-            aria-hidden="true"
-            className="absolute -bottom-1.5 left-0 h-0.5 w-0 rounded-full bg-gradient-to-r from-brand-600 to-ocean-500 transition-all duration-300 group-hover:w-full"
-          />
-        </Link>
-      ))}
+      {navLinks.map((link) => {
+        const active = isActiveLink(link, pathname);
+        return (
+          <Link
+            key={link.href}
+            href={link.href}
+            aria-current={active ? "page" : undefined}
+            className={cn(
+              "group relative text-sm font-medium transition-colors",
+              active ? "text-brand-700" : "text-slate-700 hover:text-brand-700",
+            )}
+          >
+            {t(`nav.${link.labelKey}`)}
+            <span
+              aria-hidden="true"
+              className={cn(
+                "absolute -bottom-1.5 left-0 h-0.5 rounded-full bg-gradient-to-r from-brand-600 to-ocean-500 transition-all duration-300",
+                active ? "w-full" : "w-0 group-hover:w-full",
+              )}
+            />
+          </Link>
+        );
+      })}
     </nav>
   );
 }

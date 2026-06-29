@@ -1,5 +1,7 @@
 {
-  "heading": "Important information",
+  "heading": "Compliance roadmap note",
+  "roadmapLabel": "Compliance roadmap note",
+  "roadmapNote": "Florida Top 1 Driving School is being developed with a compliance-aware roadmap. Any regulated course delivery will follow applicable Florida approval, licensing, and operating requirements before being offered as an official state-regulated course.",
   "labels": {
     "partner-provided": "Partner-Provided",
     "educational-guide": "Educational Guide",
@@ -13,5 +15,6 @@
     "no-guarantee": "We do not guarantee exam results, ticket dismissal, point removal, license reinstatement, or insurance discounts. Those outcomes are decided by the state, courts, or your insurer."
   },
   "providerAttribution": "Course provided by {provider}.",
-  "globalFooter": "Florida Top 1 Driving School is an independent service. We are not affiliated with the Florida DMV/FLHSMV, are not a court or testing site, and do not provide legal advice. Courses may be delivered through approved third-party providers when required; we provide guidance, preparation materials, and support to help you select the appropriate path. No outcome is guaranteed. Always confirm current requirements with official state sources."
+  "globalFooter": "Florida Top 1 Driving School is being developed with a compliance-aware roadmap. Any regulated course delivery will follow applicable Florida approval, licensing, and operating requirements before being offered as an official state-regulated course. Always confirm current requirements with official state sources.",
+  "globalFooterShort": "Florida Top 1 Driving School is being developed with a compliance-aware roadmap. Regulated course delivery will follow applicable Florida approval requirements before being offered as official regulated coursework."
 }

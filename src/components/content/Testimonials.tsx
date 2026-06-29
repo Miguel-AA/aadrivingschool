@@ -15,7 +15,8 @@ export function Testimonials() {
   const items = t.raw("testimonials.items") as Item[];
 
   return (
-    <Section tone="muted">
+    // Hidden on mobile to keep the phone view short and calm; shown from `sm` up.
+    <Section tone="muted" className="hidden sm:block">
       <SectionHeading
         title={t("testimonials.heading")}
         subtitle={t("testimonials.subheading")}

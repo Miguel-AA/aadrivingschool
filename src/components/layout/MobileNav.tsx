@@ -2,14 +2,16 @@
 import { useState } from "react";
 import { Menu, X } from "lucide-react";
 import { useTranslations } from "@/i18n";
-import { Link } from "@/i18n/navigation";
-import { navLinks } from "./navLinks";
+import { Link, usePathname } from "@/i18n/navigation";
+import { cn } from "@/lib/utils/cn";
+import { navLinks, isActiveLink } from "./navLinks";
 import { LanguageToggle } from "./LanguageToggle";
 
 /** Mobile navigation drawer toggle (client component). */
 export function MobileNav() {
   const [open, setOpen] = useState(false);
   const t = useTranslations("common");
+  const pathname = usePathname();
 
   return (
     <div className="lg:hidden">
@@ -29,16 +31,25 @@ export function MobileNav() {
             className="mx-auto flex max-w-6xl flex-col gap-1 px-4 py-4"
             aria-label="Mobile"
           >
-            {navLinks.map((link) => (
-              <Link
-                key={link.href}
-                href={link.href}
-                onClick={() => setOpen(false)}
-                className="rounded-md px-3 py-2 text-base font-medium text-slate-800 hover:bg-brand-50 hover:text-brand-700"
-              >
-                {t(`nav.${link.labelKey}`)}
-              </Link>
-            ))}
+            {navLinks.map((link) => {
+              const active = isActiveLink(link, pathname);
+              return (
+                <Link
+                  key={link.href}
+                  href={link.href}
+                  onClick={() => setOpen(false)}
+                  aria-current={active ? "page" : undefined}
+                  className={cn(
+                    "rounded-md px-3 py-2 text-base font-medium",
+                    active
+                      ? "bg-brand-50 text-brand-700"
+                      : "text-slate-800 hover:bg-brand-50 hover:text-brand-700",
+                  )}
+                >
+                  {t(`nav.${link.labelKey}`)}
+                </Link>
+              );
+            })}
             <Link
               href="/quiz"
               onClick={() => setOpen(false)}

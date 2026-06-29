@@ -4,6 +4,7 @@
   "openMenu": "[ES] Open menu",
   "closeMenu": "[ES] Close menu",
   "nav": {
+    "home": "Inicio",
     "courses": "[ES] Courses",
     "packages": "[ES] Packages",
     "permitPrep": "[ES] Permit Prep",

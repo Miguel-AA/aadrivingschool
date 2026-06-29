@@ -2,8 +2,8 @@
   "courses": {
     "metaTitle": "Florida Driving Courses & Permit Prep",
     "metaDescription": "Browse Florida driving courses and prep — TLSAE, teen driver education, driver improvement, 55+, permit test prep, and bilingual support.",
-    "title": "Courses & Prep",
-    "subtitle": "Regulated courses are delivered through approved providers. Prep products are our own educational materials. Filter by your situation, or use the Course Finder.",
+    "title": "Driver Education Pathways & Prep Tools",
+    "subtitle": "Explore the learning paths, preparation tools, and support experiences Florida Top 1 Driving School is building for Florida drivers.",
     "filtersLabel": "Filter by your situation",
     "filters": {
       "all": "All",
@@ -34,8 +34,9 @@
   "contact": {
     "metaTitle": "Contact Us",
     "metaDescription": "Get bilingual help choosing the right Florida driving course. Contact us by form, phone, email, or WhatsApp.",
-    "title": "Contact us",
-    "subtitle": "Tell us your situation and we'll point you to the right next step — in English or Spanish.",
+    "title": "Contact Florida Top 1 Driving School",
+    "subtitle": "Tell us whether you need driver support, Spanish help, permit preparation, or want to learn more about the platform demo.",
+    "formHeading": "Send us your request",
     "otherWaysHeading": "Other ways to reach us"
   },
   "checkout": {
@@ -46,7 +47,7 @@
     "includesHeading": "What's included",
     "priceLabel": "Price",
     "totalLabel": "Total",
-    "note": "Secure online payment is coming soon. Request enrollment now and we'll help you complete it — including any steps with the approved provider for regulated courses.",
+    "note": "Secure online payment is coming soon. Request enrollment now and our team will follow up to help you complete the next step.",
     "continueCta": "Request enrollment",
     "whatsappCta": "Ask on WhatsApp",
     "emptyTitle": "Nothing selected yet",

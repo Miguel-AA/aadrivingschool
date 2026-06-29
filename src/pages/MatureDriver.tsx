@@ -46,8 +46,6 @@ export function MatureDriver() {
       courses={courses}
       packages={packages}
       faqs={faqs}
-      disclaimerLabels={["partner-provided", "not-official-dmv", "no-guarantee"]}
-      disclaimerProviderId="partner-pending"
       leadSourcePage="/55-plus-driver"
     />
   );

@@ -53,7 +53,11 @@ export function PermitPrep() {
       courses={courses}
       packages={packages}
       faqs={faqs}
-      disclaimerLabels={["educational-guide", "not-official-dmv", "no-guarantee"]}
+      packagesHeading={t("permit.relatedPackages")}
+      coursesHeading={t("permit.relatedCourses")}
+      faqHeading={t("permit.faqHeading")}
+      ctaHeading={t("permit.ctaHeading")}
+      ctaBody={t("permit.ctaBody")}
       leadSourcePage="/permit-test-prep"
     />
   );

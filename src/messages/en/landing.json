@@ -1,31 +1,46 @@
 {
   "common": {
-    "relatedCourses": "Related courses & prep",
-    "relatedPackages": "Recommended packages",
-    "faqHeading": "Questions",
-    "ctaHeading": "Ready for the right next step?",
-    "ctaBody": "Send us a message and we'll help you get started."
+    "relatedCourses": "Related prep tools",
+    "relatedPackages": "Related pathways",
+    "faqHeading": "Questions before you start",
+    "ctaHeading": "Tell us what you need",
+    "ctaBody": "Share your situation and our team will follow up with the right next step."
   },
   "spanish": {
     "eyebrow": "Spanish Help",
     "title": "Florida driving help in Spanish",
-    "subtitle": "From your first permit to handling a ticket, we explain Florida's steps in Spanish and support you over WhatsApp. Educational guidance and approved-provider connections — no outcome is guaranteed.",
+    "subtitle": "Get Spanish-language explanations for permit preparation, driver pathways, ticket education, and the Florida driving process.",
     "primaryCta": "Get Help in Spanish",
-    "whatsappCta": "Chat on WhatsApp"
+    "whatsappCta": "Chat on WhatsApp",
+    "relatedPackages": "Spanish support pathways",
+    "relatedCourses": "Spanish prep tools",
+    "faqHeading": "Spanish help questions",
+    "ctaHeading": "Get Spanish-language driving support",
+    "ctaBody": "Tell us your situation and we'll help you understand the next step in Spanish."
   },
   "permit": {
     "eyebrow": "Permit Test Prep",
     "title": "Prepare for the Florida permit exam with confidence",
-    "subtitle": "Practice questions, road-sign drills, and clear explanations for the Class E knowledge exam — in English and Spanish. This is educational prep, not the official exam.",
+    "subtitle": "Practice questions, study tools, and clear explanations designed to help Florida drivers prepare for the knowledge exam in English or Spanish.",
     "primaryCta": "Get Permit Prep",
-    "secondaryCta": "Practice in Spanish"
+    "secondaryCta": "Practice in Spanish",
+    "relatedPackages": "Related pathways",
+    "relatedCourses": "Related prep tools",
+    "faqHeading": "Permit prep questions",
+    "ctaHeading": "Get help preparing for the permit process",
+    "ctaBody": "Tell us what you need help with and our team will follow up."
   },
   "ticket": {
     "eyebrow": "Ticket Help",
     "title": "Got a traffic ticket? Understand your options first.",
-    "subtitle": "We explain the Basic Driver Improvement (BDI) path and your next steps. Eligibility and any effect on points are decided by the court or clerk — always follow the instructions you received.",
+    "subtitle": "Florida Top 1 Driving School is building structured ticket education pathways to help drivers understand traffic-school related options and next steps.",
     "primaryCta": "Check My Options",
-    "secondaryCta": "Ask a question"
+    "secondaryCta": "Ask a question",
+    "relatedPackages": "Ticket education pathways",
+    "relatedCourses": "Related education tools",
+    "faqHeading": "Ticket education questions",
+    "ctaHeading": "Understand your ticket education options",
+    "ctaBody": "Tell us what happened and our team will help you understand the next step."
   },
   "reinstatement": {
     "eyebrow": "License Reinstatement",

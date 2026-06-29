@@ -51,8 +51,6 @@ export function LicenseReinstatement() {
       courses={courses}
       packages={packages}
       faqs={faqs}
-      disclaimerLabels={["partner-provided", "not-official-dmv", "no-guarantee"]}
-      disclaimerProviderId="partner-pending"
       leadSourcePage="/license-reinstatement"
     />
   );

@@ -30,6 +30,7 @@ import { Services } from "@/components/content/Services";
 import { Testimonials } from "@/components/content/Testimonials";
 import { CTAButton } from "@/components/cta/CTAButton";
 import { JsonLd } from "@/components/seo/JsonLd";
+import { cn } from "@/lib/utils/cn";
 
 type ProblemCard = { title: string; body: string };
 
@@ -112,9 +113,13 @@ export function Home() {
         </Reveal>
         <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
           {problemCards.map((card, i) => (
-            <Reveal key={card.title} delay={i * 80}>
-              <div className="group h-full rounded-2xl border border-slate-200 bg-white p-6 shadow-sm ring-1 ring-transparent transition-all duration-200 hover:-translate-y-1 hover:border-accent-200 hover:shadow-lg hover:shadow-brand-900/5 hover:ring-accent-100">
-                <span className="grid h-12 w-12 place-items-center rounded-xl bg-accent-50 text-accent-600 ring-1 ring-inset ring-accent-100 transition-transform duration-200 group-hover:scale-105">
+            <Reveal
+              key={card.title}
+              delay={i * 80}
+              className={cn(i >= 3 && "hidden sm:block")}
+            >
+              <div className="group h-full rounded-2xl border border-slate-200 bg-white p-6 text-center shadow-sm ring-1 ring-transparent transition-all duration-200 hover:-translate-y-1 hover:border-accent-200 hover:shadow-lg hover:shadow-brand-900/5 hover:ring-accent-100 sm:text-left">
+                <span className="mx-auto grid h-12 w-12 place-items-center rounded-xl bg-accent-50 text-accent-600 ring-1 ring-inset ring-accent-100 transition-transform duration-200 group-hover:scale-105 sm:mx-0">
                   <Icon icon={PROBLEM_ICONS[i] ?? Car} className="h-6 w-6" />
                 </span>
                 <h3 className="mt-4 text-base font-semibold text-brand-900">
@@ -131,7 +136,7 @@ export function Home() {
 
       {/* 3. Course Finder CTA */}
       <Section tone="brand">
-        <Reveal className="flex flex-col items-start justify-between gap-6 lg:flex-row lg:items-center">
+        <Reveal className="flex flex-col items-center justify-between gap-6 text-center lg:flex-row lg:items-center lg:text-left">
           <div className="max-w-2xl">
             <span className="inline-flex items-center gap-2 rounded-full bg-white/10 px-3 py-1 text-xs font-semibold uppercase tracking-wide text-brand-100 ring-1 ring-inset ring-white/15">
               <Compass className="h-3.5 w-3.5 text-accent-300" aria-hidden="true" />
@@ -141,11 +146,14 @@ export function Home() {
               {t("finder.heading")}
             </h2>
             <p className="mt-3 text-brand-100">{t("finder.body")}</p>
-            <ul className="mt-5 flex flex-wrap gap-2">
-              {finderPills.map((pill) => (
+            <ul className="mt-5 flex flex-wrap justify-center gap-2 lg:justify-start">
+              {finderPills.map((pill, i) => (
                 <li
                   key={pill}
-                  className="rounded-full bg-white/10 px-3 py-1 text-xs font-medium text-white ring-1 ring-inset ring-white/15 backdrop-blur"
+                  className={cn(
+                    "rounded-full bg-white/10 px-3 py-1 text-xs font-medium text-white ring-1 ring-inset ring-white/15 backdrop-blur",
+                    i >= 3 && "hidden sm:block",
+                  )}
                 >
                   {pill}
                 </li>
@@ -179,7 +187,11 @@ export function Home() {
         </Reveal>
         <CatalogGrid>
           {packages.map((pkg, i) => (
-            <Reveal key={pkg.id} delay={i * 80}>
+            <Reveal
+              key={pkg.id}
+              delay={i * 80}
+              className={cn(i >= 3 && "hidden sm:block")}
+            >
               <PackageCard pkg={pkg} hidePrice ctaLabel={t("packages.cta")} />
             </Reveal>
           ))}
@@ -231,8 +243,12 @@ export function Home() {
         </Reveal>
         <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
           {whyCards.map((card, i) => (
-            <Reveal key={card.title} delay={i * 80}>
-              <div className="group flex h-full flex-col rounded-2xl border border-slate-200 bg-white p-6 shadow-sm transition-all duration-200 hover:-translate-y-1 hover:border-brand-200 hover:shadow-lg hover:shadow-brand-900/5">
+            <Reveal
+              key={card.title}
+              delay={i * 80}
+              className={cn(i >= 3 && "hidden sm:block")}
+            >
+              <div className="group flex h-full flex-col items-center rounded-2xl border border-slate-200 bg-white p-6 text-center shadow-sm transition-all duration-200 hover:-translate-y-1 hover:border-brand-200 hover:shadow-lg hover:shadow-brand-900/5 sm:items-start sm:text-left">
                 <span className="grid h-11 w-11 place-items-center rounded-xl bg-brand-50 text-brand-700 ring-1 ring-inset ring-brand-100 transition-colors group-hover:bg-brand-100">
                   <Icon icon={WHY_ICONS[i] ?? ShieldCheck} className="h-5 w-5" />
                 </span>
@@ -248,8 +264,9 @@ export function Home() {
         </div>
       </Section>
 
-      {/* 8. Investor demo highlights — premium dark band */}
-      <Section tone="dark">
+      {/* 8. Investor demo highlights — premium dark band (desktop/tablet only;
+          on mobile this overlaps the capabilities section, so it's hidden) */}
+      <Section tone="dark" className="hidden sm:block">
         <Reveal>
           <SectionHeading
             eyebrow={t("investorHighlights.eyebrow")}
@@ -293,10 +310,13 @@ export function Home() {
                 className="mb-0"
               />
               <ul className="grid gap-3 sm:grid-cols-2">
-                {localPoints.map((point) => (
+                {localPoints.map((point, i) => (
                   <li
                     key={point}
-                    className="flex items-start gap-2 rounded-xl bg-white p-3.5 text-sm font-medium text-brand-900 shadow-sm ring-1 ring-slate-200"
+                    className={cn(
+                      "flex items-start gap-2 rounded-xl bg-white p-3.5 text-sm font-medium text-brand-900 shadow-sm ring-1 ring-slate-200",
+                      i >= 3 && "hidden sm:flex",
+                    )}
                   >
                     <Check
                       className="mt-0.5 h-4 w-4 shrink-0 text-accent-600"
@@ -309,7 +329,7 @@ export function Home() {
             </div>
           </div>
         </Reveal>
-        <p className="mt-6 text-xs leading-relaxed text-slate-500">
+        <p className="mt-6 hidden text-xs leading-relaxed text-slate-500 sm:block">
           {t("local.disclaimer")}
         </p>
       </Section>
@@ -326,7 +346,7 @@ export function Home() {
             centered
           />
         </Reveal>
-        <FAQAccordion faqs={faqs} />
+        <FAQAccordion faqs={faqs} mobileLimit={3} />
       </Section>
 
       {/* 11. Final CTA */}
@@ -355,7 +375,7 @@ export function Home() {
               eventProps={{ source: "home_final", target: "investor" }}
               variant="secondary"
               size="lg"
-              className="w-full sm:w-auto"
+              className="hidden w-full sm:inline-flex sm:w-auto"
             >
               {t("finalCta.secondaryCta")}
             </CTAButton>

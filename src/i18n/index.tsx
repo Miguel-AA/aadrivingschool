@@ -147,8 +147,10 @@ export function useTranslations(namespace: string): Translator {
   const { locale } = useContext(LocaleContext);
 
   return useMemo(() => {
-    const ns = MESSAGES[locale]?.[namespace];
-    const enNs = MESSAGES.en[namespace];
+    // Support dotted namespaces (e.g. "landing.common", "pages.courseDetail")
+    // by resolving the path into the locale's message tree.
+    const ns = resolvePath(MESSAGES[locale], namespace);
+    const enNs = resolvePath(MESSAGES.en, namespace);
 
     const lookup = (key: string): unknown => {
       const found = resolvePath(ns, key);

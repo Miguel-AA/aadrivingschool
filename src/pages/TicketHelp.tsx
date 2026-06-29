@@ -46,8 +46,11 @@ export function TicketHelp() {
       courses={courses}
       packages={packages}
       faqs={faqs}
-      disclaimerLabels={["partner-provided", "not-official-dmv", "no-guarantee"]}
-      disclaimerProviderId="partner-pending"
+      packagesHeading={t("ticket.relatedPackages")}
+      coursesHeading={t("ticket.relatedCourses")}
+      faqHeading={t("ticket.faqHeading")}
+      ctaHeading={t("ticket.ctaHeading")}
+      ctaBody={t("ticket.ctaBody")}
       leadSourcePage="/ticket-help"
     />
   );

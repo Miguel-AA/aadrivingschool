@@ -1,4 +1,4 @@
-import { Info } from "lucide-react";
+import { ShieldCheck } from "lucide-react";
 import { useLocale, useTranslations } from "@/i18n";
 import type { ComplianceLabelKey } from "@/lib/schemas/content";
 import { getProviderById } from "@/content";
@@ -26,16 +26,16 @@ export function Disclaimer({ labels, providerId, className }: DisclaimerProps) {
   return (
     <aside
       className={cn(
-        "rounded-lg border border-amber-200 bg-amber-50/60 p-4 text-sm text-slate-700",
+        "rounded-xl border border-slate-200 bg-slate-50/70 p-4 text-sm text-slate-600",
         className,
       )}
       aria-label={t("heading")}
     >
-      <div className="mb-2 flex items-center gap-2 font-semibold text-amber-900">
-        <Info className="h-4 w-4" aria-hidden="true" />
+      <div className="mb-2 flex items-center gap-2 font-semibold text-slate-700">
+        <ShieldCheck className="h-4 w-4 text-slate-400" aria-hidden="true" />
         {t("heading")}
       </div>
-      <ul className="space-y-1.5">
+      <ul className="space-y-1.5 text-xs leading-relaxed text-slate-500">
         {labels.map((key) => (
           <li key={key}>{t(`statements.${key}`)}</li>
         ))}

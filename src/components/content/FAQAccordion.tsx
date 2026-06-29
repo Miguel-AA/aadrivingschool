@@ -2,20 +2,36 @@ import { ChevronDown } from "lucide-react";
 import { useLocale } from "@/i18n";
 import type { Faq } from "@/lib/schemas/content";
 import { getLocalized } from "@/lib/utils/locale";
+import { cn } from "@/lib/utils/cn";
 
 /**
  * Accessible FAQ list using native <details>/<summary> (keyboard-operable, no
  * client JS). The matching FAQ JSON-LD is rendered separately by the page from
  * the same data so on-page content and structured data stay in sync.
+ *
+ * `mobileLimit` keeps the mobile view calm by hiding items beyond N below the
+ * `sm` breakpoint (all items remain in the DOM / structured data).
  */
-export function FAQAccordion({ faqs }: { faqs: Faq[] }) {
+export function FAQAccordion({
+  faqs,
+  mobileLimit,
+}: {
+  faqs: Faq[];
+  mobileLimit?: number;
+}) {
   const locale = useLocale();
   if (faqs.length === 0) return null;
 
   return (
     <div className="mx-auto max-w-3xl divide-y divide-slate-200 overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-sm">
-      {faqs.map((faq) => (
-        <details key={faq.id} className="group">
+      {faqs.map((faq, i) => (
+        <details
+          key={faq.id}
+          className={cn(
+            "group",
+            mobileLimit && i >= mobileLimit && "hidden sm:block",
+          )}
+        >
           <summary className="flex cursor-pointer list-none items-center justify-between gap-3 p-5 font-medium text-slate-900 transition-colors marker:content-[''] hover:bg-slate-50 group-open:text-brand-700">
             {getLocalized(faq.question, locale)}
             <ChevronDown

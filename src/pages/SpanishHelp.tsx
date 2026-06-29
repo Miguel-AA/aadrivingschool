@@ -48,7 +48,11 @@ export function SpanishHelp() {
       courses={courses}
       packages={packages}
       faqs={faqs}
-      disclaimerLabels={["educational-guide", "not-official-dmv", "no-guarantee"]}
+      packagesHeading={t("spanish.relatedPackages")}
+      coursesHeading={t("spanish.relatedCourses")}
+      faqHeading={t("spanish.faqHeading")}
+      ctaHeading={t("spanish.ctaHeading")}
+      ctaBody={t("spanish.ctaBody")}
       leadSourcePage="/spanish-help"
     />
   );

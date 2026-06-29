@@ -25,8 +25,8 @@ export function Section({
   id,
 }: SectionProps) {
   return (
-    <section id={id} className={cn(tones[tone], "py-14 sm:py-20", className)}>
-      <div className="mx-auto w-full max-w-6xl px-4 sm:px-6 lg:px-8">
+    <section id={id} className={cn(tones[tone], "py-12 sm:py-20", className)}>
+      <div className="mx-auto w-full max-w-6xl px-5 sm:px-6 lg:px-8">
         {children}
       </div>
     </section>
@@ -55,7 +55,15 @@ export function SectionHeading({
   const dark = tone === "dark";
   return (
     <div
-      className={cn(centered && "mx-auto max-w-2xl text-center", "mb-10", className)}
+      className={cn(
+        "mb-10",
+        // Centered on mobile/tablet by default; left-aligned from `lg` up
+        // (unless explicitly `centered`, which stays centered at all sizes).
+        centered
+          ? "mx-auto max-w-2xl text-center"
+          : "text-center sm:text-left",
+        className,
+      )}
     >
       {eyebrow && (
         <span

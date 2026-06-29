@@ -25,7 +25,9 @@ export function CoursesExplorer({
   packages: Package[];
 }) {
   const t = useTranslations("pages");
+  const tc = useTranslations("common");
   const [need, setNeed] = useState<NeedKey | "all">("all");
+  const [showAll, setShowAll] = useState(false);
 
   const visibleCourses =
     need === "all"
@@ -37,6 +39,20 @@ export function CoursesExplorer({
       : packages.filter((p) => getPackageNeeds(p.id).includes(need));
 
   const chips: (NeedKey | "all")[] = ["all", ...NEED_KEYS];
+
+  // Keep the mobile catalog calm: show the first 6 items, with a "View all"
+  // toggle. All items always render on `sm`+ and stay in the DOM.
+  const MOBILE_CAP = 6;
+  const items = [
+    ...visiblePackages.map((pkg) => ({
+      key: `p-${pkg.id}`,
+      node: <PackageCard pkg={pkg} />,
+    })),
+    ...visibleCourses.map((course) => ({
+      key: `c-${course.id}`,
+      node: <CourseCard course={course} />,
+    })),
+  ];
 
   return (
     <div>
@@ -67,13 +83,30 @@ export function CoursesExplorer({
       </div>
 
       <CatalogGrid className="mt-8">
-        {visiblePackages.map((pkg) => (
-          <PackageCard key={pkg.id} pkg={pkg} />
-        ))}
-        {visibleCourses.map((course) => (
-          <CourseCard key={course.id} course={course} />
+        {items.map((item, i) => (
+          <div
+            key={item.key}
+            className={cn(
+              "h-full",
+              !showAll && i >= MOBILE_CAP && "hidden sm:block",
+            )}
+          >
+            {item.node}
+          </div>
         ))}
       </CatalogGrid>
+
+      {!showAll && items.length > MOBILE_CAP && (
+        <div className="mt-6 sm:hidden">
+          <button
+            type="button"
+            onClick={() => setShowAll(true)}
+            className="w-full rounded-xl border border-brand-200 bg-white px-4 py-3 text-sm font-semibold text-brand-700 shadow-sm"
+          >
+            {tc("cta.viewAllCourses")}
+          </button>
+        </div>
+      )}
     </div>
   );
 }

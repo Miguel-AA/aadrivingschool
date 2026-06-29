@@ -13,6 +13,7 @@ import { Link } from "@/i18n/navigation";
 import { Section, SectionHeading } from "@/components/content/Section";
 import { Reveal } from "@/components/content/Reveal";
 import { Icon } from "@/components/content/Icon";
+import { cn } from "@/lib/utils/cn";
 
 type ServiceItem = { key: string; title: string; body: string };
 
@@ -44,10 +45,14 @@ export function Services() {
         {items.map((item, i) => {
           const meta = META[item.key];
           return (
-            <Reveal key={item.key} delay={i * 70}>
+            <Reveal
+              key={item.key}
+              delay={i * 70}
+              className={cn(i >= 3 && "hidden sm:block")}
+            >
               <Link
                 href={meta?.href ?? "/courses"}
-                className="group flex h-full flex-col rounded-2xl border border-slate-200 bg-white p-6 shadow-sm transition-all duration-200 hover:-translate-y-1 hover:border-brand-200 hover:shadow-lg hover:shadow-brand-900/5"
+                className="group flex h-full flex-col items-center rounded-2xl border border-slate-200 bg-white p-6 text-center shadow-sm transition-all duration-200 hover:-translate-y-1 hover:border-brand-200 hover:shadow-lg hover:shadow-brand-900/5 sm:items-start sm:text-left"
               >
                 <span className="grid h-11 w-11 place-items-center rounded-xl bg-brand-50 text-brand-800 ring-1 ring-inset ring-brand-100 transition-colors group-hover:bg-brand-100">
                   {meta && <Icon icon={meta.icon} className="h-5 w-5" />}

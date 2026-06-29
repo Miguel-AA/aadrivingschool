@@ -1,5 +1,7 @@
 {
-  "heading": "[ES] Important information",
+  "heading": "Nota sobre la hoja de ruta de cumplimiento",
+  "roadmapLabel": "Nota sobre la hoja de ruta de cumplimiento",
+  "roadmapNote": "Florida Top 1 Driving School se está desarrollando con una hoja de ruta enfocada en el cumplimiento. Cualquier curso regulado seguirá los requisitos aplicables de aprobación, licencia y operación de Florida antes de ofrecerse como un curso oficial regulado por el estado.",
   "labels": {
     "partner-provided": "[ES] Partner-Provided",
     "educational-guide": "[ES] Educational Guide",
@@ -13,5 +15,6 @@
     "no-guarantee": "[ES] We do not guarantee exam results, ticket dismissal, point removal, license reinstatement, or insurance discounts. Those outcomes are decided by the state, courts, or your insurer."
   },
   "providerAttribution": "[ES] Course provided by {provider}.",
-  "globalFooter": "[ES] Florida Top 1 Driving School is an independent service. We are not affiliated with the Florida DMV/FLHSMV, are not a court or testing site, and do not provide legal advice. Courses may be delivered through approved third-party providers when required; we provide guidance, preparation materials, and support to help you select the appropriate path. No outcome is guaranteed. Always confirm current requirements with official state sources."
+  "globalFooter": "Florida Top 1 Driving School se está desarrollando con una hoja de ruta enfocada en el cumplimiento. Cualquier curso regulado seguirá los requisitos aplicables de aprobación, licencia y operación de Florida antes de ofrecerse como un curso oficial regulado por el estado. Confirma siempre los requisitos vigentes con las fuentes oficiales del estado.",
+  "globalFooterShort": "Florida Top 1 Driving School se está desarrollando con una hoja de ruta enfocada en el cumplimiento. Los cursos regulados seguirán los requisitos de aprobación de Florida antes de ofrecerse como cursos oficiales regulados."
 }

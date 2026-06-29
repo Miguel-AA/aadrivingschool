@@ -41,12 +41,15 @@ export function Contact() {
       />
 
       <Section>
-        <div className="grid gap-10 lg:grid-cols-3">
+        <div className="grid gap-8 lg:grid-cols-3 lg:gap-10">
           <div className="lg:col-span-2">
-            <LeadForm
-              defaults={{ recommendation, sourcePage: "/contact" }}
-              recommendationLabel={recommendationLabel}
-            />
+            <div className="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm sm:p-8">
+              <SectionHeading title={t("contact.formHeading")} className="mb-6" />
+              <LeadForm
+                defaults={{ recommendation, sourcePage: "/contact" }}
+                recommendationLabel={recommendationLabel}
+              />
+            </div>
           </div>
 
           <aside className="lg:col-span-1">

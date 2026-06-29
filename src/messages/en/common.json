@@ -1,9 +1,10 @@
 {
-  "brandTagline": "West Palm Beach & Florida statewide",
+  "brandTagline": "West Palm Beach & Florida Statewide",
   "skipToContent": "Skip to content",
   "openMenu": "Open menu",
   "closeMenu": "Close menu",
   "nav": {
+    "home": "Home",
     "courses": "Courses",
     "packages": "Packages",
     "permitPrep": "Permit Prep",

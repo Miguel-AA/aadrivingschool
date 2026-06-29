@@ -49,7 +49,6 @@ export function NewToFlorida() {
       courses={courses}
       packages={packages}
       faqs={faqs}
-      disclaimerLabels={["educational-guide", "not-official-dmv", "no-guarantee"]}
       leadSourcePage="/new-to-florida"
     />
   );

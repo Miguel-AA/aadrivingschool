@@ -1,5 +1,6 @@
 /** Keys under the `common.nav` message namespace. */
 export type NavLabelKey =
+  | "home"
   | "courses"
   | "permitPrep"
   | "spanishHelp"
@@ -9,16 +10,26 @@ export type NavLabelKey =
   | "newToFlorida"
   | "contact";
 
-type NavLink = { href: string; labelKey: NavLabelKey };
+type NavLink = { href: string; labelKey: NavLabelKey; exact?: boolean };
 
 /** Top navigation (concise — per the brand direction). */
 export const navLinks: NavLink[] = [
+  { href: "/", labelKey: "home", exact: true },
   { href: "/courses", labelKey: "courses" },
   { href: "/permit-test-prep", labelKey: "permitPrep" },
   { href: "/spanish-help", labelKey: "spanishHelp" },
   { href: "/ticket-help", labelKey: "ticketHelp" },
   { href: "/contact", labelKey: "contact" },
 ];
+
+/** Whether `pathname` should mark `link` as the active nav item. */
+export function isActiveLink(
+  link: { href: string; exact?: boolean },
+  pathname: string,
+): boolean {
+  if (link.exact || link.href === "/") return pathname === link.href;
+  return pathname === link.href || pathname.startsWith(`${link.href}/`);
+}
 
 /** Footer "Explore" list — full set of landing/pathway pages. */
 export const footerLinks: NavLink[] = [

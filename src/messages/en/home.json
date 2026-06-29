@@ -1,33 +1,35 @@
 {
   "hero": {
     "eyebrow": "Florida Top 1 Driving School · Online driving education platform",
-    "title": "A Complete Online Driving School Platform for Florida Drivers",
-    "subtitle": "Florida Top 1 Driving School is building a modern, bilingual driving education platform for Florida — combining online learning, permit preparation, student pathways, progress tracking, and support in English and Spanish.",
+    "title": "Florida's Bilingual Online Driving School Platform",
+    "subtitle": "Florida Top 1 Driving School is building a modern driving education platform for Florida — combining online learning, permit preparation, driver pathways, progress tracking, and support in English and Spanish.",
     "primaryCta": "View Platform Demo",
     "secondaryCta": "Explore Driver Pathways",
     "trust": [
       "Built in West Palm Beach",
       "Designed for Florida statewide",
       "English & Spanish experience",
-      "Compliance-aware course roadmap"
+      "Compliance-aware roadmap"
     ],
     "showcase": {
       "title": "Student Pathway",
       "badge": "Product preview",
       "footnote": "One guided, trackable, bilingual journey",
-      "steps": [
-        "Create student profile",
-        "Select program",
-        "Complete lessons",
-        "Track progress",
-        "Get bilingual support",
-        "Prepare for DMV steps"
+      "profileLabel": "Student Profile",
+      "profileValue": "First-Time Driver",
+      "progressLabel": "Permit Prep Progress",
+      "completionLabel": "Completion Status",
+      "completionValue": "On track",
+      "rows": [
+        { "label": "Driver Pathway", "value": "First-Time Driver" },
+        { "label": "Support Language", "value": "English / Español" },
+        { "label": "Next DMV Step", "value": "Knowledge Exam Prep" }
       ]
     }
   },
   "problem": {
     "eyebrow": "The Market Opportunity",
-    "title": "Florida drivers need a simpler way to start, study, track progress, and get support.",
+    "title": "Florida drivers shouldn't have to guess what comes next.",
     "body": "Many first-time drivers, parents, and Spanish-speaking users face confusion around course requirements, permit preparation, ticket education, and next steps. Florida Top 1 Driving School is being built to bring that process into one organized digital platform.",
     "cards": [
       {
@@ -63,7 +65,7 @@
   },
   "services": {
     "heading": "Platform Capabilities",
-    "title": "A complete digital experience for driving education.",
+    "title": "One platform for the most common Florida driver journeys.",
     "subheading": "Florida Top 1 Driving School is being built as a complete digital experience for driving education, preparation, bilingual support, and student progress.",
     "learnMore": "Learn more",
     "items": [
@@ -107,7 +109,7 @@
   },
   "howItWorks": {
     "eyebrow": "How the Platform Works",
-    "heading": "One guided journey, from profile to DMV-ready",
+    "heading": "How the platform works",
     "step1Title": "Create a student profile",
     "step1Body": "Each driver starts from their situation — first-time, teen, ticket, or Spanish-speaking — to enter the right pathway.",
     "step2Title": "Choose a learning pathway",
@@ -140,7 +142,7 @@
   },
   "investorHighlights": {
     "eyebrow": "Investor Demo Highlights",
-    "heading": "What this demo shows",
+    "heading": "What the demo shows",
     "subheading": "A first look at the experience, the model, and where the platform is going.",
     "items": [
       {
