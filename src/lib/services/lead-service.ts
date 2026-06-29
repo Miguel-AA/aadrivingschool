@@ -10,7 +10,17 @@ export type LeadRecord = LeadInput & {
 
 export interface LeadService {
   submitLead(input: LeadInput): Promise<{ id: string; ok: true }>;
+  /** Read captured leads (newest first) for the internal admin view. */
+  listLeads(): Promise<LeadRecord[]>;
 }
+
+// Back the store with globalThis so it's shared across bundles. Next.js bundles
+// route handlers and server components separately, so a plain module-level array
+// would be a different instance in each — the API route's leads wouldn't be
+// visible to the /admin page. (Still per-process and non-persistent; swap for a
+// real DB/CRM later.)
+const globalForLeads = globalThis as unknown as { __leadStore?: LeadRecord[] };
+const store: LeadRecord[] = (globalForLeads.__leadStore ??= []);
 
 /**
  * Stub lead service. Logs and keeps leads in memory for the foundation build.
@@ -19,7 +29,7 @@ export interface LeadService {
  * interface and all call sites stay the same.
  */
 class ConsoleLeadService implements LeadService {
-  private store: LeadRecord[] = [];
+  private store: LeadRecord[] = store;
 
   async submitLead(input: LeadInput) {
     const record: LeadRecord = {
@@ -31,6 +41,10 @@ class ConsoleLeadService implements LeadService {
     this.store.push(record);
     console.log("[lead-service] new lead", record);
     return { id: record.id, ok: true as const };
+  }
+
+  async listLeads() {
+    return [...this.store].reverse();
   }
 }
 

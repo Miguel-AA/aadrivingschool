@@ -3,13 +3,18 @@
     "metaTitle": "Florida Driving Courses & Permit Prep",
     "metaDescription": "Browse Florida driving courses and prep — TLSAE, teen driver education, driver improvement, 55+, permit test prep, and bilingual support.",
     "title": "Courses & Prep",
-    "subtitle": "Regulated courses are delivered through approved providers. Prep products are our own educational materials. Not sure what you need? Use the Course Finder.",
-    "regulatedHeading": "Regulated courses",
-    "regulatedSubheading": "Delivered through approved providers (partner-provided).",
-    "proprietaryHeading": "Prep & guides",
-    "proprietarySubheading": "Our own educational study materials and guidance.",
-    "packagesHeading": "Packages",
-    "packagesSubheading": "Bundles built around your situation."
+    "subtitle": "Regulated courses are delivered through approved providers. Prep products are our own educational materials. Filter by your situation, or use the Course Finder.",
+    "filtersLabel": "Filter by your situation",
+    "filters": {
+      "all": "All",
+      "firstTime": "First-time",
+      "teen": "Teen",
+      "ticket": "Ticket",
+      "suspension": "Suspension",
+      "mature": "55+",
+      "spanish": "Spanish",
+      "newToFlorida": "New to Florida"
+    }
   },
   "courseDetail": {
     "whoHeading": "Who is this for?",
@@ -32,5 +37,41 @@
     "title": "Contact us",
     "subtitle": "Tell us your situation and we'll point you to the right next step — in English or Spanish.",
     "otherWaysHeading": "Other ways to reach us"
+  },
+  "checkout": {
+    "metaTitle": "Checkout",
+    "metaDescription": "Review your selection and get started with A&A Driving School.",
+    "title": "Review & get started",
+    "summaryHeading": "Order summary",
+    "includesHeading": "What's included",
+    "priceLabel": "Price",
+    "totalLabel": "Total",
+    "note": "Secure online payment is coming soon. Request enrollment now and we'll help you complete it — including any steps with the approved provider for regulated courses.",
+    "continueCta": "Request enrollment",
+    "whatsappCta": "Ask on WhatsApp",
+    "emptyTitle": "Nothing selected yet",
+    "emptyBody": "Browse our courses and packages to choose what fits your situation.",
+    "emptyCta": "Browse courses"
+  },
+  "admin": {
+    "metaTitle": "Admin — Leads",
+    "title": "Lead dashboard",
+    "subtitle": "Internal view of captured leads (current server session).",
+    "countLabel": "Total leads",
+    "empty": "No leads captured yet in this session.",
+    "unauthorizedTitle": "Unauthorized",
+    "unauthorizedBody": "Append ?token=YOUR_TOKEN to view this page.",
+    "disabledTitle": "Admin not configured",
+    "disabledBody": "Set the ADMIN_TOKEN environment variable to enable the lead dashboard.",
+    "th": {
+      "created": "Created",
+      "name": "Name",
+      "contact": "Contact",
+      "city": "City",
+      "lang": "Lang",
+      "situation": "Situation",
+      "recommendation": "Recommendation",
+      "source": "Source"
+    }
   }
 }

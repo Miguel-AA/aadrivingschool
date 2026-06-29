@@ -3,13 +3,18 @@
     "metaTitle": "[ES] Florida Driving Courses & Permit Prep",
     "metaDescription": "[ES] Browse Florida driving courses and prep — TLSAE, teen driver education, driver improvement, 55+, permit test prep, and bilingual support.",
     "title": "[ES] Courses & Prep",
-    "subtitle": "[ES] Regulated courses are delivered through approved providers. Prep products are our own educational materials. Not sure what you need? Use the Course Finder.",
-    "regulatedHeading": "[ES] Regulated courses",
-    "regulatedSubheading": "[ES] Delivered through approved providers (partner-provided).",
-    "proprietaryHeading": "[ES] Prep & guides",
-    "proprietarySubheading": "[ES] Our own educational study materials and guidance.",
-    "packagesHeading": "[ES] Packages",
-    "packagesSubheading": "[ES] Bundles built around your situation."
+    "subtitle": "[ES] Regulated courses are delivered through approved providers. Prep products are our own educational materials. Filter by your situation, or use the Course Finder.",
+    "filtersLabel": "[ES] Filter by your situation",
+    "filters": {
+      "all": "[ES] All",
+      "firstTime": "[ES] First-time",
+      "teen": "[ES] Teen",
+      "ticket": "[ES] Ticket",
+      "suspension": "[ES] Suspension",
+      "mature": "55+",
+      "spanish": "[ES] Spanish",
+      "newToFlorida": "[ES] New to Florida"
+    }
   },
   "courseDetail": {
     "whoHeading": "[ES] Who is this for?",
@@ -32,5 +37,41 @@
     "title": "[ES] Contact us",
     "subtitle": "[ES] Tell us your situation and we'll point you to the right next step — in English or Spanish.",
     "otherWaysHeading": "[ES] Other ways to reach us"
+  },
+  "checkout": {
+    "metaTitle": "[ES] Checkout",
+    "metaDescription": "[ES] Review your selection and get started with A&A Driving School.",
+    "title": "[ES] Review & get started",
+    "summaryHeading": "[ES] Order summary",
+    "includesHeading": "[ES] What's included",
+    "priceLabel": "[ES] Price",
+    "totalLabel": "[ES] Total",
+    "note": "[ES] Secure online payment is coming soon. Request enrollment now and we'll help you complete it — including any steps with the approved provider for regulated courses.",
+    "continueCta": "[ES] Request enrollment",
+    "whatsappCta": "[ES] Ask on WhatsApp",
+    "emptyTitle": "[ES] Nothing selected yet",
+    "emptyBody": "[ES] Browse our courses and packages to choose what fits your situation.",
+    "emptyCta": "[ES] Browse courses"
+  },
+  "admin": {
+    "metaTitle": "[ES] Admin — Leads",
+    "title": "[ES] Lead dashboard",
+    "subtitle": "[ES] Internal view of captured leads (current server session).",
+    "countLabel": "[ES] Total leads",
+    "empty": "[ES] No leads captured yet in this session.",
+    "unauthorizedTitle": "[ES] Unauthorized",
+    "unauthorizedBody": "[ES] Append ?token=YOUR_TOKEN to view this page.",
+    "disabledTitle": "[ES] Admin not configured",
+    "disabledBody": "[ES] Set the ADMIN_TOKEN environment variable to enable the lead dashboard.",
+    "th": {
+      "created": "[ES] Created",
+      "name": "[ES] Name",
+      "contact": "[ES] Contact",
+      "city": "[ES] City",
+      "lang": "[ES] Lang",
+      "situation": "[ES] Situation",
+      "recommendation": "[ES] Recommendation",
+      "source": "[ES] Source"
+    }
   }
 }

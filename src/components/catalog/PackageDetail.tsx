@@ -50,7 +50,11 @@ export function PackageDetail({ pkg }: { pkg: Package }) {
           </div>
           <div className="mt-8 flex flex-wrap items-center gap-3">
             <CTAButton
-              href={`/contact?intent=package:${pkg.slug}`}
+              href={
+                price
+                  ? `/checkout?item=package:${pkg.slug}`
+                  : `/contact?intent=package:${pkg.slug}`
+              }
               eventName={EVENTS.CHECKOUT_START}
               eventProps={{ kind: "package", id: pkg.id }}
               size="lg"

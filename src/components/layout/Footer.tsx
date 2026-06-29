@@ -2,7 +2,7 @@ import { Mail, MessageCircle, Phone } from "lucide-react";
 import { useTranslations } from "next-intl";
 import { Link } from "@/i18n/navigation";
 import { siteConfig } from "@/config/site";
-import { navLinks } from "./navLinks";
+import { footerLinks } from "./navLinks";
 import { Logo } from "./Logo";
 
 /** Site footer: brand, explore links, support details, and the global disclaimer. */
@@ -31,7 +31,7 @@ export function Footer() {
               {t("footer.exploreHeading")}
             </h2>
             <ul className="mt-4 space-y-2.5">
-              {navLinks.map((link) => (
+              {footerLinks.map((link) => (
                 <li key={link.href}>
                   <Link
                     href={link.href}

@@ -1,0 +1,80 @@
+"use client";
+
+import { useState } from "react";
+import { useTranslations } from "next-intl";
+import type { Course, Package } from "@/lib/schemas/content";
+import {
+  NEED_KEYS,
+  getCourseNeeds,
+  getPackageNeeds,
+  type NeedKey,
+} from "@/lib/utils/courseNeeds";
+import { cn } from "@/lib/utils/cn";
+import { CatalogGrid } from "./CatalogGrid";
+import { CourseCard } from "./CourseCard";
+import { PackageCard } from "./PackageCard";
+
+/**
+ * Filterable catalog: chips filter courses + packages by situation-based "need".
+ * Client component so filtering is instant; cards have no server-only deps.
+ */
+export function CoursesExplorer({
+  courses,
+  packages,
+}: {
+  courses: Course[];
+  packages: Package[];
+}) {
+  const t = useTranslations("pages");
+  const [need, setNeed] = useState<NeedKey | "all">("all");
+
+  const visibleCourses =
+    need === "all"
+      ? courses
+      : courses.filter((c) => getCourseNeeds(c.category).includes(need));
+  const visiblePackages =
+    need === "all"
+      ? packages
+      : packages.filter((p) => getPackageNeeds(p.id).includes(need));
+
+  const chips: (NeedKey | "all")[] = ["all", ...NEED_KEYS];
+
+  return (
+    <div>
+      <div
+        className="flex flex-wrap gap-2"
+        role="group"
+        aria-label={t("courses.filtersLabel")}
+      >
+        {chips.map((key) => {
+          const active = key === need;
+          return (
+            <button
+              key={key}
+              type="button"
+              onClick={() => setNeed(key)}
+              aria-pressed={active}
+              className={cn(
+                "rounded-full border px-4 py-1.5 text-sm font-medium transition-colors",
+                active
+                  ? "border-brand-600 bg-brand-600 text-white"
+                  : "border-slate-200 bg-white text-slate-700 hover:border-brand-300 hover:bg-brand-50",
+              )}
+            >
+              {t(`courses.filters.${key}`)}
+            </button>
+          );
+        })}
+      </div>
+
+      <CatalogGrid className="mt-8">
+        {visiblePackages.map((pkg) => (
+          <PackageCard key={pkg.id} pkg={pkg} />
+        ))}
+        {visibleCourses.map((course) => (
+          <CourseCard key={course.id} course={course} />
+        ))}
+      </CatalogGrid>
+    </div>
+  );
+}

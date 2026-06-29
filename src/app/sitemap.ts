@@ -11,6 +11,9 @@ const STATIC_PATHS = [
   "/spanish-help",
   "/permit-test-prep",
   "/ticket-help",
+  "/license-reinstatement",
+  "/55-plus-driver",
+  "/new-to-florida",
 ];
 
 export default function sitemap(): MetadataRoute.Sitemap {

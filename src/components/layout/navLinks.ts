@@ -4,16 +4,31 @@ export type NavLabelKey =
   | "permitPrep"
   | "spanishHelp"
   | "ticketHelp"
+  | "licenseReinstatement"
+  | "maturePlus"
+  | "newToFlorida"
   | "contact";
 
-/**
- * Primary navigation links. Only routes that exist in this build are listed
- * (no dead links). `labelKey` resolves under the `common.nav` namespace.
- */
-export const navLinks: { href: string; labelKey: NavLabelKey }[] = [
+type NavLink = { href: string; labelKey: NavLabelKey };
+
+/** Top navigation (concise — mirrors Appendix A). */
+export const navLinks: NavLink[] = [
   { href: "/courses", labelKey: "courses" },
   { href: "/permit-test-prep", labelKey: "permitPrep" },
   { href: "/spanish-help", labelKey: "spanishHelp" },
   { href: "/ticket-help", labelKey: "ticketHelp" },
+  { href: "/new-to-florida", labelKey: "newToFlorida" },
+  { href: "/contact", labelKey: "contact" },
+];
+
+/** Footer "Explore" list — full set of landing/pathway pages. */
+export const footerLinks: NavLink[] = [
+  { href: "/courses", labelKey: "courses" },
+  { href: "/permit-test-prep", labelKey: "permitPrep" },
+  { href: "/spanish-help", labelKey: "spanishHelp" },
+  { href: "/ticket-help", labelKey: "ticketHelp" },
+  { href: "/license-reinstatement", labelKey: "licenseReinstatement" },
+  { href: "/55-plus-driver", labelKey: "maturePlus" },
+  { href: "/new-to-florida", labelKey: "newToFlorida" },
   { href: "/contact", labelKey: "contact" },
 ];

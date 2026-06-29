@@ -64,7 +64,11 @@ export function CourseDetail({ course }: { course: Course }) {
 
           <div className="mt-8 flex flex-wrap items-center gap-3">
             <CTAButton
-              href={`/contact?intent=course:${course.slug}`}
+              href={
+                price
+                  ? `/checkout?item=course:${course.slug}`
+                  : `/contact?intent=course:${course.slug}`
+              }
               eventName={EVENTS.CHECKOUT_START}
               eventProps={{ kind: "course", id: course.id }}
               size="lg"

@@ -4,17 +4,10 @@ import { hasLocale } from "next-intl";
 import { notFound } from "next/navigation";
 import { routing, type Locale } from "@/i18n/routing";
 import { buildMetadata } from "@/lib/seo/metadata";
-import {
-  getRegulatedCourses,
-  getProprietaryCourses,
-  packages,
-} from "@/content";
+import { courses, packages } from "@/content";
 import { Hero } from "@/components/content/Hero";
-import { Section, SectionHeading } from "@/components/content/Section";
-import { CatalogGrid } from "@/components/catalog/CatalogGrid";
-import { CourseCard } from "@/components/catalog/CourseCard";
-import { PackageCard } from "@/components/catalog/PackageCard";
-import { Reveal } from "@/components/content/Reveal";
+import { Section } from "@/components/content/Section";
+import { CoursesExplorer } from "@/components/catalog/CoursesExplorer";
 
 export async function generateMetadata({
   params,
@@ -37,9 +30,6 @@ export default async function CoursesPage({
   setRequestLocale(locale);
   const t = await getTranslations({ locale, namespace: "pages" });
 
-  const regulated = getRegulatedCourses();
-  const proprietary = getProprietaryCourses();
-
   return (
     <>
       <Hero
@@ -49,45 +39,7 @@ export default async function CoursesPage({
       />
 
       <Section>
-        <SectionHeading
-          title={t("courses.regulatedHeading")}
-          subtitle={t("courses.regulatedSubheading")}
-        />
-        <CatalogGrid>
-          {regulated.map((course, i) => (
-            <Reveal key={course.id} delay={i * 70}>
-              <CourseCard course={course} />
-            </Reveal>
-          ))}
-        </CatalogGrid>
-      </Section>
-
-      <Section tone="muted">
-        <SectionHeading
-          title={t("courses.proprietaryHeading")}
-          subtitle={t("courses.proprietarySubheading")}
-        />
-        <CatalogGrid>
-          {proprietary.map((course, i) => (
-            <Reveal key={course.id} delay={i * 70}>
-              <CourseCard course={course} />
-            </Reveal>
-          ))}
-        </CatalogGrid>
-      </Section>
-
-      <Section>
-        <SectionHeading
-          title={t("courses.packagesHeading")}
-          subtitle={t("courses.packagesSubheading")}
-        />
-        <CatalogGrid>
-          {packages.map((pkg, i) => (
-            <Reveal key={pkg.id} delay={i * 70}>
-              <PackageCard pkg={pkg} />
-            </Reveal>
-          ))}
-        </CatalogGrid>
+        <CoursesExplorer courses={courses} packages={packages} />
       </Section>
     </>
   );

@@ -26,5 +26,26 @@
     "subtitle": "We explain the Basic Driver Improvement (BDI) path and your next steps. Eligibility and any effect on points are decided by the court or clerk — always follow the instructions you received.",
     "primaryCta": "Check My Options",
     "secondaryCta": "Ask a question"
+  },
+  "reinstatement": {
+    "eyebrow": "License Reinstatement",
+    "title": "Suspended license? Let's map your next steps.",
+    "subtitle": "Suspension situations are time-sensitive. We explain the Advanced Driver Improvement (ADI) path where it applies and general first steps. Your status is determined by the state and any court orders — this is guidance, not legal advice, and no outcome is guaranteed.",
+    "primaryCta": "Get Reinstatement Guidance",
+    "secondaryCta": "Ask on WhatsApp"
+  },
+  "mature": {
+    "eyebrow": "55+ Mature Driver",
+    "title": "A safety refresher built for drivers 55 and older",
+    "subtitle": "Take an approved Mature Driver course online and get guidance on submitting completion to your insurer. Any premium discount is determined solely by your insurance company — we can't promise one.",
+    "primaryCta": "Start the 55+ Course",
+    "secondaryCta": "Ask a question"
+  },
+  "newfl": {
+    "eyebrow": "New to Florida",
+    "title": "New to Florida? Build your licensing checklist.",
+    "subtitle": "Whether you're moving from another state or another country, we help you understand the Florida process, the documents commonly needed, and the right prep — in English and Spanish. General guidance only; always confirm current requirements with official sources.",
+    "primaryCta": "Build My Checklist",
+    "secondaryCta": "Get Help in Spanish"
   }
 }
