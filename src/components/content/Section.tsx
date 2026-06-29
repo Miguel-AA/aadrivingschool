@@ -33,30 +33,43 @@ export function Section({
   blendBottom = true,
   id,
 }: SectionProps) {
-  // Dark/brand sections get soft light "feathers" at their edges so they emerge
-  // from (and dissolve back into) the light sections around them — no hard line.
+  // Dark/brand sections get a soft white curved divider at their edges so they
+  // ease in/out of the light sections around them with a clean curve — no hard
+  // line and no muddy white haze over the blue.
   const dark = tone === "brand" || tone === "dark";
   return (
     <section
       id={id}
-      className={cn(tones[tone], "py-12 sm:py-20", dark && "relative", className)}
+      className={cn(
+        tones[tone],
+        "py-12 sm:py-20",
+        dark && "relative overflow-hidden",
+        className,
+      )}
     >
-      {dark && (
-        <div
-          aria-hidden="true"
-          className="pointer-events-none absolute inset-x-0 top-0 h-12 bg-gradient-to-b from-white/90 to-transparent sm:h-16"
-        />
-      )}
-      {dark && blendBottom && (
-        <div
-          aria-hidden="true"
-          className="pointer-events-none absolute inset-x-0 bottom-0 h-12 bg-gradient-to-t from-white/90 to-transparent sm:h-16"
-        />
-      )}
+      {dark && <SectionCurve edge="top" />}
+      {dark && blendBottom && <SectionCurve edge="bottom" />}
       <div className="relative z-10 mx-auto w-full max-w-6xl px-5 sm:px-6 lg:px-8">
         {children}
       </div>
     </section>
+  );
+}
+
+/** White curved divider that blends a dark section into the light one beside it. */
+function SectionCurve({ edge }: { edge: "top" | "bottom" }) {
+  return (
+    <svg
+      aria-hidden="true"
+      viewBox="0 0 1440 56"
+      preserveAspectRatio="none"
+      className={cn(
+        "pointer-events-none absolute inset-x-0 z-0 h-6 w-full sm:h-9",
+        edge === "top" ? "top-0" : "bottom-0 rotate-180",
+      )}
+    >
+      <path d="M0,0 H1440 V26 C1100,54 340,54 0,26 Z" fill="#ffffff" />
+    </svg>
   );
 }
 
