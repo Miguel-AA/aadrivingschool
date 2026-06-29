@@ -1,11 +1,11 @@
-import { Star } from "lucide-react";
 import { useTranslations } from "@/i18n";
 import { siteConfig } from "@/config/site";
 import { cn } from "@/lib/utils/cn";
+import { BrandMark } from "./BrandMark";
 
 /**
- * Brand lockup: navy gradient tile with a star mark ("Top 1") + wordmark +
- * tagline. Server component. Wrap in a Link where it should navigate.
+ * Brand lockup: the car + graduation-cap brand mark + wordmark + tagline.
+ * Wrap in a Link where it should navigate.
  */
 export function Logo({
   withTagline = true,
@@ -19,12 +19,7 @@ export function Logo({
   const t = useTranslations("common");
   return (
     <span className={cn("flex items-center gap-2.5", className)}>
-      <span
-        aria-hidden="true"
-        className="grid h-10 w-10 shrink-0 place-items-center rounded-xl bg-gradient-to-br from-brand-700 to-brand-900 text-white shadow-sm ring-1 ring-white/10"
-      >
-        <Star className="h-5 w-5 fill-accent-400 text-accent-400" />
-      </span>
+      <BrandMark className="h-10 w-10 shrink-0 rounded-xl shadow-sm" />
       <span className="flex flex-col leading-tight">
         <span
           className={cn(
