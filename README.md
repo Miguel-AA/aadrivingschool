@@ -1,10 +1,11 @@
-# Florida Driver Help Center
+# A&A Driving School
 
-A remote-only Florida driving education & license-support platform — a bilingual
-(English/Spanish) "Driver Help Center" that packages official/partner courses
-with proprietary prep and guidance, a Course Finder quiz, and lead capture.
+A remote-only Florida driving education & license-support platform (*Florida
+Remote Driving School*) — a bilingual (English/Spanish) site that packages
+official/partner courses with proprietary prep and guidance, a Course Finder
+quiz, and lead capture.
 
-> **Compliance:** This site is an independent help center. It does **not** claim
+> **Compliance:** This site is an independent, remote-only service. It does **not** claim
 > to be a Florida DMV/FLHSMV, court, or state-approved provider, and it makes
 > **no guarantees** about exam results, ticket dismissal, point removal,
 > reinstatement, or insurance discounts. Regulated courses are presented as

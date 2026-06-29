@@ -5,14 +5,16 @@ interface SectionProps {
   children: ReactNode;
   className?: string;
   /** Background tone. */
-  tone?: "white" | "muted" | "brand";
+  tone?: "white" | "muted" | "brand" | "dark";
   id?: string;
 }
 
 const tones = {
   white: "bg-white",
   muted: "bg-slate-50",
-  brand: "bg-brand-900 text-white",
+  brand:
+    "bg-gradient-to-br from-brand-700 via-brand-600 to-ocean-600 text-white",
+  dark: "bg-brand-950 text-white",
 };
 
 /** Full-width section with a centered, padded container. */
@@ -23,7 +25,7 @@ export function Section({
   id,
 }: SectionProps) {
   return (
-    <section id={id} className={cn(tones[tone], "py-12 sm:py-16", className)}>
+    <section id={id} className={cn(tones[tone], "py-14 sm:py-20", className)}>
       <div className="mx-auto w-full max-w-6xl px-4 sm:px-6 lg:px-8">
         {children}
       </div>
@@ -37,6 +39,8 @@ interface SectionHeadingProps {
   subtitle?: string;
   className?: string;
   centered?: boolean;
+  /** Use light text on dark/brand backgrounds. */
+  tone?: "light" | "dark";
 }
 
 /** Reusable eyebrow + heading + subtitle block. */
@@ -46,19 +50,43 @@ export function SectionHeading({
   subtitle,
   className,
   centered = false,
+  tone = "light",
 }: SectionHeadingProps) {
+  const dark = tone === "dark";
   return (
-    <div className={cn(centered && "mx-auto max-w-2xl text-center", "mb-8", className)}>
+    <div
+      className={cn(centered && "mx-auto max-w-2xl text-center", "mb-10", className)}
+    >
       {eyebrow && (
-        <p className="mb-2 text-sm font-semibold uppercase tracking-wide text-brand-700">
+        <span
+          className={cn(
+            "inline-flex items-center gap-2 rounded-full px-3 py-1 text-xs font-semibold uppercase tracking-wide",
+            dark
+              ? "bg-white/10 text-brand-100"
+              : "bg-brand-50 text-brand-700",
+          )}
+        >
+          <span className="h-1.5 w-1.5 rounded-full bg-accent-500" />
           {eyebrow}
-        </p>
+        </span>
       )}
-      <h2 className="text-2xl font-bold tracking-tight text-slate-900 sm:text-3xl">
+      <h2
+        className={cn(
+          "mt-3 text-3xl font-bold tracking-tight sm:text-4xl",
+          dark ? "text-white" : "text-slate-900",
+        )}
+      >
         {title}
       </h2>
       {subtitle && (
-        <p className="mt-3 text-base text-slate-600">{subtitle}</p>
+        <p
+          className={cn(
+            "mt-3 text-base",
+            dark ? "text-brand-100/80" : "text-slate-600",
+          )}
+        >
+          {subtitle}
+        </p>
       )}
     </div>
   );

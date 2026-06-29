@@ -1,10 +1,40 @@
 {
   "hero": {
-    "eyebrow": "[ES] Florida Driver Help Center",
+    "eyebrow": "Florida Remote Driving School · West Palm Beach y todo Florida",
     "title": "[ES] Online Florida driving courses and license help — in English and Spanish",
     "subtitle": "[ES] Not sure which course you need? We help you find the right path — first-time license, teen permit, ticket, suspension, 55+ discount, or new to Florida — and connect you to approved providers and bilingual support.",
     "primaryCta": "[ES] Find My Course",
-    "secondaryCta": "[ES] Get Help in Spanish"
+    "secondaryCta": "[ES] Get Help in Spanish",
+    "badges": [
+      "[ES] 100% online & remote",
+      "[ES] Bilingual EN/ES support",
+      "[ES] Approved-provider courses",
+      "[ES] WhatsApp concierge"
+    ]
+  },
+  "stats": {
+    "items": [
+      {
+        "value": 8,
+        "suffix": "+",
+        "label": "[ES] Course & prep paths"
+      },
+      {
+        "value": 2,
+        "suffix": "",
+        "label": "[ES] Languages (EN / ES)"
+      },
+      {
+        "value": 100,
+        "suffix": "%",
+        "label": "[ES] Online & remote"
+      },
+      {
+        "value": 24,
+        "suffix": "/7",
+        "label": "[ES] Ask us anytime"
+      }
+    ]
   },
   "finder": {
     "heading": "[ES] Tell us your situation. We'll point you to the right path.",
@@ -21,16 +51,38 @@
   },
   "howItWorks": {
     "heading": "[ES] How it works",
-    "step1Title": "[ES] 1. Tell us your situation",
+    "step1Title": "[ES] Tell us your situation",
     "step1Body": "[ES] Use the Course Finder or contact us in English or Spanish.",
-    "step2Title": "[ES] 2. Get the right path",
+    "step2Title": "[ES] Get the right path",
     "step2Body": "[ES] We recommend the correct course, prep, and checklist for you.",
-    "step3Title": "[ES] 3. Get started with support",
+    "step3Title": "[ES] Get started with support",
     "step3Body": "[ES] Enroll through an approved provider or grab our prep — with help along the way."
+  },
+  "testimonials": {
+    "eyebrow": "[ES] What people say",
+    "heading": "[ES] Guidance that makes the next step obvious",
+    "sampleLabel": "[ES] Sample",
+    "items": [
+      {
+        "quote": "[ES] The Course Finder told me exactly which course I needed in about two minutes.",
+        "name": "[ES] M. R.",
+        "role": "[ES] First-time driver · West Palm Beach"
+      },
+      {
+        "quote": "[ES] Getting help in Spanish over WhatsApp made the whole process so much less stressful.",
+        "name": "[ES] J. G.",
+        "role": "[ES] Permit prep · Lake Worth"
+      },
+      {
+        "quote": "[ES] As a parent, the teen guide finally showed me how to actually support my son's practice.",
+        "name": "[ES] D. S.",
+        "role": "[ES] Parent of a teen driver"
+      }
+    ]
   },
   "trust": {
     "heading": "[ES] Clear, honest, and local",
-    "body": "[ES] We're an independent help center focused on West Palm Beach and all of Florida. We don't claim state approval, and we never promise outcomes we can't control — we make the process simpler and bilingual."
+    "body": "[ES] We're an independent, remote-only driving school serving West Palm Beach and all of Florida. We don't claim state approval, and we never promise outcomes we can't control — we just make the process simpler and bilingual."
   },
   "faq": {
     "heading": "[ES] Frequently asked questions"

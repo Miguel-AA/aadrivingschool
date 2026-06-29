@@ -79,7 +79,7 @@ export function QuizStepper({
 
   if (phase === "intro") {
     return (
-      <div className="rounded-xl border border-slate-200 bg-white p-6">
+      <div className="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
         <p className="text-slate-700">{t("intro")}</p>
         <button
           type="button"
@@ -93,18 +93,24 @@ export function QuizStepper({
   }
 
   if (phase === "result" && result) {
-    return <QuizResult recommendation={result} onRetake={retake} />;
+    return (
+      <div className="animate-fade-up">
+        <QuizResult recommendation={result} onRetake={retake} />
+      </div>
+    );
   }
 
   return (
-    <div className="rounded-xl border border-slate-200 bg-white p-6">
+    <div className="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
       <QuizProgress current={index + 1} total={sorted.length} />
       {current && (
-        <QuizQuestionView
-          question={current}
-          selected={selected}
-          onSelect={select}
-        />
+        <div key={current.id} className="animate-fade-up">
+          <QuizQuestionView
+            question={current}
+            selected={selected}
+            onSelect={select}
+          />
+        </div>
       )}
       <div className="mt-6 flex items-center justify-between">
         <button

@@ -1,37 +1,41 @@
+import { Mail, MessageCircle, Phone } from "lucide-react";
 import { useTranslations } from "next-intl";
 import { Link } from "@/i18n/navigation";
 import { siteConfig } from "@/config/site";
 import { navLinks } from "./navLinks";
+import { Logo } from "./Logo";
 
-/** Site footer: explore links, support details, and the global compliance note. */
+/** Site footer: brand, explore links, support details, and the global disclaimer. */
 export function Footer() {
   const t = useTranslations("common");
   const tc = useTranslations("compliance");
   const year = new Date().getFullYear();
 
   return (
-    <footer className="border-t border-slate-200 bg-slate-50">
-      <div className="mx-auto w-full max-w-6xl px-4 py-12 sm:px-6 lg:px-8">
-        <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
+    <footer className="bg-brand-950 text-slate-300">
+      <div
+        aria-hidden="true"
+        className="h-1 w-full bg-gradient-to-r from-brand-500 via-ocean-500 to-accent-500"
+      />
+      <div className="mx-auto w-full max-w-6xl px-4 py-14 sm:px-6 lg:px-8">
+        <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-4">
           <div className="lg:col-span-2">
-            <p className="text-base font-bold text-brand-800">
-              {siteConfig.name}
-            </p>
-            <p className="mt-2 max-w-sm text-sm text-slate-600">
+            <Logo tone="dark" />
+            <p className="mt-4 max-w-sm text-sm text-slate-400">
               {t("footer.tagline")}
             </p>
           </div>
 
           <div>
-            <h2 className="text-sm font-semibold text-slate-900">
+            <h2 className="text-sm font-semibold text-white">
               {t("footer.exploreHeading")}
             </h2>
-            <ul className="mt-3 space-y-2">
+            <ul className="mt-4 space-y-2.5">
               {navLinks.map((link) => (
                 <li key={link.href}>
                   <Link
                     href={link.href}
-                    className="text-sm text-slate-600 hover:text-brand-700"
+                    className="text-sm text-slate-400 transition-colors hover:text-brand-200"
                   >
                     {t(`nav.${link.labelKey}`)}
                   </Link>
@@ -41,36 +45,52 @@ export function Footer() {
           </div>
 
           <div>
-            <h2 className="text-sm font-semibold text-slate-900">
+            <h2 className="text-sm font-semibold text-white">
               {t("footer.supportHeading")}
             </h2>
-            <ul className="mt-3 space-y-2 text-sm text-slate-600">
+            <ul className="mt-4 space-y-2.5 text-sm">
               <li>
-                <Link href="/contact" className="hover:text-brand-700">
+                <Link
+                  href="/contact"
+                  className="text-slate-400 transition-colors hover:text-brand-200"
+                >
                   {t("nav.contact")}
                 </Link>
               </li>
               <li>
                 <a
                   href={`tel:${siteConfig.supportPhone}`}
-                  className="hover:text-brand-700"
+                  className="flex items-center gap-2 text-slate-400 transition-colors hover:text-brand-200"
                 >
+                  <Phone className="h-4 w-4" aria-hidden="true" />
                   {siteConfig.supportPhone}
                 </a>
               </li>
               <li>
                 <a
                   href={`mailto:${siteConfig.supportEmail}`}
-                  className="hover:text-brand-700"
+                  className="flex items-center gap-2 text-slate-400 transition-colors hover:text-brand-200"
                 >
+                  <Mail className="h-4 w-4" aria-hidden="true" />
                   {siteConfig.supportEmail}
+                </a>
+              </li>
+              <li>
+                <a
+                  href={`https://wa.me/${siteConfig.whatsappNumber}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-2 text-slate-400 transition-colors hover:text-brand-200"
+                >
+                  <MessageCircle className="h-4 w-4" aria-hidden="true" />
+                  {t("cta.chatWhatsApp")}
                 </a>
               </li>
             </ul>
           </div>
         </div>
 
-        <div className="mt-10 border-t border-slate-200 pt-6">
+        <div className="mt-12 border-t border-white/10 pt-6">
           <p className="text-xs leading-relaxed text-slate-500">
             {tc("globalFooter")}
           </p>

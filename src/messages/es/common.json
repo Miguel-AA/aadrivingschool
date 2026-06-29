@@ -1,5 +1,5 @@
 {
-  "brandTagline": "[ES] Florida Driver Help Center",
+  "brandTagline": "Florida Remote Driving School",
   "skipToContent": "[ES] Skip to content",
   "openMenu": "[ES] Open menu",
   "closeMenu": "[ES] Close menu",
@@ -50,5 +50,8 @@
     "title": "[ES] Page not found",
     "body": "[ES] Sorry, we couldn't find that page. Let's get you back on track.",
     "cta": "[ES] Go to homepage"
+  },
+  "badges": {
+    "popular": "[ES] Popular"
   }
 }

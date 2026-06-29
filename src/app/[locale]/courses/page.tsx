@@ -14,6 +14,7 @@ import { Section, SectionHeading } from "@/components/content/Section";
 import { CatalogGrid } from "@/components/catalog/CatalogGrid";
 import { CourseCard } from "@/components/catalog/CourseCard";
 import { PackageCard } from "@/components/catalog/PackageCard";
+import { Reveal } from "@/components/content/Reveal";
 
 export async function generateMetadata({
   params,
@@ -53,8 +54,10 @@ export default async function CoursesPage({
           subtitle={t("courses.regulatedSubheading")}
         />
         <CatalogGrid>
-          {regulated.map((course) => (
-            <CourseCard key={course.id} course={course} />
+          {regulated.map((course, i) => (
+            <Reveal key={course.id} delay={i * 70}>
+              <CourseCard course={course} />
+            </Reveal>
           ))}
         </CatalogGrid>
       </Section>
@@ -65,8 +68,10 @@ export default async function CoursesPage({
           subtitle={t("courses.proprietarySubheading")}
         />
         <CatalogGrid>
-          {proprietary.map((course) => (
-            <CourseCard key={course.id} course={course} />
+          {proprietary.map((course, i) => (
+            <Reveal key={course.id} delay={i * 70}>
+              <CourseCard course={course} />
+            </Reveal>
           ))}
         </CatalogGrid>
       </Section>
@@ -77,8 +82,10 @@ export default async function CoursesPage({
           subtitle={t("courses.packagesSubheading")}
         />
         <CatalogGrid>
-          {packages.map((pkg) => (
-            <PackageCard key={pkg.id} pkg={pkg} />
+          {packages.map((pkg, i) => (
+            <Reveal key={pkg.id} delay={i * 70}>
+              <PackageCard pkg={pkg} />
+            </Reveal>
           ))}
         </CatalogGrid>
       </Section>

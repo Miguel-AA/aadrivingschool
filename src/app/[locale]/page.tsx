@@ -17,9 +17,14 @@ import { CatalogGrid } from "@/components/catalog/CatalogGrid";
 import { CourseCard } from "@/components/catalog/CourseCard";
 import { PackageCard } from "@/components/catalog/PackageCard";
 import { FAQAccordion } from "@/components/content/FAQAccordion";
+import { Reveal } from "@/components/content/Reveal";
+import { Counter } from "@/components/content/Counter";
+import { Testimonials } from "@/components/content/Testimonials";
 import { CTAButton } from "@/components/cta/CTAButton";
 import { WhatsAppCTA } from "@/components/cta/WhatsAppCTA";
 import { JsonLd } from "@/components/seo/JsonLd";
+
+type StatItem = { value: number; suffix: string; label: string };
 
 export async function generateMetadata({
   params,
@@ -45,6 +50,8 @@ export default async function HomePage({ params }: PageProps<"/[locale]">) {
   const packages = getFeaturedPackages();
   const faqs = getGlobalFaqs();
 
+  const badges = t.raw("hero.badges") as string[];
+  const stats = t.raw("stats.items") as StatItem[];
   const steps = [
     { title: t("howItWorks.step1Title"), body: t("howItWorks.step1Body") },
     { title: t("howItWorks.step2Title"), body: t("howItWorks.step2Body") },
@@ -58,7 +65,9 @@ export default async function HomePage({ params }: PageProps<"/[locale]">) {
       <Hero
         eyebrow={t("hero.eyebrow")}
         title={t("hero.title")}
+        highlight="Florida driving courses"
         subtitle={t("hero.subtitle")}
+        badges={badges}
         actions={
           <>
             <CTAButton
@@ -82,11 +91,30 @@ export default async function HomePage({ params }: PageProps<"/[locale]">) {
         }
       />
 
+      {/* Stats band */}
+      <Section tone="dark" className="py-10 sm:py-12">
+        <dl className="grid grid-cols-2 gap-6 sm:grid-cols-4">
+          {stats.map((stat) => (
+            <div key={stat.label} className="text-center">
+              <dt className="sr-only">{stat.label}</dt>
+              <dd>
+                <span className="block text-3xl font-extrabold text-white sm:text-4xl">
+                  <Counter to={stat.value} suffix={stat.suffix} />
+                </span>
+                <span className="mt-1 block text-sm text-brand-100/80">
+                  {stat.label}
+                </span>
+              </dd>
+            </div>
+          ))}
+        </dl>
+      </Section>
+
       {/* Course finder banner */}
       <Section tone="brand">
-        <div className="flex flex-col items-start justify-between gap-4 sm:flex-row sm:items-center">
+        <Reveal className="flex flex-col items-start justify-between gap-4 sm:flex-row sm:items-center">
           <div>
-            <h2 className="text-2xl font-bold">{t("finder.heading")}</h2>
+            <h2 className="text-2xl font-bold sm:text-3xl">{t("finder.heading")}</h2>
             <p className="mt-2 max-w-2xl text-brand-100">{t("finder.body")}</p>
           </div>
           <CTAButton
@@ -98,18 +126,22 @@ export default async function HomePage({ params }: PageProps<"/[locale]">) {
           >
             {t("finder.cta")}
           </CTAButton>
-        </div>
+        </Reveal>
       </Section>
 
       {/* Popular courses */}
       <Section>
-        <SectionHeading
-          title={t("popularCourses.heading")}
-          subtitle={t("popularCourses.subheading")}
-        />
+        <Reveal>
+          <SectionHeading
+            title={t("popularCourses.heading")}
+            subtitle={t("popularCourses.subheading")}
+          />
+        </Reveal>
         <CatalogGrid>
-          {courses.map((course) => (
-            <CourseCard key={course.id} course={course} />
+          {courses.map((course, i) => (
+            <Reveal key={course.id} delay={i * 80}>
+              <CourseCard course={course} />
+            </Reveal>
           ))}
         </CatalogGrid>
         <div className="mt-8">
@@ -126,53 +158,71 @@ export default async function HomePage({ params }: PageProps<"/[locale]">) {
 
       {/* Packages */}
       <Section tone="muted">
-        <SectionHeading
-          title={t("packages.heading")}
-          subtitle={t("packages.subheading")}
-        />
+        <Reveal>
+          <SectionHeading
+            title={t("packages.heading")}
+            subtitle={t("packages.subheading")}
+          />
+        </Reveal>
         <CatalogGrid>
-          {packages.map((pkg) => (
-            <PackageCard key={pkg.id} pkg={pkg} />
+          {packages.map((pkg, i) => (
+            <Reveal key={pkg.id} delay={i * 80}>
+              <PackageCard pkg={pkg} />
+            </Reveal>
           ))}
         </CatalogGrid>
       </Section>
 
       {/* How it works */}
       <Section>
-        <SectionHeading title={t("howItWorks.heading")} centered />
-        <div className="grid gap-8 sm:grid-cols-3">
-          {steps.map((step) => (
-            <div key={step.title} className="text-center">
-              <h3 className="text-lg font-semibold text-slate-900">
-                {step.title}
-              </h3>
-              <p className="mt-2 text-sm text-slate-600">{step.body}</p>
-            </div>
+        <Reveal>
+          <SectionHeading title={t("howItWorks.heading")} centered />
+        </Reveal>
+        <div className="grid gap-6 sm:grid-cols-3">
+          {steps.map((step, i) => (
+            <Reveal key={step.title} delay={i * 90}>
+              <div className="h-full rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
+                <span className="grid h-11 w-11 place-items-center rounded-xl bg-gradient-to-br from-brand-600 to-ocean-500 text-lg font-bold text-white">
+                  {i + 1}
+                </span>
+                <h3 className="mt-4 text-lg font-semibold text-slate-900">
+                  {step.title}
+                </h3>
+                <p className="mt-2 text-sm text-slate-600">{step.body}</p>
+              </div>
+            </Reveal>
           ))}
         </div>
       </Section>
 
+      {/* Testimonials (sample) */}
+      <Testimonials />
+
       {/* Trust */}
-      <Section tone="muted">
-        <div className="mx-auto max-w-2xl text-center">
-          <h2 className="text-2xl font-bold text-slate-900">
+      <Section>
+        <Reveal className="mx-auto max-w-2xl text-center">
+          <h2 className="text-2xl font-bold text-slate-900 sm:text-3xl">
             {t("trust.heading")}
           </h2>
           <p className="mt-3 text-slate-600">{t("trust.body")}</p>
-        </div>
+        </Reveal>
       </Section>
 
       {/* FAQ */}
-      <Section>
-        <SectionHeading title={t("faq.heading")} />
+      <Section tone="muted">
+        <Reveal>
+          <SectionHeading title={t("faq.heading")} centered />
+        </Reveal>
         <FAQAccordion faqs={faqs} />
       </Section>
 
       {/* Lead CTA */}
       <Section tone="brand">
-        <div className="flex flex-col items-start justify-between gap-4 sm:flex-row sm:items-center">
+        <Reveal className="flex flex-col items-start justify-between gap-4 sm:flex-row sm:items-center">
           <div>
-            <h2 className="text-2xl font-bold">{t("leadCta.heading")}</h2>
+            <h2 className="text-2xl font-bold sm:text-3xl">
+              {t("leadCta.heading")}
+            </h2>
             <p className="mt-2 max-w-2xl text-brand-100">{t("leadCta.body")}</p>
           </div>
           <div className="flex flex-wrap gap-3">
@@ -187,7 +237,7 @@ export default async function HomePage({ params }: PageProps<"/[locale]">) {
             </CTAButton>
             <WhatsAppCTA kind="default" variant="secondary" size="lg" />
           </div>
-        </div>
+        </Reveal>
       </Section>
     </>
   );

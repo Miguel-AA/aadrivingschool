@@ -11,9 +11,13 @@ export function Nav() {
         <Link
           key={link.href}
           href={link.href}
-          className="text-sm font-medium text-slate-700 hover:text-brand-700"
+          className="group relative text-sm font-medium text-slate-700 transition-colors hover:text-brand-700"
         >
           {t(`nav.${link.labelKey}`)}
+          <span
+            aria-hidden="true"
+            className="absolute -bottom-1.5 left-0 h-0.5 w-0 rounded-full bg-gradient-to-r from-brand-600 to-ocean-500 transition-all duration-300 group-hover:w-full"
+          />
         </Link>
       ))}
     </nav>

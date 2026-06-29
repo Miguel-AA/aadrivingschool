@@ -19,7 +19,7 @@ export function QuizProgress({
       </p>
       <div className="h-2 w-full overflow-hidden rounded-full bg-slate-200">
         <div
-          className="h-full rounded-full bg-brand-600 transition-all"
+          className="h-full rounded-full bg-gradient-to-r from-brand-600 to-ocean-500 transition-all duration-500 ease-out"
           style={{ width: `${pct}%` }}
         />
       </div>

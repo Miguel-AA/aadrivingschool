@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
+import { Inter, Plus_Jakarta_Sans } from "next/font/google";
 import { hasLocale, NextIntlClientProvider } from "next-intl";
 import { getMessages, getTranslations, setRequestLocale } from "next-intl/server";
 import { routing } from "@/i18n/routing";
@@ -8,7 +9,21 @@ import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { JsonLd } from "@/components/seo/JsonLd";
 import { orgJsonLd } from "@/lib/seo/jsonld";
+import { MobileCTABar } from "@/components/cta/MobileCTABar";
+import { FloatingWhatsApp } from "@/components/cta/FloatingWhatsApp";
 import "../globals.css";
+
+const inter = Inter({
+  subsets: ["latin"],
+  variable: "--font-inter",
+  display: "swap",
+});
+const jakarta = Plus_Jakarta_Sans({
+  subsets: ["latin"],
+  variable: "--font-jakarta",
+  weight: ["600", "700", "800"],
+  display: "swap",
+});
 
 export function generateStaticParams() {
   return routing.locales.map((locale) => ({ locale }));
@@ -36,8 +51,18 @@ export default async function LocaleLayout({
   const t = await getTranslations("common");
 
   return (
-    <html lang={locale} className="h-full antialiased">
+    <html
+      lang={locale}
+      className={`${inter.variable} ${jakarta.variable} h-full antialiased`}
+    >
       <body className="flex min-h-full flex-col bg-white text-slate-900">
+        {/* Mark JS as active before paint so scroll-reveal's hidden initial
+            state only applies with JS (no-JS users see content immediately). */}
+        <script
+          dangerouslySetInnerHTML={{
+            __html: "document.documentElement.classList.add('js')",
+          }}
+        />
         <NextIntlClientProvider messages={messages}>
           <JsonLd data={orgJsonLd()} />
           <a
@@ -47,10 +72,12 @@ export default async function LocaleLayout({
             {t("skipToContent")}
           </a>
           <Header />
-          <main id="main-content" className="flex-1">
+          <main id="main-content" className="flex-1 pb-16 lg:pb-0">
             {children}
           </main>
           <Footer />
+          <FloatingWhatsApp />
+          <MobileCTABar />
         </NextIntlClientProvider>
       </body>
     </html>

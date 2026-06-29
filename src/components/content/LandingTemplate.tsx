@@ -9,6 +9,7 @@ import { CatalogGrid } from "@/components/catalog/CatalogGrid";
 import { CourseCard } from "@/components/catalog/CourseCard";
 import { PackageCard } from "@/components/catalog/PackageCard";
 import { FAQAccordion } from "@/components/content/FAQAccordion";
+import { Reveal } from "@/components/content/Reveal";
 import { Disclaimer } from "@/components/compliance/Disclaimer";
 import { LeadForm } from "@/components/lead/LeadForm";
 import { JsonLd } from "@/components/seo/JsonLd";
@@ -66,8 +67,10 @@ export function LandingTemplate({
         <Section tone="muted">
           <SectionHeading title={t("relatedPackages")} />
           <CatalogGrid>
-            {packages.map((pkg) => (
-              <PackageCard key={pkg.id} pkg={pkg} />
+            {packages.map((pkg, i) => (
+              <Reveal key={pkg.id} delay={i * 80}>
+                <PackageCard pkg={pkg} />
+              </Reveal>
             ))}
           </CatalogGrid>
         </Section>
@@ -77,8 +80,10 @@ export function LandingTemplate({
         <Section>
           <SectionHeading title={t("relatedCourses")} />
           <CatalogGrid>
-            {courses.map((course) => (
-              <CourseCard key={course.id} course={course} />
+            {courses.map((course, i) => (
+              <Reveal key={course.id} delay={i * 80}>
+                <CourseCard course={course} />
+              </Reveal>
             ))}
           </CatalogGrid>
         </Section>

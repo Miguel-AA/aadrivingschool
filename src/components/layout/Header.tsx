@@ -1,24 +1,40 @@
+"use client";
+
+import { useEffect, useState } from "react";
 import { useTranslations } from "next-intl";
 import { Link } from "@/i18n/navigation";
-import { siteConfig } from "@/config/site";
 import { EVENTS } from "@/lib/services/analytics";
 import { CTAButton } from "@/components/cta/CTAButton";
+import { cn } from "@/lib/utils/cn";
+import { Logo } from "./Logo";
 import { Nav } from "./Nav";
 import { MobileNav } from "./MobileNav";
 import { LanguageToggle } from "./LanguageToggle";
 
-/** Site header: brand, primary nav, language toggle, and a Find My Course CTA. */
+/** Sticky, glassy site header with a scroll-shadow, brand logo, and nav. */
 export function Header() {
   const t = useTranslations("common");
+  const [scrolled, setScrolled] = useState(false);
+
+  useEffect(() => {
+    const onScroll = () => setScrolled(window.scrollY > 8);
+    onScroll();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
 
   return (
-    <header className="relative border-b border-slate-200 bg-white">
+    <header
+      className={cn(
+        "sticky top-0 z-50 border-b backdrop-blur transition-shadow",
+        scrolled
+          ? "border-slate-200 bg-white/85 shadow-sm"
+          : "border-transparent bg-white/70",
+      )}
+    >
       <div className="mx-auto flex max-w-6xl items-center justify-between gap-4 px-4 py-3 sm:px-6 lg:px-8">
-        <Link href="/" className="flex flex-col leading-tight">
-          <span className="text-lg font-bold text-brand-800">
-            {siteConfig.shortName}
-          </span>
-          <span className="text-xs text-slate-500">{t("brandTagline")}</span>
+        <Link href="/" aria-label={t("brandTagline")}>
+          <Logo />
         </Link>
 
         <Nav />

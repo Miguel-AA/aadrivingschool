@@ -13,17 +13,17 @@ export function FAQAccordion({ faqs }: { faqs: Faq[] }) {
   if (faqs.length === 0) return null;
 
   return (
-    <div className="divide-y divide-slate-200 rounded-xl border border-slate-200 bg-white">
+    <div className="mx-auto max-w-3xl divide-y divide-slate-200 overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-sm">
       {faqs.map((faq) => (
-        <details key={faq.id} className="group p-4">
-          <summary className="flex cursor-pointer items-center justify-between gap-3 font-medium text-slate-900 marker:content-['']">
+        <details key={faq.id} className="group">
+          <summary className="flex cursor-pointer list-none items-center justify-between gap-3 p-5 font-medium text-slate-900 transition-colors marker:content-[''] hover:bg-slate-50 group-open:text-brand-700">
             {getLocalized(faq.question, locale)}
             <ChevronDown
-              className="h-5 w-5 shrink-0 text-slate-400 transition-transform group-open:rotate-180"
+              className="h-5 w-5 shrink-0 text-slate-400 transition-transform duration-300 group-open:rotate-180 group-open:text-brand-600"
               aria-hidden="true"
             />
           </summary>
-          <p className="mt-3 text-sm leading-relaxed text-slate-600">
+          <p className="px-5 pb-5 text-sm leading-relaxed text-slate-600">
             {getLocalized(faq.answer, locale)}
           </p>
         </details>
