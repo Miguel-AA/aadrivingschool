@@ -1,5 +1,5 @@
 import { ArrowRight, Check, Sparkles } from "lucide-react";
-import { useLocale, useTranslations } from "next-intl";
+import { useLocale, useTranslations } from "@/i18n";
 import type { Package, PackageBadge } from "@/lib/schemas/content";
 import { Link } from "@/i18n/navigation";
 import { cn } from "@/lib/utils/cn";

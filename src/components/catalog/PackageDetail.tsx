@@ -1,5 +1,5 @@
 import { Check } from "lucide-react";
-import { useLocale, useTranslations } from "next-intl";
+import { useLocale, useTranslations } from "@/i18n";
 import type { ComplianceLabelKey, Package } from "@/lib/schemas/content";
 import { getCoursesForPackage } from "@/content";
 import { getLocalized } from "@/lib/utils/locale";

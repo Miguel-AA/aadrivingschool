@@ -1,7 +1,6 @@
-"use client";
 
 import { Check } from "lucide-react";
-import { useLocale } from "next-intl";
+import { useLocale } from "@/i18n";
 import type { QuizQuestion } from "@/lib/schemas/content";
 import { getLocalized } from "@/lib/utils/locale";
 import { cn } from "@/lib/utils/cn";

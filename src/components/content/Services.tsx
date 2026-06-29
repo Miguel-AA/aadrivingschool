@@ -8,7 +8,7 @@ import {
   Users,
   type LucideIcon,
 } from "lucide-react";
-import { useTranslations } from "next-intl";
+import { useTranslations } from "@/i18n";
 import { Link } from "@/i18n/navigation";
 import { Section, SectionHeading } from "@/components/content/Section";
 import { Reveal } from "@/components/content/Reveal";

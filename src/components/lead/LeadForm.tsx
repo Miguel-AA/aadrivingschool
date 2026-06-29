@@ -1,9 +1,8 @@
-"use client";
 
 import { useState } from "react";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { useLocale, useTranslations } from "next-intl";
+import { useLocale, useTranslations } from "@/i18n";
 import { z } from "zod";
 import { LeadSchema, type LeadInput } from "@/lib/schemas/lead";
 
@@ -41,7 +40,6 @@ export function LeadForm({
   const {
     register,
     handleSubmit,
-    setError,
     formState: { errors, isSubmitting },
   } = useForm<LeadFormValues, unknown, LeadInput>({
     resolver: zodResolver(LeadSchema),
@@ -66,37 +64,14 @@ export function LeadForm({
 
   const onSubmit = handleSubmit(async (values) => {
     trackEvent(EVENTS.LEAD_SUBMIT_ATTEMPT, { sourcePage: values.sourcePage });
-    try {
-      const res = await fetch("/api/leads", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(values),
-      });
-      if (res.ok) {
-        setStatus("success");
-        trackEvent(EVENTS.LEAD_SUBMIT_SUCCESS, {
-          sourcePage: values.sourcePage,
-          recommendation: values.recommendation,
-        });
-        return;
-      }
-      // Map server-side field errors back onto the form if present.
-      const data = (await res.json().catch(() => null)) as {
-        errors?: Record<string, string[]>;
-      } | null;
-      if (data?.errors) {
-        for (const [field, messages] of Object.entries(data.errors)) {
-          setError(field as keyof LeadFormValues, {
-            message: messages?.[0] ?? "validation.name",
-          });
-        }
-      }
-      setStatus("error");
-      trackEvent(EVENTS.LEAD_SUBMIT_ERROR, { sourcePage: values.sourcePage });
-    } catch {
-      setStatus("error");
-      trackEvent(EVENTS.LEAD_SUBMIT_ERROR, { sourcePage: values.sourcePage });
-    }
+    // Investor demo build: there is no backend. Simulate a successful
+    // submission. Wire this to a real CRM/API endpoint before launch.
+    await new Promise((resolve) => setTimeout(resolve, 600));
+    setStatus("success");
+    trackEvent(EVENTS.LEAD_SUBMIT_SUCCESS, {
+      sourcePage: values.sourcePage,
+      recommendation: values.recommendation,
+    });
   });
 
   if (status === "success") {

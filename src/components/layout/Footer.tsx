@@ -1,5 +1,5 @@
 import { Mail, MessageCircle, Phone } from "lucide-react";
-import { useTranslations } from "next-intl";
+import { useTranslations } from "@/i18n";
 import { Link } from "@/i18n/navigation";
 import { siteConfig } from "@/config/site";
 import { footerLinks } from "./navLinks";

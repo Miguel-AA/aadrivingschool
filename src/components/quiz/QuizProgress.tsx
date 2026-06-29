@@ -1,6 +1,5 @@
-"use client";
 
-import { useTranslations } from "next-intl";
+import { useTranslations } from "@/i18n";
 
 /** Progress indicator for the quiz (current question of total). */
 export function QuizProgress({

@@ -1,6 +1,5 @@
-"use client";
 
-import { useTranslations } from "next-intl";
+import { useTranslations } from "@/i18n";
 import { EVENTS } from "@/lib/services/analytics";
 import { CTAButton } from "./CTAButton";
 import { WhatsAppCTA } from "./WhatsAppCTA";

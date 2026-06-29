@@ -1,5 +1,5 @@
 import { ChevronDown } from "lucide-react";
-import { useLocale } from "next-intl";
+import { useLocale } from "@/i18n";
 import type { Faq } from "@/lib/schemas/content";
 import { getLocalized } from "@/lib/utils/locale";
 

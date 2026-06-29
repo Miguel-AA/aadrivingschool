@@ -9,11 +9,11 @@ export const siteConfig = {
   // Working tagline — review/translate before launch.
   description:
     "Florida Top 1 Driving School helps Florida drivers and families understand the right next step — TLSAE, permit prep, ticket help, and bilingual (English/Spanish) license support.",
-  url: process.env.NEXT_PUBLIC_SITE_URL ?? "https://floridatop1drivingschool.com",
+  url: import.meta.env.VITE_SITE_URL ?? "https://floridatop1drivingschool.com",
   // Contact / concierge (placeholders).
-  whatsappNumber: process.env.NEXT_PUBLIC_WHATSAPP_NUMBER ?? "15555555555",
-  supportPhone: process.env.NEXT_PUBLIC_SUPPORT_PHONE ?? "+1-555-555-5555",
-  supportEmail: process.env.NEXT_PUBLIC_SUPPORT_EMAIL ?? "help@example.com",
+  whatsappNumber: import.meta.env.VITE_WHATSAPP_NUMBER ?? "15555555555",
+  supportPhone: import.meta.env.VITE_SUPPORT_PHONE ?? "+1-555-555-5555",
+  supportEmail: import.meta.env.VITE_SUPPORT_EMAIL ?? "help@example.com",
 } as const;
 
 export type SiteConfig = typeof siteConfig;

@@ -13,45 +13,57 @@ and guidance, and includes a Course Finder quiz and lead capture.
 > delivered through approved providers. These rules are enforced in code (see
 > "Compliance" below) — keep them intact.
 
-This is the **foundation + core pages** build. External integrations (payments,
-CRM, email, analytics) are stubbed behind clean interfaces and ready to wire up.
+This is a **frontend-only React + Vite SPA** (investor demo). It deploys as
+static files to Cloudflare Pages — no server, SSR, or API routes. External
+integrations (payments, CRM, email, analytics) are stubbed/mocked behind clean
+interfaces and ready to wire up.
 
 ## Stack
 
-- **Next.js 16** (App Router, Turbopack) + **React 19** + **TypeScript**
-- **Tailwind CSS v4** (CSS-first config in `src/app/globals.css`)
-- **next-intl** for EN/ES routing (`/en`, `/es`) — `src/i18n/*`, `src/proxy.ts`
-- **Zod** for content + form validation
-- **react-hook-form** for the lead form
+- **Vite 7** + **React 19** + **TypeScript**
+- **Tailwind CSS v4** via `@tailwindcss/vite` (theme/tokens in `src/index.css`)
+- **react-router-dom** for client routing (routes in `src/App.tsx`)
+- **i18n shim** (`src/i18n/`) for EN/ES — reuses `src/messages/{en,es}/*.json`;
+  locale is React state (toggle re-renders in place, URLs stay clean)
+- **Zod** for content + form validation; **react-hook-form** for the lead form
+- Self-hosted fonts via **@fontsource** (Inter + Plus Jakarta Sans)
 
 ## Getting started
 
 ```bash
 npm install
-cp .env.example .env.local   # optional; safe defaults exist
-npm run dev                  # http://localhost:3000 -> redirects to /en
+npm run dev        # http://localhost:5173
 ```
 
-Scripts: `npm run dev | build | start | lint | typecheck | format`.
+Scripts: `npm run dev | build | preview | lint | typecheck | format`.
 
 ## Project structure
 
 ```
+index.html            # Vite entry (static <head> meta)
+public/               # favicon, robots.txt, _redirects (SPA fallback)
 src/
-  app/[locale]/        # pages: home, courses, courses/[slug], quiz, contact,
-                       #        spanish-help, permit-test-prep, ticket-help
-  app/api/leads/       # lead capture endpoint (Zod + honeypot -> lead service)
-  app/sitemap.ts, robots.ts
-  components/          # layout, catalog, compliance, quiz, lead, cta, content, seo
+  main.tsx            # bootstraps React + BrowserRouter + LocaleProvider
+  App.tsx             # layout shell + all routes
+  pages/              # route components: Home, Courses, CatalogDetail, Contact,
+                      #   CourseFinder, Checkout, the landing pages, NotFound
+  components/         # layout, catalog, compliance, quiz, lead, cta, content, seo
   content/            # STRUCTURED DATA: courses, packages, providers, faqs,
                       #   quiz-questions, quiz-rules (+ typed lookups in index.ts)
   lib/schemas/        # Zod schemas (content, lead) — single source of truth
-  lib/services/       # stubbed: lead-service, analytics, checkout-service
+  lib/services/       # analytics stub (console)
   lib/quiz/engine.ts  # pure recommendation engine
-  lib/seo/            # metadata + JSON-LD helpers
-  i18n/               # next-intl routing/navigation/request
+  lib/seo/            # JSON-LD helpers
+  lib/hooks/          # usePageTitle
+  i18n/               # locale provider + translations/navigation shims (no Next)
   messages/{en,es}/   # message dictionaries (EN complete; ES = [ES] placeholders)
 ```
+
+## Deployment (Cloudflare Pages)
+
+- **Build command:** `npm run build` · **Output directory:** `dist`
+- `public/_redirects` (`/* /index.html 200`) makes client-side deep links work.
+- No adapter, Workers, or `wrangler` config needed — it's pure static assets.
 
 ## Content model
 
@@ -72,20 +84,19 @@ falls back to English when a Spanish value is empty. To add/edit a course, edit
 ## Internationalization
 
 EN copy is complete; ES files mirror the key structure with visible `[ES]`
-placeholders for human translation. Catalog content Spanish fields are empty
-(fall back to EN) until translated. The header language toggle preserves the
-current path + query.
+placeholders. The i18n shim **strips the `[ES]` marker** at runtime, so the
+Spanish toggle shows clean English text where a real translation isn't in yet
+(and genuine Spanish strings render as-is). The header language toggle switches
+locale in React state — no reload, URLs stay clean.
 
-## Integrations (stubbed)
+## Integrations (stubbed/mocked)
 
-`leadService.submitLead` (console + in-memory), `analytics.trackEvent` (console),
-and `checkoutService.createCheckout` (routes to `/contact`) are interfaces with
-stub implementations — swap them for Stripe/CRM/email/GA without changing call
-sites.
+`analytics.trackEvent` is a console stub. The **lead form is mocked** for the
+demo: it validates with Zod and resolves to a success state client-side (no
+backend). Wire `LeadForm`'s `onSubmit` to a real CRM/API endpoint before launch.
 
 ## What's intentionally out of scope (later phases)
 
-Real payments, partner enrollment routing, admin/CRM dashboard, email/SMS,
-the remaining landing pages (`/license-reinstatement`, `/55-plus-driver`,
-`/new-to-florida`), full Spanish copy, a live analytics provider, and
+Real payments, partner enrollment routing, admin/CRM dashboard, email/SMS, a
+real lead backend, full Spanish copy, a live analytics provider, and
 reCAPTCHA/Turnstile.

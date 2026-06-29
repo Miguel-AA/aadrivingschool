@@ -1,5 +1,5 @@
 import type { ReactNode } from "react";
-import { useLocale, useTranslations } from "next-intl";
+import { useLocale, useTranslations } from "@/i18n";
 import type { Course, Faq, Package } from "@/lib/schemas/content";
 import type { ComplianceLabelKey } from "@/lib/schemas/content";
 import { faqJsonLd } from "@/lib/seo/jsonld";

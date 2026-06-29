@@ -1,7 +1,6 @@
-"use client";
 
 import { useEffect, useState } from "react";
-import { useTranslations } from "next-intl";
+import { useTranslations } from "@/i18n";
 import { Link } from "@/i18n/navigation";
 import { EVENTS } from "@/lib/services/analytics";
 import { CTAButton } from "@/components/cta/CTAButton";

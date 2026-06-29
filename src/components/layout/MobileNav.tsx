@@ -1,8 +1,7 @@
-"use client";
 
 import { useState } from "react";
 import { Menu, X } from "lucide-react";
-import { useTranslations } from "next-intl";
+import { useTranslations } from "@/i18n";
 import { Link } from "@/i18n/navigation";
 import { navLinks } from "./navLinks";
 import { LanguageToggle } from "./LanguageToggle";

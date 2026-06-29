@@ -6,7 +6,7 @@ import {
   Sparkles,
   type LucideIcon,
 } from "lucide-react";
-import { useTranslations } from "next-intl";
+import { useTranslations } from "@/i18n";
 
 type ShowcaseItem = { label: string; desc: string };
 

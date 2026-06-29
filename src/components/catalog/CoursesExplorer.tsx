@@ -1,7 +1,6 @@
-"use client";
 
 import { useState } from "react";
-import { useTranslations } from "next-intl";
+import { useTranslations } from "@/i18n";
 import type { Course, Package } from "@/lib/schemas/content";
 import {
   NEED_KEYS,

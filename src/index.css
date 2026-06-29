@@ -1,0 +1,185 @@
+@import "tailwindcss";
+
+@theme {
+  /* Fonts — families provided by @fontsource (imported in main.tsx), wired to
+     the same CSS variables the components/Tailwind theme expect. */
+  --font-sans:
+    var(--font-inter), ui-sans-serif, system-ui, -apple-system, "Segoe UI",
+    Roboto, Helvetica, Arial, sans-serif;
+  --font-display:
+    var(--font-jakarta), var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+
+  /* Brand palette — Dark Navy Blue (authority: headers, text, strong sections) */
+  --color-brand-50: #eef2f9;
+  --color-brand-100: #d9e2f1;
+  --color-brand-200: #b3c4e3;
+  --color-brand-300: #8aa3d3;
+  --color-brand-400: #5e7dbf;
+  --color-brand-500: #3f5fa6;
+  --color-brand-600: #314b85;
+  --color-brand-700: #283d6b;
+  --color-brand-800: #1f2f52;
+  --color-brand-900: #16223d;
+  --color-brand-950: #0b1322;
+
+  /* Ocean (azure) — pairs with navy in gradients/decoration */
+  --color-ocean-300: #7cc0f0;
+  --color-ocean-400: #4aa3e8;
+  --color-ocean-500: #2b86d4;
+  --color-ocean-600: #1e6fb8;
+
+  /* Accent — Warm Orange (action: primary buttons, highlights, CTAs) */
+  --color-accent-50: #fff7ed;
+  --color-accent-100: #ffedd5;
+  --color-accent-200: #fed7aa;
+  --color-accent-300: #fdba74;
+  --color-accent-400: #fb923c;
+  --color-accent-500: #f97316;
+  --color-accent-600: #ea580c;
+  --color-accent-700: #c2410c;
+
+  /* Animation tokens (Tailwind generates animate-* utilities) */
+  --animate-fade-up: fade-up 0.6s ease both;
+  --animate-fade-in: fade-in 0.6s ease both;
+  --animate-float: float 7s ease-in-out infinite;
+  --animate-float-slow: float 11s ease-in-out infinite;
+  --animate-gradient: gradient-shift 14s ease infinite;
+  --animate-shimmer: shimmer 2.5s linear infinite;
+}
+
+@keyframes fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@keyframes float {
+  0%,
+  100% {
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+  50% {
+    transform: translate3d(0, -22px, 0) scale(1.04);
+  }
+}
+@keyframes gradient-shift {
+  0%,
+  100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+}
+@keyframes shimmer {
+  from {
+    background-position: -200% 0;
+  }
+  to {
+    background-position: 200% 0;
+  }
+}
+
+:root {
+  --background: #ffffff;
+  --foreground: #0f172a;
+
+  /* Font families from @fontsource-variable (imported in main.tsx). */
+  --font-inter:
+    "Inter Variable", ui-sans-serif, system-ui, -apple-system, "Segoe UI",
+    Roboto, Helvetica, Arial, sans-serif;
+  --font-jakarta: "Plus Jakarta Sans Variable", var(--font-inter);
+}
+
+html {
+  height: 100%;
+  scroll-behavior: smooth;
+}
+
+body {
+  min-height: 100%;
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-sans);
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-family: var(--font-display);
+  letter-spacing: -0.02em;
+}
+
+::selection {
+  background: var(--color-brand-200);
+  color: var(--color-brand-950);
+}
+
+/* Accessible focus styling for keyboard users */
+:focus-visible {
+  outline: 2px solid var(--color-brand-600);
+  outline-offset: 2px;
+}
+
+/* --- Utilities --------------------------------------------------------- */
+
+/* Gradient text helper — warm orange highlight on navy headlines */
+.text-gradient {
+  background-image: linear-gradient(
+    100deg,
+    var(--color-accent-500),
+    var(--color-accent-600)
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+/* Dotted decorative grid (hero backgrounds) */
+.bg-dot-grid {
+  background-image: radial-gradient(currentColor 1px, transparent 1px);
+  background-size: 22px 22px;
+}
+
+/* Scroll-reveal: the hidden initial state applies only when (a) JS is active
+   (html.js, set in main.tsx) and (b) motion is allowed. So reduced-motion users
+   always see content immediately. */
+@media (prefers-reduced-motion: no-preference) {
+  html.js .reveal {
+    opacity: 0;
+    transform: translateY(20px);
+    transition:
+      opacity 0.6s ease,
+      transform 0.6s ease;
+    will-change: opacity, transform;
+  }
+  html.js .reveal.is-visible {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+/* Respect reduced-motion: neutralize all animation/transition. */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}

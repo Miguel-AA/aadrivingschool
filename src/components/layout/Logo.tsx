@@ -1,5 +1,5 @@
 import { Star } from "lucide-react";
-import { useTranslations } from "next-intl";
+import { useTranslations } from "@/i18n";
 import { siteConfig } from "@/config/site";
 import { cn } from "@/lib/utils/cn";
 

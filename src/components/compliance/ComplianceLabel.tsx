@@ -1,4 +1,4 @@
-import { useTranslations } from "next-intl";
+import { useTranslations } from "@/i18n";
 import type { ComplianceLabelKey } from "@/lib/schemas/content";
 import { cn } from "@/lib/utils/cn";
 

@@ -1,26 +1,18 @@
-"use client";
-
-import { useLocale, useTranslations } from "next-intl";
-import { usePathname, useRouter } from "@/i18n/navigation";
+import { useLocale, useSetLocale, useTranslations } from "@/i18n";
 import { routing, type Locale } from "@/i18n/routing";
 import { cn } from "@/lib/utils/cn";
 
 /**
- * Switches locale while preserving the current path and query string. Reads
- * `window.location.search` at click time to avoid a useSearchParams Suspense
- * de-opt on otherwise-static pages.
+ * Switches the active locale (tracked in React state / localStorage). The SPA
+ * re-renders translated copy in place without changing the URL.
  */
 export function LanguageToggle({ className }: { className?: string }) {
   const locale = useLocale();
+  const setLocale = useSetLocale();
   const t = useTranslations("common");
-  const pathname = usePathname();
-  const router = useRouter();
 
   const select = (next: Locale) => {
-    if (next === locale) return;
-    const search =
-      typeof window !== "undefined" ? window.location.search : "";
-    router.replace(`${pathname}${search}`, { locale: next });
+    if (next !== locale) setLocale(next);
   };
 
   return (

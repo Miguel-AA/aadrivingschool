@@ -1,7 +1,6 @@
-"use client";
 
 import { ArrowRight, RotateCcw } from "lucide-react";
-import { useLocale, useTranslations } from "next-intl";
+import { useLocale, useTranslations } from "@/i18n";
 import type { Recommendation } from "@/lib/quiz/engine";
 import { getCourseById, getPackageById } from "@/content";
 import { getLocalized } from "@/lib/utils/locale";
