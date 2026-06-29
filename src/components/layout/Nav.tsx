@@ -18,14 +18,14 @@ export function Nav() {
             aria-current={active ? "page" : undefined}
             className={cn(
               "group relative text-sm font-medium transition-colors",
-              active ? "text-brand-700" : "text-slate-700 hover:text-brand-700",
+              active ? "text-white" : "text-brand-100 hover:text-white",
             )}
           >
             {t(`nav.${link.labelKey}`)}
             <span
               aria-hidden="true"
               className={cn(
-                "absolute -bottom-1.5 left-0 h-0.5 rounded-full bg-gradient-to-r from-brand-600 to-ocean-500 transition-all duration-300",
+                "absolute -bottom-1.5 left-0 h-0.5 rounded-full bg-gradient-to-r from-accent-400 to-accent-500 transition-all duration-300",
                 active ? "w-full" : "w-0 group-hover:w-full",
               )}
             />

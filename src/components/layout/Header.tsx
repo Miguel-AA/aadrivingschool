@@ -27,19 +27,19 @@ export function Header() {
       className={cn(
         "sticky top-0 z-50 border-b backdrop-blur transition-shadow",
         scrolled
-          ? "border-slate-200 bg-white/85 shadow-sm"
-          : "border-transparent bg-white/70",
+          ? "border-white/10 bg-brand-900/95 shadow-md shadow-brand-950/30"
+          : "border-white/10 bg-brand-900/80",
       )}
     >
       <div className="mx-auto flex max-w-6xl items-center justify-between gap-4 px-4 py-3 sm:px-6 lg:px-8">
         <Link href="/" aria-label={t("brandTagline")}>
-          <Logo />
+          <Logo tone="dark" />
         </Link>
 
         <Nav />
 
         <div className="flex items-center gap-3">
-          <LanguageToggle className="hidden sm:inline-flex" />
+          <LanguageToggle tone="dark" className="hidden sm:inline-flex" />
           <CTAButton
             href="/quiz"
             eventName={EVENTS.CTA_CLICK}
