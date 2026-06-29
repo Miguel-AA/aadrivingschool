@@ -40,15 +40,24 @@ export function Section({
   return (
     <section
       id={id}
-      className={cn(
-        tones[tone],
-        "py-12 sm:py-20",
-        dark && "relative overflow-hidden",
-        className,
-      )}
+      className={cn(tones[tone], "relative overflow-hidden py-12 sm:py-20", className)}
     >
-      {dark && <SectionCurve edge="top" />}
-      {dark && blendBottom && <SectionCurve edge="bottom" />}
+      {dark ? (
+        <>
+          <SectionCurve edge="top" />
+          {blendBottom && <SectionCurve edge="bottom" />}
+        </>
+      ) : (
+        // Light sections get a soft color glow in the background for "brillo" —
+        // subtle enough to keep cards and text fully readable.
+        <div
+          aria-hidden="true"
+          className="pointer-events-none absolute inset-0 overflow-hidden"
+        >
+          <div className="absolute -left-24 top-0 h-72 w-72 rounded-full bg-ocean-400/15 blur-3xl" />
+          <div className="absolute -right-20 bottom-0 h-72 w-72 rounded-full bg-accent-300/15 blur-3xl" />
+        </div>
+      )}
       <div className="relative z-10 mx-auto w-full max-w-6xl px-5 sm:px-6 lg:px-8">
         {children}
       </div>

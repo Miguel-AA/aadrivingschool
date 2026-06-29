@@ -12,12 +12,22 @@ export function Footer() {
   const year = new Date().getFullYear();
 
   return (
-    <footer className="bg-brand-950 text-slate-300">
+    <footer className="relative overflow-hidden border-t border-white/10 bg-gradient-to-r from-brand-950 via-brand-900 to-brand-950 text-slate-300">
+      {/* Bright accent line along the top edge — mirrors the header. */}
+      <span
+        aria-hidden="true"
+        className="pointer-events-none absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-ocean-400 to-transparent"
+      />
+      {/* Vibrant blue glow for "brillo" — same spotlight as the header. */}
       <div
         aria-hidden="true"
-        className="h-1 w-full bg-gradient-to-r from-brand-500 via-ocean-500 to-accent-500"
-      />
-      <div className="mx-auto w-full max-w-6xl px-4 pt-14 pb-28 sm:px-6 lg:px-8 lg:pb-14">
+        className="pointer-events-none absolute inset-0 overflow-hidden"
+      >
+        <div className="absolute -top-16 left-1/2 h-32 w-2/3 -translate-x-1/2 rounded-full bg-ocean-500/25 blur-3xl" />
+        <div className="absolute -top-12 right-10 h-24 w-40 rounded-full bg-accent-500/15 blur-3xl" />
+      </div>
+
+      <div className="relative z-10 mx-auto w-full max-w-6xl px-4 pt-14 pb-28 sm:px-6 lg:px-8 lg:pb-14">
         <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-4">
           <div className="lg:col-span-2">
             <Logo tone="dark" size="lg" />
