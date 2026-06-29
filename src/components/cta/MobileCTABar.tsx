@@ -25,7 +25,7 @@ export function MobileCTABar() {
         </CTAButton>
         <WhatsAppCTA
           kind="default"
-          variant="secondary"
+          variant="accent"
           label="WhatsApp"
           className="flex-1 whitespace-nowrap py-3"
         />

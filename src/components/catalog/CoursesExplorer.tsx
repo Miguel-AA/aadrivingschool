@@ -57,7 +57,7 @@ export function CoursesExplorer({
   return (
     <div>
       <div
-        className="flex flex-wrap gap-2"
+        className="flex flex-wrap justify-center gap-2 sm:justify-start"
         role="group"
         aria-label={t("courses.filtersLabel")}
       >
