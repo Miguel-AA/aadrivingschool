@@ -71,7 +71,7 @@ export function Hero({
               text readable — heavier white on the text side, lighter on the right. */}
           <div
             aria-hidden="true"
-            className="absolute inset-0 -z-20 bg-gradient-to-r from-white/92 via-white/82 to-white/68 backdrop-blur-md backdrop-saturate-150"
+            className="absolute inset-0 -z-20 bg-gradient-to-r from-white/60 via-white/40 to-white/20 backdrop-blur-sm backdrop-saturate-150"
           />
         </>
       )}
@@ -100,7 +100,7 @@ export function Hero({
             {renderTitle(title, highlight)}
           </h1>
           {subtitle && (
-            <p className="mx-auto mt-5 max-w-xl text-base text-slate-600 sm:mx-0 sm:text-lg">
+            <p className="mx-auto mt-5 max-w-xl text-base text-slate-900 sm:mx-0 sm:text-lg">
               {subtitle}
             </p>
           )}
@@ -115,7 +115,7 @@ export function Hero({
                 <li
                   key={badge}
                   className={cn(
-                    "items-center gap-1.5 text-sm font-medium text-slate-600",
+                    "items-center gap-1.5 text-sm font-semibold text-slate-900",
                     // Keep the mobile hero calm: show at most 3 trust items.
                     i >= 3 ? "hidden sm:flex" : "flex",
                   )}
