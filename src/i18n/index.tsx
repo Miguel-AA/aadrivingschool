@@ -2,6 +2,7 @@ import {
   createContext,
   useCallback,
   useContext,
+  useEffect,
   useMemo,
   useState,
   type ReactNode,
@@ -113,6 +114,14 @@ export function LocaleProvider({ children }: { children: ReactNode }) {
     }
     return defaultLocale;
   });
+
+  // Keep <html lang> in sync with the active locale — including the initial
+  // value restored from localStorage (setLocale only runs on an explicit toggle).
+  useEffect(() => {
+    if (typeof document !== "undefined") {
+      document.documentElement.lang = locale;
+    }
+  }, [locale]);
 
   const setLocale = useCallback((next: Locale) => {
     setLocaleState(next);

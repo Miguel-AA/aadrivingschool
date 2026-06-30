@@ -45,6 +45,9 @@
   --animate-float-slow: float 11s ease-in-out infinite;
   --animate-gradient: gradient-shift 14s ease infinite;
   --animate-shimmer: shimmer 2.5s linear infinite;
+  /* Slow, organic drift for the page-level decorative blobs. */
+  --animate-blob: blob 22s ease-in-out infinite;
+  --animate-blob-slow: blob 32s ease-in-out infinite;
 }
 
 @keyframes fade-up {
@@ -72,6 +75,18 @@
   }
   50% {
     transform: translate3d(0, -22px, 0) scale(1.04);
+  }
+}
+@keyframes blob {
+  0%,
+  100% {
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+  33% {
+    transform: translate3d(48px, -36px, 0) scale(1.12);
+  }
+  66% {
+    transform: translate3d(-36px, 28px, 0) scale(0.92);
   }
 }
 @keyframes gradient-shift {

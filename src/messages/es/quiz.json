@@ -1,21 +1,21 @@
 {
-  "title": "[ES] Find My Course",
-  "intro": "[ES] Answer a few quick questions and we'll point you to the right path. This is guidance to help you choose — no outcome is guaranteed.",
-  "start": "[ES] Start",
-  "next": "[ES] Next",
-  "back": "[ES] Back",
-  "seeResult": "[ES] See my recommendation",
-  "progress": "[ES] Question {current} of {total}",
-  "selectPrompt": "[ES] Choose one to continue.",
+  "title": "Buscar mi curso",
+  "intro": "Responde unas preguntas rápidas y te indicaremos la ruta adecuada. Es orientación para ayudarte a elegir — no se garantiza ningún resultado.",
+  "start": "Comenzar",
+  "next": "Siguiente",
+  "back": "Atrás",
+  "seeResult": "Ver mi recomendación",
+  "progress": "Pregunta {current} de {total}",
+  "selectPrompt": "Elige una opción para continuar.",
   "result": {
-    "heading": "[ES] Here's what we recommend",
-    "reasonHeading": "[ES] Why this fits",
-    "fallbackReason": "[ES] Based on your answers, this is a great place to start. If you're not sure, contact us and we'll help you choose.",
-    "recommendedCourse": "[ES] Recommended course",
-    "recommendedPackage": "[ES] Recommended package",
-    "viewDetails": "[ES] View details",
-    "getStarted": "[ES] Send my info to get started",
-    "askWhatsApp": "[ES] Ask on WhatsApp",
-    "retake": "[ES] Start over"
+    "heading": "Esto es lo que te recomendamos",
+    "reasonHeading": "Por qué te conviene",
+    "fallbackReason": "Según tus respuestas, este es un excelente punto de partida. Si tienes dudas, contáctanos y te ayudamos a elegir.",
+    "recommendedCourse": "Curso recomendado",
+    "recommendedPackage": "Paquete recomendado",
+    "viewDetails": "Ver detalles",
+    "getStarted": "Enviar mi información para empezar",
+    "askWhatsApp": "Preguntar por WhatsApp",
+    "retake": "Empezar de nuevo"
   }
 }

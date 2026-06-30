@@ -1,15 +1,15 @@
 {
   "common": {
-    "relatedCourses": "[ES] Related prep tools",
-    "relatedPackages": "[ES] Related pathways",
-    "faqHeading": "[ES] Questions before you start",
-    "ctaHeading": "[ES] Tell us what you need",
-    "ctaBody": "[ES] Share your situation and our team will follow up with the right next step."
+    "relatedCourses": "Herramientas de preparación relacionadas",
+    "relatedPackages": "Rutas relacionadas",
+    "faqHeading": "Preguntas antes de empezar",
+    "ctaHeading": "Cuéntanos qué necesitas",
+    "ctaBody": "Comparte tu situación y nuestro equipo te contactará con el siguiente paso adecuado."
   },
   "spanish": {
-    "eyebrow": "Ayuda en Español",
-    "title": "Ayuda para conducir en Florida, en español",
-    "subtitle": "Recibe explicaciones en español sobre la preparación del permiso, las rutas para conductores, la educación por multas y el proceso de manejo en Florida.",
+    "eyebrow": "Ayuda en español",
+    "title": "Ayuda de manejo en español para Florida",
+    "subtitle": "Recibe explicaciones en español sobre la preparación del permiso, las rutas para conductores, la educación relacionada con multas y el proceso de manejo en Florida.",
     "primaryCta": "Recibir ayuda en español",
     "whatsappCta": "Chatear por WhatsApp",
     "relatedPackages": "Rutas de apoyo en español",
@@ -19,48 +19,48 @@
     "ctaBody": "Cuéntanos tu situación y te ayudamos a entender el siguiente paso en español."
   },
   "permit": {
-    "eyebrow": "[ES] Permit Test Prep",
-    "title": "[ES] Prepare for the Florida permit exam with confidence",
-    "subtitle": "[ES] Practice questions, study tools, and clear explanations designed to help Florida drivers prepare for the knowledge exam in English or Spanish.",
-    "primaryCta": "[ES] Get Permit Prep",
-    "secondaryCta": "[ES] Practice in Spanish",
-    "relatedPackages": "[ES] Related pathways",
-    "relatedCourses": "[ES] Related prep tools",
-    "faqHeading": "[ES] Permit prep questions",
-    "ctaHeading": "[ES] Get help preparing for the permit process",
-    "ctaBody": "[ES] Tell us what you need help with and our team will follow up."
+    "eyebrow": "Preparación del examen del permiso",
+    "title": "Prepárate con confianza para el examen de permiso de Florida",
+    "subtitle": "Preguntas de práctica, herramientas de estudio y explicaciones claras para prepararte para el permiso de Florida en inglés o español.",
+    "primaryCta": "Obtener preparación del permiso",
+    "secondaryCta": "Practicar en español",
+    "relatedPackages": "Rutas relacionadas",
+    "relatedCourses": "Herramientas de preparación relacionadas",
+    "faqHeading": "Preguntas sobre la preparación del permiso",
+    "ctaHeading": "Recibe ayuda para prepararte para el proceso del permiso",
+    "ctaBody": "Cuéntanos en qué necesitas ayuda y nuestro equipo te contactará."
   },
   "ticket": {
-    "eyebrow": "[ES] Ticket Help",
-    "title": "[ES] Got a traffic ticket? Understand your options first.",
-    "subtitle": "[ES] Florida Top 1 Driving School is building structured ticket education pathways to help drivers understand traffic-school related options and next steps.",
-    "primaryCta": "[ES] Check My Options",
-    "secondaryCta": "[ES] Ask a question",
-    "relatedPackages": "[ES] Ticket education pathways",
-    "relatedCourses": "[ES] Related education tools",
-    "faqHeading": "[ES] Ticket education questions",
-    "ctaHeading": "[ES] Understand your ticket education options",
-    "ctaBody": "[ES] Tell us what happened and our team will help you understand the next step."
+    "eyebrow": "Ayuda con multas",
+    "title": "¿Recibiste un ticket de tránsito? Entiende tus opciones primero.",
+    "subtitle": "Florida Top 1 Driving School está construyendo rutas estructuradas de educación sobre multas para ayudar a los conductores a entender las opciones relacionadas con la escuela de tráfico y los próximos pasos.",
+    "primaryCta": "Revisar mis opciones",
+    "secondaryCta": "Hacer una pregunta",
+    "relatedPackages": "Rutas de educación sobre multas",
+    "relatedCourses": "Herramientas educativas relacionadas",
+    "faqHeading": "Preguntas sobre educación sobre multas",
+    "ctaHeading": "Entiende tus opciones de educación sobre multas",
+    "ctaBody": "Cuéntanos qué pasó y nuestro equipo te ayudará a entender el siguiente paso."
   },
   "reinstatement": {
-    "eyebrow": "[ES] License Reinstatement",
-    "title": "[ES] Suspended license? Let's map your next steps.",
-    "subtitle": "[ES] Suspension situations are time-sensitive. We explain the Advanced Driver Improvement (ADI) path where it applies and general first steps. Your status is determined by the state and any court orders — this is guidance, not legal advice, and no outcome is guaranteed.",
-    "primaryCta": "[ES] Get Reinstatement Guidance",
-    "secondaryCta": "[ES] Ask on WhatsApp"
+    "eyebrow": "Reinstalación de licencia",
+    "title": "¿Licencia suspendida? Tracemos juntos tus próximos pasos.",
+    "subtitle": "Las situaciones de suspensión son urgentes. Explicamos la ruta del curso Advanced Driver Improvement (ADI) cuando corresponde y los primeros pasos generales. Tu estado lo determinan el estado y cualquier orden judicial — esto es orientación, no asesoría legal, y no se garantiza ningún resultado.",
+    "primaryCta": "Obtener orientación de reinstalación",
+    "secondaryCta": "Preguntar por WhatsApp"
   },
   "mature": {
-    "eyebrow": "[ES] 55+ Mature Driver",
-    "title": "[ES] A safety refresher built for drivers 55 and older",
-    "subtitle": "[ES] Take an approved Mature Driver course online and get guidance on submitting completion to your insurer. Any premium discount is determined solely by your insurance company — we can't promise one.",
-    "primaryCta": "[ES] Start the 55+ Course",
-    "secondaryCta": "[ES] Ask a question"
+    "eyebrow": "Conductor maduro 55+",
+    "title": "Un repaso de seguridad pensado para conductores de 55 años en adelante",
+    "subtitle": "Toma un curso aprobado para conductores maduros en línea y recibe orientación para enviar tu constancia de finalización a tu aseguradora. Cualquier descuento en la prima lo determina únicamente tu compañía de seguros — no podemos prometerlo.",
+    "primaryCta": "Empezar el curso 55+",
+    "secondaryCta": "Hacer una pregunta"
   },
   "newfl": {
-    "eyebrow": "[ES] New to Florida",
-    "title": "[ES] New to Florida? Build your licensing checklist.",
-    "subtitle": "[ES] Whether you're moving from another state or another country, we help you understand the Florida process, the documents commonly needed, and the right prep — in English and Spanish. General guidance only; always confirm current requirements with official sources.",
-    "primaryCta": "[ES] Build My Checklist",
-    "secondaryCta": "[ES] Get Help in Spanish"
+    "eyebrow": "Nuevo en Florida",
+    "title": "¿Nuevo en Florida? Arma tu lista de pasos para la licencia.",
+    "subtitle": "Ya sea que te mudes de otro estado o de otro país, te ayudamos a entender el proceso de Florida, los documentos que suelen necesitarse y la preparación adecuada — en inglés y español. Solo orientación general; confirma siempre los requisitos vigentes con fuentes oficiales.",
+    "primaryCta": "Armar mi lista",
+    "secondaryCta": "Recibir ayuda en español"
   }
 }

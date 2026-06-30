@@ -1,73 +1,73 @@
 {
   "brandTagline": "West Palm Beach y todo Florida",
-  "skipToContent": "[ES] Skip to content",
-  "openMenu": "[ES] Open menu",
-  "closeMenu": "[ES] Close menu",
+  "skipToContent": "Saltar al contenido",
+  "openMenu": "Abrir menú",
+  "closeMenu": "Cerrar menú",
   "nav": {
     "home": "Inicio",
-    "courses": "[ES] Courses",
-    "packages": "[ES] Packages",
-    "permitPrep": "[ES] Permit Prep",
-    "spanishHelp": "[ES] Spanish Help",
-    "ticketHelp": "[ES] Ticket Help",
-    "licenseReinstatement": "[ES] License Reinstatement",
-    "maturePlus": "[ES] 55+ Driver",
-    "newToFlorida": "[ES] New to Florida",
-    "quiz": "[ES] Find My Best Option",
-    "contact": "[ES] Contact"
+    "courses": "Cursos",
+    "packages": "Paquetes",
+    "permitPrep": "Permiso",
+    "spanishHelp": "Ayuda en español",
+    "ticketHelp": "Multas",
+    "licenseReinstatement": "Reinstalación de licencia",
+    "maturePlus": "Conductor 55+",
+    "newToFlorida": "Nuevo en Florida",
+    "quiz": "Buscar mi opción",
+    "contact": "Contacto"
   },
   "cta": {
-    "findMyCourse": "[ES] Find My Best Option",
-    "startNow": "[ES] Start Now",
-    "learnMore": "[ES] Learn More",
-    "getHelpSpanish": "[ES] Get Help in Spanish",
-    "chatWhatsApp": "[ES] Chat on WhatsApp",
-    "requestInfo": "[ES] Request Info",
-    "getStarted": "[ES] Get Started",
-    "viewAllCourses": "[ES] View All Courses",
-    "viewDetails": "[ES] View Details",
-    "askWhatINeed": "[ES] Ask What I Need",
-    "contactUs": "[ES] Contact Us"
+    "findMyCourse": "Buscar mi opción",
+    "startNow": "Empezar ahora",
+    "learnMore": "Conocer más",
+    "getHelpSpanish": "Recibir ayuda en español",
+    "chatWhatsApp": "Chatear por WhatsApp",
+    "requestInfo": "Solicitar información",
+    "getStarted": "Empezar",
+    "viewAllCourses": "Ver todos los cursos",
+    "viewDetails": "Ver detalles",
+    "askWhatINeed": "Preguntar qué necesito",
+    "contactUs": "Contáctanos"
   },
   "languageToggle": {
-    "label": "[ES] Language",
-    "en": "[ES] English",
-    "es": "[ES] Español",
-    "switchTo": "[ES] Switch to {language}"
+    "label": "Idioma",
+    "en": "English",
+    "es": "Español",
+    "switchTo": "Cambiar a {language}"
   },
   "footer": {
-    "tagline": "[ES] Online Florida driving courses, permit preparation, and license support — in English and Spanish.",
-    "exploreHeading": "[ES] Explore",
-    "supportHeading": "[ES] Support",
-    "legalHeading": "[ES] Legal",
-    "privacy": "[ES] Privacy",
-    "terms": "[ES] Terms",
-    "rights": "[ES] © {year} {name}. All rights reserved."
+    "tagline": "Cursos de manejo online en Florida, preparación para el permiso y apoyo con la licencia — en inglés y español.",
+    "exploreHeading": "Explorar",
+    "supportHeading": "Soporte",
+    "legalHeading": "Legal",
+    "privacy": "Privacidad",
+    "terms": "Términos",
+    "rights": "© {year} {name}. Todos los derechos reservados."
   },
   "whatsapp": {
-    "defaultMessage": "[ES] Hi! I'd like help choosing the right Florida driving course.",
-    "courseMessage": "[ES] Hi! I have a question about the {item} course.",
-    "recommendationMessage": "[ES] Hi! The Course Finder recommended {item}. Can you help me get started?"
+    "defaultMessage": "¡Hola! Me gustaría recibir ayuda para elegir el curso de manejo adecuado en Florida.",
+    "courseMessage": "¡Hola! Tengo una pregunta sobre el curso {item}.",
+    "recommendationMessage": "¡Hola! El buscador de cursos me recomendó {item}. ¿Me pueden ayudar a empezar?"
   },
   "leon": {
     "label": "Chatea con Leon",
     "title": "Leon",
     "status": "Asistente IA",
-    "welcome": "¡Hola! Soy Leon, tu asistente de AA Driving School. 🚗 Pregúntame lo que quieras sobre nuestros cursos, permisos o cómo empezar.",
+    "welcome": "¡Hola! Soy Leon, tu asistente de Florida Top 1 Driving School. 🚗 Pregúntame lo que quieras sobre nuestros cursos, permisos o cómo empezar.",
     "ack": "¡Gracias por tu mensaje! 🙌 Nuestro equipo recibirá tu pregunta y te responderá muy pronto.",
     "placeholder": "Escribe tu mensaje…",
     "send": "Enviar mensaje",
     "close": "Cerrar chat"
   },
   "notFound": {
-    "title": "[ES] Page not found",
-    "body": "[ES] Sorry, we couldn't find that page. Let's get you back on track.",
-    "cta": "[ES] Go to homepage"
+    "title": "Página no encontrada",
+    "body": "Lo sentimos, no pudimos encontrar esa página. Te ayudamos a volver al camino correcto.",
+    "cta": "Ir al inicio"
   },
   "badges": {
-    "popular": "[ES] Popular",
-    "mostPopular": "[ES] Most Popular",
-    "bestSpanish": "[ES] Best for Spanish Support",
-    "parentFavorite": "[ES] Parent Favorite"
+    "popular": "Popular",
+    "mostPopular": "Más popular",
+    "bestSpanish": "Mejor para soporte en español",
+    "parentFavorite": "Favorito de los padres"
   }
 }

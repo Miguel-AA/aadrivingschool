@@ -1,6 +1,23 @@
-import type { ReactNode } from "react";
+import type { CSSProperties, ReactNode } from "react";
 import { Check } from "lucide-react";
 import { cn } from "@/lib/utils/cn";
+
+// Curved bottom edge carved out with a CSS mask so the page-level animated
+// backdrop shows through the curve — no white line at the seam.
+const HERO_BOTTOM_WAVE = `url("data:image/svg+xml,${encodeURIComponent(
+  "<svg xmlns='http://www.w3.org/2000/svg' preserveAspectRatio='none' viewBox='0 0 1440 100'><path d='M0 0 L1440 0 L1440 55 Q720 -5 0 55 Z' fill='#000'/></svg>",
+)}")`;
+const HERO_WAVE_H = "4rem"; // 64px curved band
+const heroMaskStyle: CSSProperties = {
+  WebkitMaskImage: `linear-gradient(#000, #000), ${HERO_BOTTOM_WAVE}`,
+  maskImage: `linear-gradient(#000, #000), ${HERO_BOTTOM_WAVE}`,
+  WebkitMaskRepeat: "no-repeat",
+  maskRepeat: "no-repeat",
+  WebkitMaskPosition: "top, bottom",
+  maskPosition: "top, bottom",
+  WebkitMaskSize: `100% calc(100% - ${HERO_WAVE_H} + 1px), 100% ${HERO_WAVE_H}`,
+  maskSize: `100% calc(100% - ${HERO_WAVE_H} + 1px), 100% ${HERO_WAVE_H}`,
+};
 
 interface HeroProps {
   eyebrow?: string;
@@ -47,6 +64,7 @@ export function Hero({
 }: HeroProps) {
   return (
     <div
+      style={heroMaskStyle}
       className={cn(
         "relative isolate overflow-hidden bg-gradient-to-b from-brand-50/80 via-white to-white",
         className,
@@ -83,9 +101,6 @@ export function Hero({
         <div className="absolute -right-20 top-1/3 h-72 w-72 rounded-full bg-accent-200/40 blur-3xl animate-float" />
         <div className="absolute -bottom-24 left-1/4 h-72 w-72 rounded-full bg-accent-100/50 blur-3xl animate-float-slow" />
         <div className="absolute inset-0 bg-dot-grid text-slate-300/30" />
-        {/* Fade the whole decorative backdrop to white at the bottom so the hero
-            dissolves into the section below with no hard seam. */}
-        <div className="absolute inset-x-0 bottom-0 h-32 bg-gradient-to-b from-transparent to-white" />
       </div>
 
       <div className="mx-auto w-full max-w-6xl px-5 py-20 sm:px-6 sm:py-32 lg:grid lg:grid-cols-[1.05fr_0.95fr] lg:items-center lg:gap-12 lg:px-8 lg:py-44">
@@ -137,18 +152,6 @@ export function Hero({
           </div>
         )}
       </div>
-
-      {/* Curved bottom edge: a white shape that arcs up into the hero so it
-          flows into the section below without a hard horizontal seam. */}
-      <svg
-        aria-hidden="true"
-        className="pointer-events-none absolute inset-x-0 bottom-[-1px] z-0 block h-10 w-full text-white sm:h-14 lg:h-20"
-        viewBox="0 0 1440 100"
-        preserveAspectRatio="none"
-        fill="none"
-      >
-        <path d="M0 100 L0 55 Q720 -5 1440 55 L1440 100 Z" fill="currentColor" />
-      </svg>
     </div>
   );
 }

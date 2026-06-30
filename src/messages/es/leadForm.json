@@ -1,36 +1,36 @@
 {
-  "heading": "[ES] Tell us a bit about you",
-  "subheading": "[ES] We'll follow up with the right next step. Fields marked * are required.",
+  "heading": "Cuéntanos un poco sobre ti",
+  "subheading": "Te contactaremos con el siguiente paso adecuado. Los campos marcados con * son obligatorios.",
   "fields": {
-    "name": "[ES] Full name",
-    "phone": "[ES] Phone",
-    "email": "[ES] Email",
-    "city": "[ES] City",
-    "language": "[ES] Preferred language",
-    "situation": "[ES] How can we help? (optional)",
-    "consent": "[ES] I agree to be contacted about my request and have read the privacy note."
+    "name": "Nombre completo",
+    "phone": "Teléfono",
+    "email": "Correo electrónico",
+    "city": "Ciudad",
+    "language": "Idioma preferido",
+    "situation": "¿Cómo podemos ayudarte? (opcional)",
+    "consent": "Acepto que me contacten sobre mi solicitud y he leído la nota de privacidad."
   },
   "languageOptions": {
-    "en": "[ES] English",
-    "es": "[ES] Spanish"
+    "en": "Inglés",
+    "es": "Español"
   },
-  "submit": "[ES] Send my request",
-  "submitting": "[ES] Sending…",
+  "submit": "Enviar mi solicitud",
+  "submitting": "Enviando…",
   "success": {
-    "heading": "[ES] Thanks — we got your request!",
-    "body": "[ES] We'll reach out shortly with your next step. Prefer to talk now? Message us on WhatsApp."
+    "heading": "¡Gracias — recibimos tu solicitud!",
+    "body": "Te contactaremos en breve con tu siguiente paso. ¿Prefieres hablar ahora? Escríbenos por WhatsApp."
   },
   "error": {
-    "heading": "[ES] Something went wrong",
-    "body": "[ES] Please try again, or contact us directly.",
-    "fallback": "[ES] If this keeps happening, email us at {email} or message us on WhatsApp."
+    "heading": "Algo salió mal",
+    "body": "Inténtalo de nuevo o contáctanos directamente.",
+    "fallback": "Si esto sigue ocurriendo, escríbenos a {email} o por WhatsApp."
   },
   "validation": {
-    "name": "[ES] Please enter your name.",
-    "phone": "[ES] Please enter a valid phone number.",
-    "email": "[ES] Please enter a valid email address.",
-    "city": "[ES] Please enter your city.",
-    "consent": "[ES] Please agree to be contacted so we can help."
+    "name": "Por favor, ingresa tu nombre.",
+    "phone": "Por favor, ingresa un número de teléfono válido.",
+    "email": "Por favor, ingresa un correo electrónico válido.",
+    "city": "Por favor, ingresa tu ciudad.",
+    "consent": "Por favor, acepta que te contactemos para poder ayudarte."
   },
-  "privacyNote": "[ES] We only collect what we need to help you, and we never sell your information."
+  "privacyNote": "Solo recopilamos lo necesario para ayudarte, y nunca vendemos tu información."
 }

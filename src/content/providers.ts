@@ -12,6 +12,7 @@ const providers: Provider[] = [
     name: "Approved Course Partner",
     attributionText: loc(
       "This course is delivered through an approved course provider. Provider details will be confirmed before enrollment opens.",
+      "Este curso se imparte a través de un proveedor de cursos aprobado. Los datos del proveedor se confirmarán antes de que abra la inscripción.",
     ),
     enrollmentUrl: null,
   },

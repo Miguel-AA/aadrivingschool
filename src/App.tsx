@@ -2,6 +2,7 @@ import { Routes, Route } from "react-router-dom";
 import { useTranslations } from "@/i18n";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
+import { PageBackground } from "@/components/layout/PageBackground";
 import { MobileCTABar } from "@/components/cta/MobileCTABar";
 import { FloatingChat } from "@/components/cta/FloatingChat";
 import { ScrollToTop } from "@/components/util/ScrollToTop";
@@ -22,7 +23,8 @@ import { NotFound } from "@/pages/NotFound";
 export function App() {
   const t = useTranslations("common");
   return (
-    <div className="flex min-h-screen flex-col bg-white text-slate-900">
+    <div className="flex min-h-screen flex-col text-slate-900">
+      <PageBackground />
       <ScrollToTop />
       <a
         href="#main-content"

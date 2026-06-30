@@ -1,4 +1,4 @@
-import type { ReactNode } from "react";
+import type { CSSProperties, ReactNode } from "react";
 import { cn } from "@/lib/utils/cn";
 
 interface SectionProps {
@@ -15,17 +15,54 @@ interface SectionProps {
   id?: string;
 }
 
-// `muted` is a vertical white→off-white→white gradient so the section melts into
-// the white sections around it instead of showing a hard color seam.
-// `brand` and `dark` share the same bright blue so every blue section is
-// consistent — they get a glowing "spotlight" treatment like the header/footer.
+// Light tones (`white`/`muted`) are transparent so the single page-level
+// animated backdrop (`PageBackground`) shows through continuously — no per-
+// section seams. `brand` and `dark` share the same bright blue so every blue
+// section is consistent — they're opaque and cover the backdrop, getting a
+// glowing "spotlight" treatment like the header/footer.
 const BLUE = "bg-gradient-to-br from-brand-700 via-brand-600 to-ocean-600 text-white";
 const tones = {
-  white: "bg-white",
-  muted: "bg-gradient-to-b from-white via-slate-50 to-white",
+  white: "bg-transparent",
+  muted: "bg-transparent",
   brand: BLUE,
   dark: BLUE,
 };
+
+// Curved edges are carved out of the blue section with a CSS mask (instead of
+// painting a white curve over it). This reveals the page-level animated
+// backdrop directly through the curve, so there's no white line at the seam no
+// matter what color the backdrop happens to be there.
+const enc = (svg: string) => `url("data:image/svg+xml,${encodeURIComponent(svg)}")`;
+// Top wave: opaque (keeps blue) below the curve, transparent above.
+const TOP_WAVE = enc(
+  "<svg xmlns='http://www.w3.org/2000/svg' preserveAspectRatio='none' viewBox='0 0 1440 56'><path d='M0 26 C340 54 1100 54 1440 26 L1440 56 L0 56 Z' fill='#000'/></svg>",
+);
+// Bottom wave: opaque above the curve, transparent below.
+const BOTTOM_WAVE = enc(
+  "<svg xmlns='http://www.w3.org/2000/svg' preserveAspectRatio='none' viewBox='0 0 1440 56'><path d='M0 30 C340 2 1100 2 1440 30 L1440 0 L0 0 Z' fill='#000'/></svg>",
+);
+const MID = "linear-gradient(#000, #000)";
+const WAVE_H = "2.25rem"; // 36px band height per curve
+
+function blueMaskStyle(blendBottom: boolean): CSSProperties {
+  const image = blendBottom
+    ? `${TOP_WAVE}, ${MID}, ${BOTTOM_WAVE}`
+    : `${TOP_WAVE}, ${MID}`;
+  const position = blendBottom ? "top, center, bottom" : "top, bottom";
+  const size = blendBottom
+    ? `100% ${WAVE_H}, 100% calc(100% - (${WAVE_H} * 2) + 1px), 100% ${WAVE_H}`
+    : `100% ${WAVE_H}, 100% calc(100% - ${WAVE_H} + 1px)`;
+  return {
+    WebkitMaskImage: image,
+    maskImage: image,
+    WebkitMaskRepeat: "no-repeat",
+    maskRepeat: "no-repeat",
+    WebkitMaskPosition: position,
+    maskPosition: position,
+    WebkitMaskSize: size,
+    maskSize: size,
+  };
+}
 
 /** Full-width section with a centered, padded container. */
 export function Section({
@@ -35,61 +72,31 @@ export function Section({
   blendBottom = true,
   id,
 }: SectionProps) {
-  // Dark/brand sections get a soft white curved divider at their edges so they
-  // ease in/out of the light sections around them with a clean curve — no hard
-  // line and no muddy white haze over the blue.
+  // Blue (brand/dark) sections get curved edges carved out via a mask so they
+  // ease into the surrounding light sections with a clean curve — no hard line
+  // and no white seam over the animated backdrop.
   const dark = tone === "brand" || tone === "dark";
   return (
     <section
       id={id}
+      style={dark ? blueMaskStyle(blendBottom) : undefined}
       className={cn(tones[tone], "relative overflow-hidden py-12 sm:py-20", className)}
     >
       {dark ? (
-        <>
-          {/* Brilliant blue glow — same luminous spotlight as the header/footer. */}
-          <div
-            aria-hidden="true"
-            className="pointer-events-none absolute inset-0 overflow-hidden"
-          >
-            <div className="absolute -top-24 left-1/2 h-80 w-2/3 -translate-x-1/2 rounded-full bg-ocean-400/30 blur-3xl" />
-            <div className="absolute -bottom-24 right-0 h-72 w-1/2 rounded-full bg-ocean-300/20 blur-3xl" />
-            <div className="absolute -left-10 top-1/3 h-56 w-56 rounded-full bg-accent-400/10 blur-3xl" />
-          </div>
-          <SectionCurve edge="top" />
-          {blendBottom && <SectionCurve edge="bottom" />}
-        </>
-      ) : (
-        // Light sections get a soft color glow in the background for "brillo" —
-        // subtle enough to keep cards and text fully readable.
+        // Brilliant blue glow — same luminous spotlight as the header/footer.
         <div
           aria-hidden="true"
           className="pointer-events-none absolute inset-0 overflow-hidden"
         >
-          <div className="absolute -left-24 top-0 h-72 w-72 rounded-full bg-ocean-400/15 blur-3xl" />
-          <div className="absolute -right-20 bottom-0 h-72 w-72 rounded-full bg-accent-300/15 blur-3xl" />
+          <div className="absolute -top-24 left-1/2 h-80 w-2/3 -translate-x-1/2 rounded-full bg-ocean-400/30 blur-3xl" />
+          <div className="absolute -bottom-24 right-0 h-72 w-1/2 rounded-full bg-ocean-300/20 blur-3xl" />
+          <div className="absolute -left-10 top-1/3 h-56 w-56 rounded-full bg-accent-400/10 blur-3xl" />
         </div>
-      )}
+      ) : null}
       <div className="relative z-10 mx-auto w-full max-w-6xl px-5 sm:px-6 lg:px-8">
         {children}
       </div>
     </section>
-  );
-}
-
-/** White curved divider that blends a dark section into the light one beside it. */
-function SectionCurve({ edge }: { edge: "top" | "bottom" }) {
-  return (
-    <svg
-      aria-hidden="true"
-      viewBox="0 0 1440 56"
-      preserveAspectRatio="none"
-      className={cn(
-        "pointer-events-none absolute inset-x-0 z-0 h-6 w-full sm:h-9",
-        edge === "top" ? "top-0" : "bottom-0 rotate-180",
-      )}
-    >
-      <path d="M0,0 H1440 V26 C1100,54 340,54 0,26 Z" fill="#ffffff" />
-    </svg>
   );
 }
 
