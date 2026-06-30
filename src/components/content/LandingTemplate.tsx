@@ -73,7 +73,7 @@ export function LandingTemplate({
       {packages.length > 0 && (
         <Section tone="muted">
           <SectionHeading title={packagesHeading ?? t("relatedPackages")} />
-          <CatalogGrid>
+          <CatalogGrid count={packages.length}>
             {packages.map((pkg, i) => (
               <Reveal
                 key={pkg.id}
@@ -90,7 +90,7 @@ export function LandingTemplate({
       {courses.length > 0 && (
         <Section>
           <SectionHeading title={coursesHeading ?? t("relatedCourses")} />
-          <CatalogGrid>
+          <CatalogGrid count={courses.length}>
             {courses.map((course, i) => (
               <Reveal
                 key={course.id}
