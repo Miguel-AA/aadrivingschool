@@ -177,7 +177,7 @@ export function Hero({
               {eyebrow}
             </span>
           )}
-          <h1 className="mt-5 text-[2.4rem] font-extrabold leading-[1.07] tracking-tight text-slate-900 sm:text-5xl sm:leading-[1.05] lg:text-[3.5rem]">
+          <h1 className="mt-5 text-[2.4rem] font-extrabold leading-[1.07] tracking-tight text-brand-900 sm:text-5xl sm:leading-[1.05] lg:text-[3.5rem]">
             {renderTitle(title, highlight)}
           </h1>
           {subtitle && (
