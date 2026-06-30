@@ -17,12 +17,14 @@ interface SectionProps {
 
 // `muted` is a vertical white→off-white→white gradient so the section melts into
 // the white sections around it instead of showing a hard color seam.
+// `brand` and `dark` share the same bright blue so every blue section is
+// consistent — they get a glowing "spotlight" treatment like the header/footer.
+const BLUE = "bg-gradient-to-br from-brand-700 via-brand-600 to-ocean-600 text-white";
 const tones = {
   white: "bg-white",
   muted: "bg-gradient-to-b from-white via-slate-50 to-white",
-  brand:
-    "bg-gradient-to-br from-brand-700 via-brand-600 to-ocean-600 text-white",
-  dark: "bg-brand-950 text-white",
+  brand: BLUE,
+  dark: BLUE,
 };
 
 /** Full-width section with a centered, padded container. */
@@ -44,6 +46,15 @@ export function Section({
     >
       {dark ? (
         <>
+          {/* Brilliant blue glow — same luminous spotlight as the header/footer. */}
+          <div
+            aria-hidden="true"
+            className="pointer-events-none absolute inset-0 overflow-hidden"
+          >
+            <div className="absolute -top-24 left-1/2 h-80 w-2/3 -translate-x-1/2 rounded-full bg-ocean-400/30 blur-3xl" />
+            <div className="absolute -bottom-24 right-0 h-72 w-1/2 rounded-full bg-ocean-300/20 blur-3xl" />
+            <div className="absolute -left-10 top-1/3 h-56 w-56 rounded-full bg-accent-400/10 blur-3xl" />
+          </div>
           <SectionCurve edge="top" />
           {blendBottom && <SectionCurve edge="bottom" />}
         </>

@@ -7,9 +7,10 @@ const base =
   "inline-flex items-center justify-center gap-2 rounded-xl font-semibold transition-all duration-200 focus-visible:outline-2 focus-visible:outline-offset-2 disabled:cursor-not-allowed disabled:opacity-60 active:translate-y-0";
 
 const variants: Record<ButtonVariant, string> = {
-  // Warm orange = the primary action color everywhere.
+  // Metallic gold = the primary action color. Matches the "Explore pathway"
+  // card CTA: horizontal bright→deep gold gradient with dark navy text.
   primary:
-    "bg-gradient-to-r from-accent-500 to-accent-600 text-white shadow-sm shadow-accent-700/20 hover:-translate-y-0.5 hover:shadow-md hover:shadow-accent-700/30 hover:brightness-105 focus-visible:outline-accent-600",
+    "bg-gradient-to-r from-accent-300 to-accent-500 text-brand-950 shadow-sm shadow-accent-700/25 hover:-translate-y-0.5 hover:shadow-md hover:shadow-accent-700/30 hover:brightness-105 focus-visible:outline-accent-600",
   // Navy outline on light backgrounds.
   secondary:
     "border border-brand-200 bg-white text-brand-800 shadow-sm hover:-translate-y-0.5 hover:border-brand-300 hover:bg-brand-50 focus-visible:outline-brand-700",

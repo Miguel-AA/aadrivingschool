@@ -33,7 +33,7 @@ export function Logo({
         <span
           className={cn(
             "font-display font-extrabold tracking-tight",
-            lg ? "text-base sm:text-lg" : "text-sm sm:text-base",
+            lg ? "text-base sm:text-lg" : "whitespace-nowrap text-sm sm:text-base",
             tone === "dark" ? "text-white" : "text-brand-900",
           )}
         >

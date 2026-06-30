@@ -5,22 +5,22 @@
       <stop offset="1" stop-color="#0b1322"/>
     </linearGradient>
     <linearGradient id="ft1-body" x1="0" y1="0" x2="0" y2="1">
-      <stop offset="0" stop-color="#fb923c"/>
-      <stop offset="1" stop-color="#ea580c"/>
+      <stop offset="0" stop-color="#f7cf4d"/>
+      <stop offset="1" stop-color="#b9870f"/>
     </linearGradient>
   </defs>
   <rect x="0" y="0" width="48" height="48" rx="12" fill="url(#ft1-badge)"/>
   <rect x="0.6" y="0.6" width="46.8" height="46.8" rx="11.4" fill="none" stroke="#ffffff" stroke-opacity="0.08" stroke-width="1.2"/>
   <polygon points="24,9 38.5,15 24,21 9.5,15" fill="#ffffff"/>
   <polygon points="24,21 38.5,15 38.5,15.6 24,21.6" fill="#cbd5e1"/>
-  <path d="M24 15.2 L34 16.6 L34 21.5" fill="none" stroke="#fdba74" stroke-width="1.1" stroke-linecap="round" stroke-linejoin="round"/>
-  <circle cx="34" cy="22.4" r="1.7" fill="#f97316"/>
-  <circle cx="24" cy="15.2" r="1.9" fill="#f97316"/>
+  <path d="M24 15.2 L34 16.6 L34 21.5" fill="none" stroke="#f7cf4d" stroke-width="1.1" stroke-linecap="round" stroke-linejoin="round"/>
+  <circle cx="34" cy="22.4" r="1.7" fill="#dba514"/>
+  <circle cx="24" cy="15.2" r="1.9" fill="#dba514"/>
   <path d="M16.4 30 L18.8 24.6 Q19.1 24 19.8 24 L28.4 24 Q29.1 24 29.4 24.6 L31.8 30 Z" fill="#ffffff"/>
   <rect x="23.2" y="24.4" width="1.2" height="5.6" fill="#16223d"/>
   <rect x="11" y="29.4" width="26" height="6.2" rx="3.1" fill="url(#ft1-body)"/>
-  <rect x="33.4" y="31.2" width="2.6" height="1.8" rx="0.9" fill="#fff7ed"/>
-  <rect x="13" y="34.4" width="22" height="1.2" rx="0.6" fill="#9a3412" opacity="0.5"/>
+  <rect x="33.4" y="31.2" width="2.6" height="1.8" rx="0.9" fill="#fbf6e6"/>
+  <rect x="13" y="34.4" width="22" height="1.2" rx="0.6" fill="#5c4a0a" opacity="0.5"/>
   <circle cx="17.6" cy="35.6" r="3.4" fill="#16223d"/>
   <circle cx="17.6" cy="35.6" r="1.4" fill="#ffffff"/>
   <circle cx="30.4" cy="35.6" r="3.4" fill="#16223d"/>

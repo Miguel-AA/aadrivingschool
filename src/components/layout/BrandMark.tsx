@@ -36,8 +36,8 @@ export function BrandMark({
           <stop offset="1" stopColor="#0b1322" />
         </linearGradient>
         <linearGradient id={body} x1="0" y1="0" x2="0" y2="1">
-          <stop offset="0" stopColor="#fb923c" />
-          <stop offset="1" stopColor="#ea580c" />
+          <stop offset="0" stopColor="#f7cf4d" />
+          <stop offset="1" stopColor="#b9870f" />
         </linearGradient>
       </defs>
 
@@ -65,13 +65,13 @@ export function BrandMark({
       <path
         d="M24 15.2 L34 16.6 L34 21.5"
         fill="none"
-        stroke="#fdba74"
+        stroke="#f7cf4d"
         strokeWidth="1.1"
         strokeLinecap="round"
         strokeLinejoin="round"
       />
-      <circle cx="34" cy="22.4" r="1.7" fill="#f97316" />
-      <circle cx="24" cy="15.2" r="1.9" fill="#f97316" />
+      <circle cx="34" cy="22.4" r="1.7" fill="#dba514" />
+      <circle cx="24" cy="15.2" r="1.9" fill="#dba514" />
 
       {/* car — side silhouette */}
       {/* cabin / roof + windshield */}
@@ -83,8 +83,8 @@ export function BrandMark({
       {/* body hull */}
       <rect x="11" y="29.4" width="26" height="6.2" rx="3.1" fill={`url(#${body})`} />
       {/* headlight + sill accent */}
-      <rect x="33.4" y="31.2" width="2.6" height="1.8" rx="0.9" fill="#fff7ed" />
-      <rect x="13" y="34.4" width="22" height="1.2" rx="0.6" fill="#9a3412" opacity="0.5" />
+      <rect x="33.4" y="31.2" width="2.6" height="1.8" rx="0.9" fill="#fbf6e6" />
+      <rect x="13" y="34.4" width="22" height="1.2" rx="0.6" fill="#5c4a0a" opacity="0.5" />
 
       {/* wheels */}
       <circle cx="17.6" cy="35.6" r="3.4" fill="#16223d" />

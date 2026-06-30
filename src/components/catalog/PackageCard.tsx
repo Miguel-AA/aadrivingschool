@@ -19,7 +19,7 @@ const BADGES: Record<
 > = {
   "most-popular": {
     messageKey: "badges.mostPopular",
-    pill: "bg-gradient-to-r from-accent-500 to-accent-600 text-white shadow-sm",
+    pill: "bg-gradient-to-r from-accent-300 to-accent-500 text-brand-950 shadow-sm",
     featured: true,
   },
   "best-spanish": {
@@ -114,7 +114,7 @@ export function PackageCard({
           className={cn(
             "inline-flex items-center gap-1.5 rounded-xl px-4 py-2.5 text-sm font-semibold transition-colors",
             featured
-              ? "bg-gradient-to-r from-accent-500 to-accent-600 text-white shadow-sm group-hover:brightness-105"
+              ? "bg-gradient-to-r from-accent-300 to-accent-500 text-brand-950 shadow-sm group-hover:brightness-105"
               : "bg-brand-50 text-brand-700 group-hover:bg-brand-100",
           )}
         >

@@ -8,7 +8,10 @@ export function Nav() {
   const t = useTranslations("common");
   const pathname = usePathname();
   return (
-    <nav className="hidden items-center gap-6 lg:flex" aria-label="Primary">
+    <nav
+      className="hidden items-center gap-6 lg:flex xl:gap-7"
+      aria-label="Primary"
+    >
       {navLinks.map((link) => {
         const active = isActiveLink(link, pathname);
         return (
@@ -17,7 +20,7 @@ export function Nav() {
             href={link.href}
             aria-current={active ? "page" : undefined}
             className={cn(
-              "group relative text-sm font-medium transition-colors",
+              "group relative whitespace-nowrap text-sm font-medium transition-colors",
               active ? "text-white" : "text-brand-100 hover:text-white",
             )}
           >

@@ -53,7 +53,7 @@ export function HeroShowcase() {
           </div>
           <div className="mt-2 h-2 w-full overflow-hidden rounded-full bg-slate-200">
             <div
-              className="h-full rounded-full bg-gradient-to-r from-accent-400 to-accent-600"
+              className="h-full rounded-full bg-gradient-to-r from-accent-300 to-accent-500"
               style={{ width: `${pct}%` }}
             />
           </div>
