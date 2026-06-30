@@ -71,7 +71,7 @@ export function Hero({
               text readable — heavier white on the text side, lighter on the right. */}
           <div
             aria-hidden="true"
-            className="absolute inset-0 -z-20 bg-gradient-to-r from-white/60 via-white/40 to-white/20 backdrop-blur-sm backdrop-saturate-150"
+            className="absolute inset-0 -z-20 bg-gradient-to-r from-white/72 via-white/54 to-white/34 backdrop-blur-sm backdrop-saturate-150"
           />
         </>
       )}
