@@ -51,6 +51,8 @@ export function LicenseReinstatement() {
       courses={courses}
       packages={packages}
       faqs={faqs}
+      theme="rose"
+      heroImage="/herobg-poster.jpg"
       leadSourcePage="/license-reinstatement"
     />
   );

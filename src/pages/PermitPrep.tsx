@@ -58,6 +58,8 @@ export function PermitPrep() {
       faqHeading={t("permit.faqHeading")}
       ctaHeading={t("permit.ctaHeading")}
       ctaBody={t("permit.ctaBody")}
+      theme="ocean"
+      heroImage="/herobg-poster.jpg"
       leadSourcePage="/permit-test-prep"
     />
   );

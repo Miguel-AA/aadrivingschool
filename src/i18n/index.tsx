@@ -48,12 +48,6 @@ const MESSAGES: Record<Locale, Record<string, Dict>> = {
   },
 };
 
-const STORAGE_KEY = "ftop1-locale";
-
-function isLocale(value: string | null): value is Locale {
-  return value === "en" || value === "es";
-}
-
 /** Resolve a dotted key path within a namespace object. */
 function resolvePath(obj: unknown, key: string): unknown {
   return key
@@ -107,16 +101,12 @@ const LocaleContext = createContext<LocaleContextValue>({
 });
 
 export function LocaleProvider({ children }: { children: ReactNode }) {
-  const [locale, setLocaleState] = useState<Locale>(() => {
-    if (typeof localStorage !== "undefined") {
-      const stored = localStorage.getItem(STORAGE_KEY);
-      if (isLocale(stored)) return stored;
-    }
-    return defaultLocale;
-  });
+  // Always start in English on every entry. The choice is intentionally NOT
+  // persisted — a fresh visit/reload resets to the default locale; an explicit
+  // toggle only lasts for the current session (React state, no reload in the SPA).
+  const [locale, setLocaleState] = useState<Locale>(defaultLocale);
 
-  // Keep <html lang> in sync with the active locale — including the initial
-  // value restored from localStorage (setLocale only runs on an explicit toggle).
+  // Keep <html lang> in sync with the active locale.
   useEffect(() => {
     if (typeof document !== "undefined") {
       document.documentElement.lang = locale;
@@ -125,9 +115,6 @@ export function LocaleProvider({ children }: { children: ReactNode }) {
 
   const setLocale = useCallback((next: Locale) => {
     setLocaleState(next);
-    if (typeof localStorage !== "undefined") {
-      localStorage.setItem(STORAGE_KEY, next);
-    }
     if (typeof document !== "undefined") {
       document.documentElement.lang = next;
     }

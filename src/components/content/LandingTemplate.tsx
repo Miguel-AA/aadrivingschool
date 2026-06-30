@@ -4,7 +4,7 @@ import { cn } from "@/lib/utils/cn";
 import { useLocale, useTranslations } from "@/i18n";
 import type { Course, Faq, Package } from "@/lib/schemas/content";
 import { faqJsonLd } from "@/lib/seo/jsonld";
-import { Hero } from "@/components/content/Hero";
+import { Hero, type HeroTheme } from "@/components/content/Hero";
 import { Section, SectionHeading } from "@/components/content/Section";
 import { CatalogGrid } from "@/components/catalog/CatalogGrid";
 import { CourseCard } from "@/components/catalog/CourseCard";
@@ -19,6 +19,10 @@ interface LandingTemplateProps {
   title: string;
   subtitle: string;
   actions: ReactNode;
+  /** Per-page color identity for the hero. */
+  theme?: HeroTheme;
+  /** Optional still background image for the hero (behind frosted glass). */
+  heroImage?: string;
   courses?: Course[];
   packages?: Package[];
   faqs?: Faq[];
@@ -37,6 +41,8 @@ export function LandingTemplate({
   title,
   subtitle,
   actions,
+  theme,
+  heroImage,
   courses = [],
   packages = [],
   faqs = [],
@@ -60,6 +66,8 @@ export function LandingTemplate({
         title={title}
         subtitle={subtitle}
         actions={actions}
+        theme={theme}
+        imageSrc={heroImage}
       />
 
       {packages.length > 0 && (

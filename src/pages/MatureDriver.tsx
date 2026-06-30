@@ -46,6 +46,8 @@ export function MatureDriver() {
       courses={courses}
       packages={packages}
       faqs={faqs}
+      theme="emerald"
+      heroImage="/herobg-poster.jpg"
       leadSourcePage="/55-plus-driver"
     />
   );

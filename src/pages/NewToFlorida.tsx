@@ -49,6 +49,8 @@ export function NewToFlorida() {
       courses={courses}
       packages={packages}
       faqs={faqs}
+      theme="ocean"
+      heroImage="/herobg-poster.jpg"
       leadSourcePage="/new-to-florida"
     />
   );

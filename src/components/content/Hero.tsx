@@ -19,6 +19,54 @@ const heroMaskStyle: CSSProperties = {
   maskSize: `100% calc(100% - ${HERO_WAVE_H} + 1px), 100% ${HERO_WAVE_H}`,
 };
 
+/** Per-page color identity for the hero backdrop. */
+export type HeroTheme =
+  | "brand"
+  | "ocean"
+  | "amber"
+  | "emerald"
+  | "violet"
+  | "rose";
+
+// Full literal class strings per theme so Tailwind's scanner keeps them.
+// `base` is the top color of the page-fade gradient; `blobs` are the four
+// floating glow orbs; `dot` tints the dotted grid.
+const HERO_THEMES: Record<
+  HeroTheme,
+  { base: string; blobs: [string, string, string, string]; dot: string }
+> = {
+  brand: {
+    base: "from-brand-50/80",
+    blobs: ["bg-brand-300/40", "bg-ocean-300/30", "bg-accent-200/40", "bg-accent-100/50"],
+    dot: "text-slate-300/30",
+  },
+  ocean: {
+    base: "from-sky-50",
+    blobs: ["bg-ocean-300/40", "bg-sky-300/30", "bg-brand-200/40", "bg-sky-200/50"],
+    dot: "text-sky-300/30",
+  },
+  amber: {
+    base: "from-accent-50",
+    blobs: ["bg-accent-300/45", "bg-amber-300/30", "bg-accent-200/45", "bg-accent-100/50"],
+    dot: "text-amber-300/30",
+  },
+  emerald: {
+    base: "from-emerald-50",
+    blobs: ["bg-emerald-300/40", "bg-teal-300/30", "bg-emerald-200/45", "bg-emerald-100/50"],
+    dot: "text-emerald-300/30",
+  },
+  violet: {
+    base: "from-violet-50",
+    blobs: ["bg-violet-300/40", "bg-fuchsia-300/25", "bg-brand-200/35", "bg-violet-200/45"],
+    dot: "text-violet-300/30",
+  },
+  rose: {
+    base: "from-rose-50",
+    blobs: ["bg-rose-300/40", "bg-orange-300/25", "bg-accent-200/40", "bg-rose-200/45"],
+    dot: "text-rose-300/30",
+  },
+};
+
 interface HeroProps {
   eyebrow?: string;
   title: string;
@@ -34,6 +82,10 @@ interface HeroProps {
   videoSrc?: string;
   /** Poster shown before the video loads. */
   videoPoster?: string;
+  /** Optional still background image (lighter than video). Ignored if `videoSrc` is set. */
+  imageSrc?: string;
+  /** Per-page color identity for the backdrop. Defaults to `brand`. */
+  theme?: HeroTheme;
   className?: string;
 }
 
@@ -60,32 +112,46 @@ export function Hero({
   aside,
   videoSrc,
   videoPoster,
+  imageSrc,
+  theme = "brand",
   className,
 }: HeroProps) {
+  const palette = HERO_THEMES[theme];
   return (
     <div
       style={heroMaskStyle}
       className={cn(
-        "relative isolate overflow-hidden bg-gradient-to-b from-brand-50/80 via-white to-white",
+        "relative isolate overflow-hidden bg-gradient-to-b via-white to-white",
+        palette.base,
         className,
       )}
     >
-      {videoSrc && (
+      {(videoSrc || imageSrc) && (
         <>
-          {/* Looping background video */}
-          <video
-            className="absolute inset-0 -z-30 h-full w-full object-cover"
-            autoPlay
-            muted
-            loop
-            playsInline
-            preload="auto"
-            poster={videoPoster}
-            aria-hidden="true"
-          >
-            <source src={videoSrc} type="video/mp4" />
-          </video>
-          {/* Soft frosted glass: blurs the video (hides low resolution) and keeps
+          {videoSrc ? (
+            /* Looping background video */
+            <video
+              className="absolute inset-0 -z-30 h-full w-full object-cover"
+              autoPlay
+              muted
+              loop
+              playsInline
+              preload="auto"
+              poster={videoPoster}
+              aria-hidden="true"
+            >
+              <source src={videoSrc} type="video/mp4" />
+            </video>
+          ) : (
+            /* Still background image */
+            <img
+              src={imageSrc}
+              alt=""
+              aria-hidden="true"
+              className="absolute inset-0 -z-30 h-full w-full object-cover"
+            />
+          )}
+          {/* Soft frosted glass: blurs the media (hides low resolution) and keeps
               text readable — heavier white on the text side, lighter on the right. */}
           <div
             aria-hidden="true"
@@ -94,13 +160,13 @@ export function Hero({
         </>
       )}
 
-      {/* Decorative animated blobs + warm orange glow */}
+      {/* Decorative animated blobs + themed glow */}
       <div aria-hidden="true" className="pointer-events-none absolute inset-0 -z-10">
-        <div className="absolute -left-24 -top-24 h-72 w-72 rounded-full bg-brand-300/40 blur-3xl animate-float" />
-        <div className="absolute right-0 top-10 h-80 w-80 rounded-full bg-ocean-300/30 blur-3xl animate-float-slow" />
-        <div className="absolute -right-20 top-1/3 h-72 w-72 rounded-full bg-accent-200/40 blur-3xl animate-float" />
-        <div className="absolute -bottom-24 left-1/4 h-72 w-72 rounded-full bg-accent-100/50 blur-3xl animate-float-slow" />
-        <div className="absolute inset-0 bg-dot-grid text-slate-300/30" />
+        <div className={cn("absolute -left-24 -top-24 h-72 w-72 rounded-full blur-3xl animate-float", palette.blobs[0])} />
+        <div className={cn("absolute right-0 top-10 h-80 w-80 rounded-full blur-3xl animate-float-slow", palette.blobs[1])} />
+        <div className={cn("absolute -right-20 top-1/3 h-72 w-72 rounded-full blur-3xl animate-float", palette.blobs[2])} />
+        <div className={cn("absolute -bottom-24 left-1/4 h-72 w-72 rounded-full blur-3xl animate-float-slow", palette.blobs[3])} />
+        <div className={cn("absolute inset-0 bg-dot-grid", palette.dot)} />
       </div>
 
       <div className="mx-auto w-full max-w-6xl px-5 py-20 sm:px-6 sm:py-32 lg:grid lg:grid-cols-[1.05fr_0.95fr] lg:items-center lg:gap-12 lg:px-8 lg:py-44">
