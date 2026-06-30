@@ -18,6 +18,9 @@ import { TicketHelp } from "@/pages/TicketHelp";
 import { NewToFlorida } from "@/pages/NewToFlorida";
 import { MatureDriver } from "@/pages/MatureDriver";
 import { LicenseReinstatement } from "@/pages/LicenseReinstatement";
+import { Privacy } from "@/pages/Privacy";
+import { Terms } from "@/pages/Terms";
+import { Refund } from "@/pages/Refund";
 import { NotFound } from "@/pages/NotFound";
 
 export function App() {
@@ -50,6 +53,9 @@ export function App() {
           <Route path="/contact" element={<Contact />} />
           <Route path="/quiz" element={<CourseFinder />} />
           <Route path="/checkout" element={<Checkout />} />
+          <Route path="/privacy" element={<Privacy />} />
+          <Route path="/terms" element={<Terms />} />
+          <Route path="/refund" element={<Refund />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </main>

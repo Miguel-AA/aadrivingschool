@@ -5,6 +5,8 @@ import { Link } from "@/i18n/navigation";
 import { cn } from "@/lib/utils/cn";
 import { getLocalized } from "@/lib/utils/locale";
 import { formatPrice } from "@/lib/utils/price";
+import { getCoursesForPackage } from "@/content";
+import { packageAvailability } from "@/lib/catalog/availability";
 
 // Badge key -> message key + pill styling. Only "most-popular" also gives the
 // card a highlighted (featured) border.
@@ -41,14 +43,16 @@ export function PackageCard({
   ctaLabel,
 }: {
   pkg: Package;
-  /** Hide the price (used by the investor-demo "pathways" grid). */
+  /** Hide the price (used by the home "popular paths" grid). */
   hidePrice?: boolean;
   /** Override the CTA label (e.g. "Explore pathway"). */
   ctaLabel?: string;
 }) {
   const locale = useLocale();
   const t = useTranslations("common");
-  const price = formatPrice(pkg.priceUsd, locale);
+  // A package that includes a gated regulated course never shows a price.
+  const { showPrice } = packageAvailability(pkg, getCoursesForPackage(pkg));
+  const price = showPrice ? formatPrice(pkg.priceUsd, locale) : null;
   const badge = pkg.badge ? BADGES[pkg.badge] : null;
   const featured = badge?.featured ?? false;
 

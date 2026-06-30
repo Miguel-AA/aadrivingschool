@@ -1,16 +1,18 @@
 
 import { MessageCircle } from "lucide-react";
 import { useLocale, useTranslations } from "@/i18n";
-import { siteConfig } from "@/config/site";
+import { contact } from "@/config/site";
 import { trackEvent, EVENTS } from "@/lib/services/analytics";
 
 /** Floating WhatsApp button (desktop). Mobile uses the sticky CTA bar instead. */
 export function FloatingWhatsApp() {
   const locale = useLocale();
   const t = useTranslations("common");
-  const href = `https://wa.me/${siteConfig.whatsappNumber}?text=${encodeURIComponent(
-    t("whatsapp.defaultMessage"),
-  )}`;
+
+  // No WhatsApp number configured → don't render a broken link.
+  if (!contact.hasWhatsapp) return null;
+
+  const href = contact.whatsappHref(t("whatsapp.defaultMessage"));
 
   return (
     <a

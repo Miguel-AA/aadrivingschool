@@ -64,7 +64,7 @@ export function Home() {
             <CTAButton
               href="/quiz"
               eventName={EVENTS.CTA_CLICK}
-              eventProps={{ source: "home_hero", target: "demo" }}
+              eventProps={{ source: "home_hero", target: "quiz" }}
               size="lg"
               className="w-full sm:w-auto"
             >
@@ -73,7 +73,7 @@ export function Home() {
             <CTAButton
               href="/courses"
               eventName={EVENTS.CTA_CLICK}
-              eventProps={{ source: "home_hero", target: "pathways" }}
+              eventProps={{ source: "home_hero", target: "courses" }}
               variant="secondary"
               size="lg"
               className="w-full sm:w-auto"
@@ -116,7 +116,7 @@ export function Home() {
         </div>
       </Section>
 
-      {/* 3. Platform capabilities */}
+      {/* 3. What we help with */}
       <Services tone="muted" />
 
       {/* 4. Driver pathways */}
@@ -141,7 +141,7 @@ export function Home() {
         </CatalogGrid>
       </Section>
 
-      {/* 5. Product demo / course finder preview — the strong navy band */}
+      {/* 5. Course finder — the strong navy band */}
       <Section tone="brand">
         <Reveal className="flex flex-col items-center justify-between gap-6 text-center lg:flex-row lg:items-center lg:text-left">
           <div className="max-w-2xl">
@@ -238,7 +238,7 @@ export function Home() {
             <CTAButton
               href="/quiz"
               eventName={EVENTS.CTA_CLICK}
-              eventProps={{ source: "home_final", target: "demo" }}
+              eventProps={{ source: "home_final", target: "quiz" }}
               variant="primary"
               size="lg"
               className="w-full sm:w-auto"
@@ -246,9 +246,9 @@ export function Home() {
               {t("finalCta.primaryCta")}
             </CTAButton>
             <CTAButton
-              href="/contact?intent=investor"
+              href="/courses"
               eventName={EVENTS.CTA_CLICK}
-              eventProps={{ source: "home_final", target: "investor" }}
+              eventProps={{ source: "home_final", target: "courses" }}
               variant="secondary"
               size="lg"
               className="hidden w-full sm:inline-flex sm:w-auto"

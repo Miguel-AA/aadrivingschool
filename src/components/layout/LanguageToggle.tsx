@@ -3,8 +3,9 @@ import { routing, type Locale } from "@/i18n/routing";
 import { cn } from "@/lib/utils/cn";
 
 /**
- * Switches the active locale (tracked in React state / localStorage). The SPA
- * re-renders translated copy in place without changing the URL.
+ * Switches the active locale. The choice is held in React state and persisted to
+ * localStorage (see `@/i18n`), so the SPA re-renders translated copy in place
+ * without changing the URL and the selection survives a reload.
  */
 export function LanguageToggle({
   className,

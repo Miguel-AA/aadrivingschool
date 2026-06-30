@@ -9,6 +9,43 @@ import {
 } from "react";
 import { routing, defaultLocale, type Locale } from "./routing";
 
+/** localStorage key for the user's explicit language choice. */
+const LOCALE_STORAGE_KEY = "aa-driving-school-locale";
+
+/** Type guard: only our supported locales are ever accepted from storage. */
+function isSupportedLocale(value: unknown): value is Locale {
+  return (
+    typeof value === "string" &&
+    (routing.locales as readonly string[]).includes(value)
+  );
+}
+
+/**
+ * Read the persisted locale. Defaults to English on first visit and falls back
+ * safely to English if localStorage is unavailable (SSR/build, privacy mode) or
+ * holds a corrupted/unsupported value. Browser language is intentionally NOT
+ * auto-detected in Phase 1.
+ */
+function readStoredLocale(): Locale {
+  if (typeof window === "undefined") return defaultLocale;
+  try {
+    const stored = window.localStorage.getItem(LOCALE_STORAGE_KEY);
+    return isSupportedLocale(stored) ? stored : defaultLocale;
+  } catch {
+    return defaultLocale;
+  }
+}
+
+/** Persist an explicit locale choice; silently no-ops if storage is unavailable. */
+function writeStoredLocale(locale: Locale): void {
+  if (typeof window === "undefined") return;
+  try {
+    window.localStorage.setItem(LOCALE_STORAGE_KEY, locale);
+  } catch {
+    // Storage may be full or disabled (privacy mode) — fail silently.
+  }
+}
+
 // Message catalogs (reused verbatim from the previous next-intl setup).
 import enCommon from "@/messages/en/common.json";
 import enHome from "@/messages/en/home.json";
@@ -101,10 +138,11 @@ const LocaleContext = createContext<LocaleContextValue>({
 });
 
 export function LocaleProvider({ children }: { children: ReactNode }) {
-  // Always start in English on every entry. The choice is intentionally NOT
-  // persisted — a fresh visit/reload resets to the default locale; an explicit
-  // toggle only lasts for the current session (React state, no reload in the SPA).
-  const [locale, setLocaleState] = useState<Locale>(defaultLocale);
+  // First visit defaults to English; an explicit toggle is persisted to
+  // localStorage and restored on reload. Browser language is NOT auto-detected.
+  // The lazy initializer reads storage once (safe on SSR/build — see
+  // readStoredLocale) so the saved choice is applied before first paint.
+  const [locale, setLocaleState] = useState<Locale>(readStoredLocale);
 
   // Keep <html lang> in sync with the active locale.
   useEffect(() => {
@@ -115,6 +153,7 @@ export function LocaleProvider({ children }: { children: ReactNode }) {
 
   const setLocale = useCallback((next: Locale) => {
     setLocaleState(next);
+    writeStoredLocale(next);
     if (typeof document !== "undefined") {
       document.documentElement.lang = next;
     }

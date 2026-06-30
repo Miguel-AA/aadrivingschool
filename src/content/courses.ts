@@ -1,4 +1,4 @@
-import { CourseSchema, type Course } from "@/lib/schemas/content";
+import { CourseSchema, type CourseInput } from "@/lib/schemas/content";
 import { loc } from "./_loc";
 
 /**
@@ -9,7 +9,7 @@ import { loc } from "./_loc";
  *
  * Prices are PLACEHOLDERS. Confirm pricing and partner attribution before launch.
  */
-const courses: Course[] = [
+const courses: CourseInput[] = [
   // ---------------------------------------------------------------------------
   // Regulated / partner-delivered courses
   // ---------------------------------------------------------------------------
@@ -20,6 +20,7 @@ const courses: Course[] = [
     providerType: "partner",
     regulatoryStatus: "regulated-partner",
     providerId: "partner-pending",
+    status: "consultation",
     title: loc("TLSAE — Drug & Alcohol Course", "TLSAE — Curso de Drogas y Alcohol"),
     shortDescription: loc(
       "The Traffic Law & Substance Abuse Education course most first-time Florida drivers complete before applying for a learner's permit.",
@@ -59,6 +60,7 @@ const courses: Course[] = [
     providerType: "partner",
     regulatoryStatus: "regulated-partner",
     providerId: "partner-pending",
+    status: "consultation",
     title: loc("DETS — Teen Driver Education", "DETS — Educación Vial para Adolescentes"),
     shortDescription: loc(
       "Driver education for Florida teens working toward a permit or license, with parent-friendly guidance.",
@@ -98,6 +100,7 @@ const courses: Course[] = [
     providerType: "partner",
     regulatoryStatus: "regulated-partner",
     providerId: "partner-pending",
+    status: "consultation",
     title: loc("Basic Driver Improvement (BDI)", "Mejora Básica del Conductor (BDI)"),
     shortDescription: loc(
       "A driver improvement course many Florida drivers take in connection with a traffic citation. Eligibility depends on your situation.",
@@ -137,6 +140,7 @@ const courses: Course[] = [
     providerType: "partner",
     regulatoryStatus: "regulated-partner",
     providerId: "partner-pending",
+    status: "consultation",
     title: loc("Advanced Driver Improvement (ADI)", "Mejora Avanzada del Conductor (ADI)"),
     shortDescription: loc(
       "A longer driver improvement course associated with certain suspensions or court orders. We help you confirm whether it applies.",
@@ -176,6 +180,7 @@ const courses: Course[] = [
     providerType: "partner",
     regulatoryStatus: "regulated-partner",
     providerId: "partner-pending",
+    status: "consultation",
     title: loc("Mature Driver 55+ Course", "Curso para Conductor Maduro 55+"),
     shortDescription: loc(
       "A safety refresher for drivers age 55 and older. Some insurers may offer a premium discount for completion — check with your insurer.",
@@ -215,6 +220,7 @@ const courses: Course[] = [
     providerType: "partner",
     regulatoryStatus: "regulated-partner",
     providerId: "partner-pending",
+    status: "consultation",
     title: loc("Wireless Communications Device Course", "Curso sobre Dispositivos de Comunicación Inalámbrica"),
     shortDescription: loc(
       "A focused course addressing distracted-driving and cellphone-related citations, where an approved provider supports it.",

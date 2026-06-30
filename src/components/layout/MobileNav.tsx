@@ -16,7 +16,11 @@ export function MobileNav() {
   const bar = "block h-0.5 w-6 rounded-full bg-current transition-all duration-300 ease-out";
 
   return (
-    <div className="lg:hidden">
+    // Drawer (with nav links + the language toggle) is available below xl, the
+    // same breakpoint where the desktop nav + desktop toggle take over. This
+    // keeps the language toggle reachable across the tight 1024–1279px band,
+    // where the desktop header has no room for it.
+    <div className="xl:hidden">
       <button
         type="button"
         onClick={() => setOpen((v) => !v)}

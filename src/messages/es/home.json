@@ -1,217 +1,186 @@
 {
   "hero": {
-    "eyebrow": "Florida Top 1 Driving School · Plataforma de educación vial online",
-    "title": "La plataforma bilingüe de educación vial online para Florida",
-    "highlight": "educación vial online",
-    "subtitle": "Una plataforma moderna en desarrollo para conductores en Florida, con preparación para el permiso, rutas de aprendizaje, seguimiento de progreso y soporte en inglés y español.",
-    "primaryCta": "Ver demo de la plataforma",
-    "secondaryCta": "Explorar rutas de conductor",
+    "eyebrow": "A&A Driving School · West Palm Beach y todo Florida",
+    "title": "Cursos de manejo y ayuda con tu licencia en Florida — en inglés y español",
+    "highlight": "inglés y español",
+    "subtitle": "Desde la preparación del permiso hasta la orientación sobre multas y licencias, A&A Driving School ayuda a conductores y familias en Florida a encontrar el siguiente paso correcto, con apoyo amable en inglés y español.",
+    "primaryCta": "Encontrar mi curso",
+    "secondaryCta": "Ver cursos",
     "trust": [
-      "Construida desde West Palm Beach",
-      "Diseñada para todo Florida",
-      "Experiencia en inglés y español",
-      "Hoja de ruta con cumplimiento"
+      "Con base en West Palm Beach",
+      "Ayuda para conductores en todo Florida",
+      "Soporte en inglés y español",
+      "Orientación amable, paso a paso"
     ],
     "showcase": {
-      "title": "Ruta del estudiante",
-      "badge": "Vista previa del producto",
-      "footnote": "Un recorrido guiado, medible y bilingüe",
-      "profileLabel": "Perfil del estudiante",
-      "profileValue": "Conductor primerizo",
-      "progressLabel": "Progreso de preparación del permiso",
-      "completionLabel": "Estado de avance",
+      "title": "Tu plan de manejo",
+      "badge": "Ejemplo",
+      "footnote": "Un camino sencillo, paso a paso, en inglés o español",
+      "profileLabel": "Tu objetivo",
+      "profileValue": "Primera licencia",
+      "progressLabel": "Avance de preparación del permiso",
+      "completionLabel": "Estado",
       "completionValue": "En buen camino",
       "rows": [
-        { "label": "Ruta de conductor", "value": "Conductor primerizo" },
-        { "label": "Idioma de soporte", "value": "Inglés / Español" },
-        { "label": "Próximo paso en el DMV", "value": "Preparación del examen teórico" }
+        { "label": "Tu camino", "value": "Conductor primerizo" },
+        { "label": "Soporte", "value": "Inglés / Español" },
+        { "label": "Próximo paso", "value": "Preparación del permiso" }
       ]
     }
   },
   "problem": {
-    "eyebrow": "La oportunidad de mercado",
+    "eyebrow": "A quién ayudamos",
     "title": "Los conductores en Florida no deberían tener que adivinar el próximo paso.",
-    "body": "Muchos conductores primerizos, padres y usuarios hispanohablantes enfrentan confusión sobre los requisitos de los cursos, la preparación del permiso, la educación relacionada con multas y los próximos pasos. Florida Top 1 Driving School se está construyendo para reunir todo ese proceso en una sola plataforma digital y organizada.",
+    "body": "Las reglas del permiso, los cursos por multas y los pasos hacia la licencia pueden ser confusos. A&A Driving School te ayuda a entender tu situación y encontrar el siguiente paso correcto — con claridad y en tu idioma.",
     "cards": [
       {
         "title": "Conductores primerizos",
-        "body": "Un mercado amplio y recurrente que necesita un punto de partida claro, una ruta de curso y preparación para el permiso."
+        "body": "¿No sabes por dónde empezar? Te ayudamos a encontrar tu ruta de curso y a prepararte para el examen del permiso."
       },
       {
         "title": "Padres de adolescentes",
-        "body": "Familias que quieren una ruta guiada y medible a través del permiso, la práctica y los pasos hacia la licencia."
+        "body": "Orientación paso a paso para las familias a través del permiso, la práctica y el proceso de la licencia."
       },
       {
         "title": "Conductores hispanohablantes",
-        "body": "Un segmento desatendido que necesita una verdadera experiencia bilingüe, no una traducción improvisada."
+        "body": "Apoyo completo en español — explicaciones claras y ayuda en el idioma con el que te sientes más cómodo."
       },
       {
         "title": "Conductores con multas",
-        "body": "Demanda recurrente de orientación estructurada sobre escuela de tráfico y educación relacionada con multas."
+        "body": "Ayuda para entender las opciones de escuela de tráfico y cursos relacionados con multas, y tus próximos pasos."
       }
     ]
   },
   "finder": {
-    "eyebrow": "Inscripción guiada",
-    "heading": "Una experiencia de inscripción guiada para cada tipo de conductor.",
-    "body": "La plataforma está diseñada para identificar la situación de cada usuario — conductor primerizo, permiso de adolescente, solicitante hispanohablante, educación sobre multas o preparación del permiso — y guiarlo hacia la ruta de aprendizaje correcta.",
-    "cta": "Ver el buscador de cursos",
+    "eyebrow": "Encuentra tu curso",
+    "heading": "¿No sabes qué curso necesitas?",
+    "body": "Responde unas preguntas rápidas y te indicaremos la mejor opción para tu situación — conductor primerizo, permiso de adolescente, ayuda en español, curso por multas o preparación del permiso.",
+    "cta": "Encontrar mi curso",
     "pills": [
       "Conductor primerizo",
       "Permiso de adolescente",
-      "Hispanohablante",
-      "Educación sobre multas",
+      "Ayuda en español",
+      "Curso por multas",
       "Preparación del permiso"
     ]
   },
   "services": {
-    "heading": "Capacidades de la plataforma",
-    "title": "Una plataforma para las rutas de conductores en Florida.",
-    "subheading": "Florida Top 1 Driving School se está construyendo como una experiencia digital completa de educación vial, preparación, soporte bilingüe y seguimiento del progreso del estudiante.",
+    "heading": "En qué te ayudamos",
+    "title": "Ayuda para las necesidades de manejo más comunes en Florida.",
+    "subheading": "A&A Driving School ayuda a los conductores de Florida con orientación sobre cursos, preparación del permiso, soporte bilingüe y a encontrar el siguiente paso correcto.",
     "learnMore": "Conocer más",
     "items": [
       {
         "key": "tlsae",
-        "title": "Cursos online",
-        "body": "Rutas de aprendizaje digitales y estructuradas, diseñadas para la educación vial de Florida."
+        "title": "Ayuda con cursos online",
+        "body": "Orientación y apoyo de estudio para los cursos de manejo de Florida, en línea y a tu propio ritmo."
       },
       {
         "key": "permit",
-        "title": "Preparación del examen del permiso",
-        "body": "Herramientas de práctica y apoyo de estudio para prepararte para el permiso de Florida."
+        "title": "Preparación del permiso",
+        "body": "Preguntas de práctica y apoyo de estudio para prepararte para el examen del permiso de Florida."
       },
       {
         "key": "spanish",
-        "title": "Soporte bilingüe al estudiante",
-        "body": "Orientación en inglés y español integrada en el núcleo de la experiencia del usuario."
+        "title": "Ayuda en español",
+        "body": "Explicaciones y apoyo en español, desde el principio — no como un agregado posterior."
       },
       {
         "key": "teen",
-        "title": "Rutas para conductores adolescentes",
-        "body": "Flujos guiados para padres y adolescentes que se preparan para el proceso del permiso."
+        "title": "Guía para adolescentes y padres",
+        "body": "Ayuda paso a paso para padres y adolescentes que se preparan para el permiso y la licencia."
       },
       {
         "key": "ticket",
-        "title": "Educación sobre multas",
-        "body": "Una experiencia estructurada para conductores que necesitan educación relacionada con escuela de tráfico."
+        "title": "Ayuda con multas y escuela de tráfico",
+        "body": "Orientación para conductores que necesitan opciones de escuela de tráfico o cursos relacionados con multas."
       },
       {
         "key": "insurance",
-        "title": "Panel de seguimiento de progreso",
-        "body": "Un futuro panel del estudiante para lecciones, estado de avance, soporte y próximos pasos."
+        "title": "¿No sabes qué necesitas?",
+        "body": "Cuéntanos tu situación y te ayudamos a encontrar el curso o el siguiente paso correcto — en inglés o español."
       }
     ]
   },
   "packages": {
-    "eyebrow": "Rutas de conductor",
-    "heading": "Rutas de conductor que estamos construyendo",
-    "subheading": "Cada ruta es un recorrido guiado — desde el primer contacto hasta estar listo para el DMV — adaptado a un tipo específico de conductor en Florida.",
-    "cta": "Explorar ruta"
+    "eyebrow": "Rutas populares",
+    "heading": "Rutas de conductor populares",
+    "subheading": "Ayuda guiada para situaciones específicas — desde conductores primerizos hasta solicitantes hispanohablantes. Encuentra la que te corresponde y solicita información.",
+    "cta": "Ver detalles"
   },
   "howItWorks": {
-    "eyebrow": "Cómo funciona la plataforma",
-    "heading": "Cómo funciona la plataforma",
-    "step1Title": "Crea un perfil de estudiante",
-    "step1Body": "Cada conductor parte de su situación — primerizo, adolescente, multa o hispanohablante — para entrar en la ruta correcta.",
-    "step2Title": "Elige una ruta de aprendizaje",
-    "step2Body": "La plataforma conecta cada perfil con la ruta adecuada: educación online, preparación del permiso y soporte bilingüe.",
-    "step3Title": "Aprende, avanza y prepárate",
-    "step3Body": "Avanza por las lecciones, sigue tu progreso y prepárate para el DMV con soporte bilingüe en cada paso."
+    "eyebrow": "Cómo funciona",
+    "heading": "Cómo funciona",
+    "step1Title": "Cuéntanos tu situación",
+    "step1Body": "Empieza desde donde estás — conductor primerizo, adolescente, multa o ayuda en español — para indicarte el camino correcto.",
+    "step2Title": "Encuentra el curso correcto",
+    "step2Body": "Te ayudamos a encontrar la opción adecuada: orientación de cursos, preparación del permiso y soporte bilingüe.",
+    "step3Title": "Recibe ayuda y próximos pasos",
+    "step3Body": "Recibe orientación clara, apoyo de estudio y soporte amable en inglés o español en cada paso."
   },
   "whyUs": {
-    "eyebrow": "Por qué puede escalar",
-    "heading": "Por qué esta plataforma puede escalar",
-    "subheading": "Un modelo digital, bilingüe y centrado en Florida, construido para crecer.",
+    "eyebrow": "Por qué A&A",
+    "heading": "Por qué elegir A&A Driving School",
+    "subheading": "Ayuda sencilla y bilingüe, enfocada en los conductores de Florida.",
     "cards": [
       {
-        "title": "Enfocada en Florida desde el primer día",
-        "body": "Construida en torno a las necesidades de los conductores, las familias y los solicitantes primerizos de Florida."
+        "title": "Enfocados en los conductores de Florida",
+        "body": "Ayuda pensada para los conductores, las familias y los solicitantes primerizos de Florida."
       },
       {
-        "title": "Bilingüe por diseño",
-        "body": "El soporte en inglés y español es parte del núcleo de la experiencia, no un agregado posterior."
+        "title": "Verdadero soporte bilingüe",
+        "body": "La ayuda en inglés y español es parte de cómo trabajamos, no un agregado posterior."
       },
       {
-        "title": "Un solo recorrido organizado",
-        "body": "Cursos, preparación, soporte y seguimiento del progreso conviven en un único flujo guiado."
+        "title": "Un camino sencillo",
+        "body": "Orientación de cursos, preparación y soporte en un solo flujo claro, paso a paso."
       },
       {
-        "title": "Construida para escalar",
-        "body": "La plataforma puede expandirse desde West Palm Beach hacia la educación digital en todo Florida."
-      }
-    ]
-  },
-  "investorHighlights": {
-    "eyebrow": "Aspectos clave de la demo",
-    "heading": "Qué muestra la demo",
-    "subheading": "Un primer vistazo a la experiencia, el modelo y hacia dónde se dirige la plataforma.",
-    "items": [
-      {
-        "title": "Experiencia digital",
-        "body": "Una experiencia de escuela de manejo moderna y mobile-first, diseñada para entrega online."
-      },
-      {
-        "title": "Recorrido bilingüe del usuario",
-        "body": "Una experiencia en inglés y español diseñada para un mercado de Florida desatendido."
-      },
-      {
-        "title": "Buscador de cursos e inscripción",
-        "body": "Un flujo guiado que dirige cada tipo de conductor hacia la ruta correcta."
-      },
-      {
-        "title": "Hoja de ruta de seguimiento de progreso",
-        "body": "Un panel del estudiante planeado para lecciones, avance y actividad de soporte."
-      },
-      {
-        "title": "Potencial de expansión estatal",
-        "body": "Un modelo replicable que escala desde West Palm Beach a todo Florida."
-      },
-      {
-        "title": "Hoja de ruta con cumplimiento",
-        "body": "Entrega de cursos regulados planeada en torno a la aprobación y las licencias de Florida."
+        "title": "Ayuda amable y sin presión",
+        "body": "Haz tus preguntas y recibe orientación — solicita información o escríbenos cuando quieras, sin presión."
       }
     ]
   },
   "local": {
-    "eyebrow": "Raíces locales, visión estatal",
-    "heading": "Empezamos en West Palm Beach. Construida para todo Florida.",
-    "body": "Florida Top 1 Driving School se está construyendo desde West Palm Beach con un modelo digital estatal: inscripción bilingüe, rutas de aprendizaje online, preparación del permiso, soporte al estudiante y futura entrega de cursos alineada con los requisitos de Florida.",
+    "eyebrow": "Raíces locales, ayuda en todo el estado",
+    "heading": "Con base en West Palm Beach. Ayudando a conductores en todo Florida.",
+    "body": "A&A Driving School ayuda a conductores y familias en Florida con orientación bilingüe sobre cursos, preparación del permiso y apoyo para encontrar el siguiente paso correcto.",
     "points": [
       "Con base en West Palm Beach",
-      "Modelo digital estatal",
-      "Experiencia en inglés y español",
-      "Rutas de aprendizaje online",
-      "Hoja de ruta con cumplimiento"
+      "Ayudando a conductores en todo el estado",
+      "Soporte en inglés y español",
+      "Orientación de cursos en línea",
+      "Ayuda amable, paso a paso"
     ],
-    "disclaimer": "Hoja de ruta de cumplimiento: Florida Top 1 Driving School se está desarrollando con una hoja de ruta consciente de cumplimiento. Cualquier curso regulado seguirá los requisitos aplicables de aprobación, licencia y operación de Florida antes de ofrecerse como un curso oficial regulado por el estado."
+    "disclaimer": "A&A Driving School ofrece orientación sobre cursos de manejo y soporte bilingüe. Algunos cursos regulados pueden ofrecerse a través de proveedores aprobados, y la elegibilidad puede variar. No estamos afiliados con el DMV/FLHSMV de Florida y no garantizamos resultados específicos."
   },
   "testimonials": {
-    "heading": "Hecha para conductores y familias reales de Florida",
-    "subheading": "La plataforma está diseñada en torno a las personas a las que sirve — conductores primerizos, padres y usuarios hispanohablantes que quieren una experiencia clara y moderna.",
+    "heading": "Hecho para conductores y familias reales de Florida",
+    "subheading": "Nos enfocamos en las personas a las que ayudamos — conductores primerizos, padres y conductores hispanohablantes que quieren una orientación clara y sencilla.",
     "items": [
       {
-        "quote": "No sabía bien por dónde empezar con mi permiso. Una ruta guiada como esta habría hecho todo el proceso mucho más claro.",
+        "quote": "No sabía bien por dónde empezar con mi permiso. Que alguien me explicara el siguiente paso lo hizo mucho más fácil.",
         "role": "Conductor primerizo"
       },
       {
-        "quote": "Como padre, quiero un solo lugar donde ver qué necesita completar mi hijo adolescente y cómo va avanzando.",
+        "quote": "Como padre, solo quería ayuda clara para entender qué necesita hacer mi hijo adolescente a continuación.",
         "role": "Padre"
       },
       {
         "quote": "Tener todo el proceso explicado en español, en un solo lugar, cambia completamente la experiencia.",
-        "role": "Usuario hispanohablante"
+        "role": "Conductor hispanohablante"
       }
     ]
   },
   "faq": {
     "eyebrow": "Preguntas frecuentes",
-    "heading": "Preguntas sobre la plataforma y el cumplimiento"
+    "heading": "Preguntas frecuentes"
   },
   "finalCta": {
-    "heading": "Conoce la visión de la plataforma para la educación vial en Florida.",
-    "body": "Explora la demo, solicita una presentación para inversionistas o contacta al equipo que está construyendo la escuela de manejo online y bilingüe de Florida.",
-    "primaryCta": "Ver demo de la plataforma",
-    "secondaryCta": "Solicitar presentación para inversionistas",
-    "tertiaryCta": "Contactar al equipo"
+    "heading": "¿Listo para encontrar tu curso de manejo en Florida?",
+    "body": "Cuéntanos tu situación y te ayudamos a encontrar el siguiente paso correcto — en inglés o español.",
+    "primaryCta": "Encontrar mi curso",
+    "secondaryCta": "Ver cursos",
+    "tertiaryCta": "Contáctanos"
   }
 }

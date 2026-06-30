@@ -32,5 +32,6 @@
     "city": "Please enter your city.",
     "consent": "Please agree to be contacted so we can help."
   },
-  "privacyNote": "We only collect what we need to help you, and we never sell your information."
+  "privacyNote": "We only collect what we need to help you, and we never sell your information.",
+  "privacyLink": "Read our Privacy Policy"
 }

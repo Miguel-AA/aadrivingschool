@@ -1,11 +1,11 @@
-import { PackageSchema, type Package } from "@/lib/schemas/content";
+import { PackageSchema, type PackageInput } from "@/lib/schemas/content";
 import { loc } from "./_loc";
 
 /**
  * Situation-based packages. Each bundles courses/guides for a specific user
  * problem. Prices are PLACEHOLDERS. `courseIds` reference entries in courses.ts.
  */
-const packages: Package[] = [
+const packages: PackageInput[] = [
   {
     id: "first-time-adult",
     slug: "first-time-adult",

@@ -29,6 +29,9 @@
     "askWhatINeed": "Ask What I Need",
     "contactUs": "Contact Us"
   },
+  "catalog": {
+    "consultationNote": "Pricing confirmed at consultation"
+  },
   "languageToggle": {
     "label": "Language",
     "en": "English",
@@ -40,8 +43,9 @@
     "exploreHeading": "Explore",
     "supportHeading": "Support",
     "legalHeading": "Legal",
-    "privacy": "Privacy",
-    "terms": "Terms",
+    "privacy": "Privacy Policy",
+    "terms": "Terms of Service",
+    "refund": "Refund & Cancellation",
     "rights": "© {year} {name}. All rights reserved."
   },
   "whatsapp": {
@@ -53,7 +57,7 @@
     "label": "Chat with Leon",
     "title": "Leon",
     "status": "AI Assistant",
-    "welcome": "Hi! I'm Leon, your AA Driving School assistant. 🚗 Ask me anything about our courses, permits, or how to get started.",
+    "welcome": "Hi! I'm Leon, your A&A Driving School assistant. 🚗 Ask me anything about our courses, permits, or how to get started.",
     "ack": "Thanks for your message! 🙌 Our team will receive your question and get back to you shortly.",
     "placeholder": "Type your message…",
     "send": "Send message",

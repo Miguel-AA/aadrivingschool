@@ -11,6 +11,7 @@ import { LeadSchema, type LeadInput } from "@/lib/schemas/lead";
 type LeadFormValues = z.input<typeof LeadSchema>;
 import { trackEvent, EVENTS } from "@/lib/services/analytics";
 import { siteConfig } from "@/config/site";
+import { Link } from "@/i18n/navigation";
 import { buttonClasses } from "@/components/cta/buttonStyles";
 import { WhatsAppCTA } from "@/components/cta/WhatsAppCTA";
 import { ConsentCheckbox } from "./ConsentCheckbox";
@@ -62,16 +63,31 @@ export function LeadForm({
   const msg = (key?: string) =>
     key ? t(key as Parameters<typeof t>[0]) : undefined;
 
+  // Non-PII metadata only — never name/email/phone/city/situation.
+  const meta = (values: LeadInput) => ({
+    sourcePage: values.sourcePage,
+    recommendation: values.recommendation,
+    language: values.language,
+  });
+
   const onSubmit = handleSubmit(async (values) => {
-    trackEvent(EVENTS.LEAD_SUBMIT_ATTEMPT, { sourcePage: values.sourcePage });
-    // Investor demo build: there is no backend. Simulate a successful
-    // submission. Wire this to a real CRM/API endpoint before launch.
-    await new Promise((resolve) => setTimeout(resolve, 600));
-    setStatus("success");
-    trackEvent(EVENTS.LEAD_SUBMIT_SUCCESS, {
-      sourcePage: values.sourcePage,
-      recommendation: values.recommendation,
-    });
+    trackEvent(EVENTS.LEAD_SUBMIT_ATTEMPT, meta(values));
+    try {
+      const res = await fetch("/api/lead", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(values),
+      });
+      const data = (await res.json().catch(() => null)) as {
+        ok?: boolean;
+      } | null;
+      if (!res.ok || !data?.ok) throw new Error("submit_failed");
+      setStatus("success");
+      trackEvent(EVENTS.LEAD_SUBMIT_SUCCESS, meta(values));
+    } catch {
+      setStatus("error");
+      trackEvent(EVENTS.LEAD_SUBMIT_ERROR, meta(values));
+    }
   });
 
   if (status === "success") {
@@ -191,13 +207,25 @@ export function LeadForm({
         {...register("consent")}
       />
 
-      <p className="text-xs text-slate-500">{t("privacyNote")}</p>
+      <p className="text-xs text-slate-500">
+        {t("privacyNote")}{" "}
+        <Link
+          href="/privacy"
+          className="font-medium text-brand-700 underline hover:text-brand-800"
+        >
+          {t("privacyLink")}
+        </Link>
+      </p>
 
       {status === "error" && (
         <div className="rounded-lg border border-red-200 bg-red-50 p-3 text-sm text-red-700">
           <p className="font-medium">{t("error.heading")}</p>
           <p>{t("error.body")}</p>
           <p className="mt-1">{t("error.fallback", { email: siteConfig.supportEmail })}</p>
+          {/* Working fallback channel (self-hides if WhatsApp is unconfigured). */}
+          <div className="mt-3">
+            <WhatsAppCTA kind="default" variant="primary" />
+          </div>
         </div>
       )}
 

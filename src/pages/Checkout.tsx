@@ -1,9 +1,10 @@
-import { useSearchParams } from "react-router-dom";
+import { Navigate, useSearchParams } from "react-router-dom";
 import { Check } from "lucide-react";
 import { useLocale, useTranslations } from "@/i18n";
 import { Link } from "@/i18n/navigation";
 import type { ComplianceLabelKey } from "@/lib/schemas/content";
 import { getCatalogItemBySlug, getCoursesForPackage } from "@/content";
+import { isCourseGated, isPackageGated } from "@/lib/catalog/availability";
 import { getLocalized } from "@/lib/utils/locale";
 import { formatPrice } from "@/lib/utils/price";
 import { usePageTitle } from "@/lib/hooks/usePageTitle";
@@ -42,6 +43,16 @@ export function Checkout() {
   }
 
   const isCourse = item.kind === "course";
+
+  // Safety gate: gated regulated items must never reach checkout, even via a
+  // direct URL. Send them to the request-info flow instead.
+  const gated = isCourse
+    ? isCourseGated(item.course)
+    : isPackageGated(getCoursesForPackage(item.pkg));
+  if (gated) {
+    return <Navigate to={`/contact?intent=${kind}:${slug}`} replace />;
+  }
+
   const title = isCourse
     ? getLocalized(item.course.title, locale)
     : getLocalized(item.pkg.title, locale);
@@ -101,12 +112,9 @@ export function Checkout() {
             )}
 
             {price && (
-              <div className="mt-5 flex items-center justify-between border-t border-slate-200 pt-4">
-                <span className="font-semibold text-slate-900">
-                  {t("checkout.totalLabel")}
-                </span>
-                <span className="text-lg font-bold text-slate-900">{price}</span>
-              </div>
+              <p className="mt-5 border-t border-slate-200 pt-4 text-xs text-slate-500">
+                {t("checkout.priceCaption")}
+              </p>
             )}
           </div>
 

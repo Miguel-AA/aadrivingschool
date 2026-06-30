@@ -3,7 +3,7 @@
     "metaTitle": "Cursos de manejo y preparación del permiso en Florida",
     "metaDescription": "Explora los cursos de manejo y la preparación en Florida — TLSAE, educación para conductores adolescentes, mejora del conductor, 55+, preparación del examen del permiso y soporte bilingüe.",
     "title": "Rutas de educación vial y herramientas de preparación",
-    "subtitle": "Explora las rutas de aprendizaje, las herramientas de preparación y las experiencias de soporte que Florida Top 1 Driving School está construyendo para los conductores de Florida.",
+    "subtitle": "Explora las rutas de aprendizaje, las herramientas de preparación y el soporte bilingüe que A&A Driving School ofrece a los conductores de Florida.",
     "filtersLabel": "Filtra por tu situación",
     "filters": {
       "all": "Todos",
@@ -34,20 +34,20 @@
   "contact": {
     "metaTitle": "Contacto",
     "metaDescription": "Recibe ayuda bilingüe para elegir el curso de manejo adecuado en Florida. Contáctanos por formulario, teléfono, correo o WhatsApp.",
-    "title": "Contacta a Florida Top 1 Driving School",
-    "subtitle": "Cuéntanos si necesitas soporte como conductor, ayuda en español, preparación para el permiso o más información sobre la demo de la plataforma.",
+    "title": "Contacta a A&A Driving School",
+    "subtitle": "Cuéntanos si necesitas soporte como conductor, ayuda en español o preparación para el permiso — te ayudamos a encontrar el siguiente paso correcto.",
     "formHeading": "Envíanos tu solicitud",
     "otherWaysHeading": "Otras formas de contactarnos"
   },
   "checkout": {
-    "metaTitle": "Pago",
-    "metaDescription": "Revisa tu selección y empieza con Florida Top 1 Driving School.",
-    "title": "Revisa y empieza",
-    "summaryHeading": "Resumen del pedido",
+    "metaTitle": "Solicitar inscripción",
+    "metaDescription": "Revisa tu selección y solicita tu inscripción con A&A Driving School. No se cobra ningún pago en esta página.",
+    "title": "Solicitar inscripción",
+    "summaryHeading": "Tu selección",
     "includesHeading": "Qué incluye",
-    "priceLabel": "Precio",
-    "totalLabel": "Total",
-    "note": "El pago seguro en línea estará disponible pronto. Solicita tu inscripción ahora y nuestro equipo te contactará para ayudarte a completar el siguiente paso.",
+    "priceLabel": "Precio de referencia",
+    "priceCaption": "El precio se muestra solo como referencia; no se cobra ningún pago en esta página.",
+    "note": "No se cobra ningún pago en esta página. Envía el formulario de solicitud y A&A Driving School te contactará con los siguientes pasos.",
     "continueCta": "Solicitar inscripción",
     "whatsappCta": "Preguntar por WhatsApp",
     "emptyTitle": "Aún no has seleccionado nada",
@@ -73,6 +73,148 @@
       "situation": "Situación",
       "recommendation": "Recomendación",
       "source": "Origen"
+    }
+  },
+  "legal": {
+    "lastUpdatedLabel": "Última actualización",
+    "privacy": {
+      "title": "Política de privacidad",
+      "updated": "30 de junio de 2026",
+      "intro": "A&A Driving School (\"A&A Driving School\", \"nosotros\") es un servicio de información sobre cursos de manejo en Florida y de generación de prospectos. Esta Política de privacidad explica qué información recopilamos cuando nos contactas y cómo la usamos. Es una política práctica para nuestro sitio web actual y puede actualizarse.",
+      "sections": [
+        {
+          "heading": "Información que recopilamos",
+          "body": [
+            "Cuando envías un formulario de solicitud, recopilamos la información que proporcionas: tu nombre, número de teléfono, correo electrónico, ciudad, idioma preferido (inglés o español) y cualquier mensaje o detalle que compartas sobre tu situación.",
+            "También registramos de qué curso o página proviene tu solicitud (por ejemplo, una recomendación de nuestro buscador de cursos) para poder darte seguimiento con ayuda relevante.",
+            "No solicitamos información de pago en este sitio web."
+          ]
+        },
+        {
+          "heading": "Cómo usamos tu información",
+          "body": [
+            "Usamos tu información para responder a tu consulta, ofrecerte información sobre cursos y opciones de ayuda, darte seguimiento de forma manual y mejorar nuestro sitio web.",
+            "No vendemos tu información personal."
+          ]
+        },
+        {
+          "heading": "Cómo se entrega tu solicitud",
+          "body": [
+            "Cuando envías una solicitud, se envía a nuestro equipo a través de un servicio de entrega configurado (como un proveedor de correo o webhook) para que podamos contactarte. Compartimos tu información con proveedores de servicios solo en la medida necesaria para recibir y responder a tu solicitud."
+          ]
+        },
+        {
+          "heading": "Cookies y analítica",
+          "body": [
+            "Nuestro sitio web no utiliza actualmente rastreadores publicitarios de terceros. Si agregamos analítica en el futuro, actualizaremos esta política."
+          ]
+        },
+        {
+          "heading": "Tus opciones",
+          "body": [
+            "Puedes pedirnos que revisemos, actualicemos o eliminemos la información que enviaste. Para hacer una solicitud, contáctanos con los datos de nuestra página de Contacto."
+          ]
+        },
+        {
+          "heading": "No estamos afiliados al DMV",
+          "body": [
+            "A&A Driving School es un servicio independiente. No somos el DMV/FLHSMV de Florida, ni un tribunal, ni un sitio de exámenes."
+          ]
+        },
+        {
+          "heading": "Cambios en esta política",
+          "body": [
+            "Podemos actualizar esta Política de privacidad de vez en cuando. Por favor, revísala periódicamente."
+          ]
+        },
+        {
+          "heading": "Contáctanos",
+          "body": [
+            "Si tienes preguntas sobre esta política, escríbenos a través de nuestra página de Contacto."
+          ]
+        }
+      ]
+    },
+    "terms": {
+      "title": "Términos del servicio",
+      "updated": "30 de junio de 2026",
+      "intro": "Estos Términos del servicio aplican al uso del sitio web de A&A Driving School. Al usar el sitio o enviar una solicitud, aceptas estos términos. Son un conjunto práctico de términos para nuestro sitio web actual y pueden actualizarse.",
+      "sections": [
+        {
+          "heading": "Sobre este sitio web",
+          "body": [
+            "A&A Driving School ofrece información sobre cursos de manejo en Florida y opciones de ayuda, y te permite solicitar información o asistencia. El sitio web es solo informativo y de generación de prospectos."
+          ]
+        },
+        {
+          "heading": "Sin garantías",
+          "body": [
+            "No garantizamos ningún resultado específico, incluyendo la aprobación de la licencia, la desestimación de multas, la eliminación de puntos, la reinstalación de la licencia, descuentos de seguro ni resultados de exámenes. Esos resultados los deciden el estado, los tribunales, tu aseguradora o un proveedor aprobado."
+          ]
+        },
+        {
+          "heading": "Cursos regulados y proveedores",
+          "body": [
+            "Algunos cursos están regulados en Florida y pueden ofrecerse a través de proveedores o socios aprobados cuando se requiere. La disponibilidad y la elegibilidad pueden variar, y el precio de esos cursos se confirma durante una consulta."
+          ]
+        },
+        {
+          "heading": "Tus responsabilidades",
+          "body": [
+            "Eres responsable de confirmar tu elegibilidad y los requisitos vigentes con el DMV/FLHSMV de Florida, el tribunal o el secretario que maneja tu caso, tu aseguradora o un proveedor aprobado, según corresponda.",
+            "Aceptas proporcionar información precisa y no hacer mal uso de nuestros formularios ni enviar solicitudes falsas o automatizadas."
+          ]
+        },
+        {
+          "heading": "Contenido y cambios",
+          "body": [
+            "El contenido del sitio web se ofrece con fines informativos generales y puede cambiar en cualquier momento sin previo aviso."
+          ]
+        },
+        {
+          "heading": "Pagos",
+          "body": [
+            "No se cobra ningún pago en este sitio web. Enviar un formulario de solicitud no crea un pedido pagado."
+          ]
+        },
+        {
+          "heading": "Contáctanos",
+          "body": [
+            "Si tienes preguntas sobre estos términos, escríbenos a través de nuestra página de Contacto."
+          ]
+        }
+      ]
+    },
+    "refund": {
+      "title": "Política de reembolso y cancelación",
+      "updated": "30 de junio de 2026",
+      "intro": "Esta política explica cómo funcionan los pagos, los reembolsos y las cancelaciones en el sitio web de A&A Driving School hoy. Puede actualizarse a medida que cambien nuestros servicios.",
+      "sections": [
+        {
+          "heading": "No se cobra pago en este sitio web",
+          "body": [
+            "A&A Driving School no cobra pagos en este sitio web. Enviar un formulario de solicitud es una solicitud de información o de ayuda con la inscripción — no es una compra y no crea un pedido pagado."
+          ]
+        },
+        {
+          "heading": "Si pagas más adelante",
+          "body": [
+            "Si más adelante decides pagar a A&A Driving School o a un proveedor aprobado por un servicio o curso, los términos de reembolso y cancelación de ese servicio o proveedor específico se te informarán antes de que pagues."
+          ]
+        },
+        {
+          "heading": "Cursos regulados",
+          "body": [
+            "Los cursos regulados pueden ser impartidos por proveedores aprobados. Esos proveedores pueden tener sus propios términos de reembolso y cancelación, que aplicarían a sus cursos."
+          ]
+        },
+        {
+          "heading": "Preguntas",
+          "body": [
+            "Si tienes preguntas sobre pagos, reembolsos o cancelaciones, escríbenos a través de nuestra página de Contacto antes de realizar cualquier pago."
+          ]
+        }
+      ]
     }
   }
 }

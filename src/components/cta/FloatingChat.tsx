@@ -6,7 +6,7 @@ import { cn } from "@/lib/utils/cn";
 type ChatMessage = { id: number; from: "leon" | "user"; text: string };
 
 /**
- * Floating "Leon" AI assistant chat (mock for the investor demo).
+ * Floating "Leon" AI assistant chat (front-end mock; no backend yet).
  *
  * A persistent message bubble in the bottom-left corner. Tapping it opens a
  * chat panel that greets the visitor; any message they send is acknowledged

@@ -47,6 +47,10 @@ export function Header() {
         <Nav />
 
         <div className="flex shrink-0 items-center gap-3">
+          {/* Desktop toggle shows at xl, the same breakpoint where the mobile
+              drawer (which also holds the toggle) hides — so the language switch
+              is reachable at every width with no 1024–1279px gap, and the header
+              never overflows trying to fit the toggle in the tight lg band. */}
           <LanguageToggle tone="dark" className="hidden xl:inline-flex" />
           <CTAButton
             href="/quiz"

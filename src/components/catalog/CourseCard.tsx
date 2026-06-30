@@ -4,6 +4,7 @@ import type { Course } from "@/lib/schemas/content";
 import { Link } from "@/i18n/navigation";
 import { getLocalized } from "@/lib/utils/locale";
 import { formatPrice } from "@/lib/utils/price";
+import { courseAvailability } from "@/lib/catalog/availability";
 import { CategoryIcon } from "@/lib/utils/courseIcons";
 import { ComplianceLabelRow } from "@/components/compliance/ComplianceLabel";
 
@@ -11,7 +12,9 @@ import { ComplianceLabelRow } from "@/components/compliance/ComplianceLabel";
 export function CourseCard({ course }: { course: Course }) {
   const locale = useLocale();
   const t = useTranslations("common");
-  const price = formatPrice(course.priceUsd, locale);
+  // Gated regulated courses never show a price (→ "Request info").
+  const { showPrice } = courseAvailability(course);
+  const price = showPrice ? formatPrice(course.priceUsd, locale) : null;
 
   return (
     <Link

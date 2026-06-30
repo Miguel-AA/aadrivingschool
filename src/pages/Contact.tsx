@@ -1,7 +1,7 @@
 import { useSearchParams } from "react-router-dom";
 import { Mail, Phone } from "lucide-react";
 import { useLocale, useTranslations } from "@/i18n";
-import { siteConfig } from "@/config/site";
+import { siteConfig, contact } from "@/config/site";
 import { getCatalogItemBySlug } from "@/content";
 import { getLocalized } from "@/lib/utils/locale";
 import { usePageTitle } from "@/lib/hooks/usePageTitle";
@@ -59,20 +59,24 @@ export function Contact() {
             />
             <div className="space-y-4 text-sm">
               <WhatsAppCTA kind="default" variant="primary" className="w-full" />
-              <a
-                href={`tel:${siteConfig.supportPhone}`}
-                className="flex items-center gap-2 text-slate-700 hover:text-brand-700"
-              >
-                <Phone className="h-4 w-4" aria-hidden="true" />
-                {siteConfig.supportPhone}
-              </a>
-              <a
-                href={`mailto:${siteConfig.supportEmail}`}
-                className="flex items-center gap-2 text-slate-700 hover:text-brand-700"
-              >
-                <Mail className="h-4 w-4" aria-hidden="true" />
-                {siteConfig.supportEmail}
-              </a>
+              {contact.hasPhone && (
+                <a
+                  href={contact.telHref}
+                  className="flex items-center gap-2 text-slate-700 hover:text-brand-700"
+                >
+                  <Phone className="h-4 w-4" aria-hidden="true" />
+                  {siteConfig.supportPhone}
+                </a>
+              )}
+              {contact.hasEmail && (
+                <a
+                  href={contact.mailtoHref}
+                  className="flex items-center gap-2 text-slate-700 hover:text-brand-700"
+                >
+                  <Mail className="h-4 w-4" aria-hidden="true" />
+                  {siteConfig.supportEmail}
+                </a>
+              )}
             </div>
           </aside>
         </div>

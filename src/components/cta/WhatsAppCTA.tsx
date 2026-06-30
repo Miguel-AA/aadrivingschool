@@ -1,7 +1,7 @@
 
 import { MessageCircle } from "lucide-react";
 import { useLocale, useTranslations } from "@/i18n";
-import { siteConfig } from "@/config/site";
+import { contact } from "@/config/site";
 import { trackEvent, EVENTS } from "@/lib/services/analytics";
 import {
   buttonClasses,
@@ -37,12 +37,15 @@ export function WhatsAppCTA({
   const locale = useLocale();
   const t = useTranslations("common");
 
+  // No WhatsApp number configured → don't render a broken link.
+  if (!contact.hasWhatsapp) return null;
+
   const message =
     kind === "default"
       ? t("whatsapp.defaultMessage")
       : t(`whatsapp.${kind}Message`, { item: item ?? "" });
 
-  const href = `https://wa.me/${siteConfig.whatsappNumber}?text=${encodeURIComponent(message)}`;
+  const href = contact.whatsappHref(message);
 
   return (
     <a

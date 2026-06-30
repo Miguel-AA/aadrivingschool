@@ -2,7 +2,7 @@ import { useId } from "react";
 import { cn } from "@/lib/utils/cn";
 
 /**
- * Florida Top 1 Driving School brand mark — a code-drawn SVG of a car wearing a
+ * A&A Driving School brand mark — a code-drawn SVG of a car wearing a
  * graduation cap, set in a rounded navy badge. Scales sharply from favicon size
  * up to hero size and reads on both light and dark backgrounds (it carries its
  * own navy badge). Decorative by default; pass `title` to expose an a11y label.

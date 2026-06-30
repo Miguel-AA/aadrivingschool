@@ -9,7 +9,7 @@ export function Nav() {
   const pathname = usePathname();
   return (
     <nav
-      className="hidden items-center gap-6 lg:flex xl:gap-7"
+      className="hidden items-center gap-6 xl:flex xl:gap-7"
       aria-label="Primary"
     >
       {navLinks.map((link) => {

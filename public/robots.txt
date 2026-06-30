@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://floridatop1drivingschool.com/sitemap.xml
+Sitemap: https://aadrivingschool.com/sitemap.xml

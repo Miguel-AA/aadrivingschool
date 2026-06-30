@@ -22,6 +22,22 @@ export const RegulatoryStatusSchema = z.enum([
 ]);
 export type RegulatoryStatus = z.infer<typeof RegulatoryStatusSchema>;
 
+/** Explicit availability for a catalog item:
+ *  - "available"    — promotable; may show price + checkout (if priced)
+ *  - "consultation" — request-info only; no price, no checkout
+ *  - "coming-soon"  — not yet offered; request-info only
+ *  Regulated courses without a confirmed provider must never be "available". */
+export const CatalogStatusSchema = z.enum([
+  "available",
+  "consultation",
+  "coming-soon",
+]);
+export type CatalogStatus = z.infer<typeof CatalogStatusSchema>;
+
+/** Provider ids that are placeholders — i.e. no confirmed approved provider yet.
+ *  A regulated course pointing at one of these is gated: no price, no checkout. */
+export const PENDING_PROVIDER_IDS = new Set<string>(["partner-pending"]);
+
 export const CourseCategorySchema = z.enum([
   // regulated / partner
   "tlsae",
@@ -82,6 +98,7 @@ export const CourseSchema = z
     faqIds: z.array(z.string()).default([]),
     seo: SeoSchema,
     featured: z.boolean().default(false),
+    status: CatalogStatusSchema.default("available"),
   })
   .refine(
     (c) =>
@@ -92,8 +109,21 @@ export const CourseSchema = z
       message:
         "Regulated-partner courses must have a providerId and include the partner-provided, not-official-dmv, and no-guarantee compliance labels.",
     },
+  )
+  .refine(
+    (c) =>
+      !(
+        c.regulatoryStatus === "regulated-partner" &&
+        (c.providerId === null || PENDING_PROVIDER_IDS.has(c.providerId))
+      ) || c.status !== "available",
+    {
+      message:
+        "Regulated-partner courses without a confirmed approved provider must not be status 'available' (use 'consultation' or 'coming-soon').",
+    },
   );
 export type Course = z.infer<typeof CourseSchema>;
+/** Authoring type for course data — defaulted fields (e.g. `status`) optional. */
+export type CourseInput = z.input<typeof CourseSchema>;
 
 /** Optional marketing badge shown on a package card. Only ONE package should
  *  carry "most-popular"; the others are situational accents. */
@@ -115,8 +145,13 @@ export const PackageSchema = z.object({
   priceUsd: z.number().nullable(),
   featured: z.boolean().default(false),
   badge: PackageBadgeSchema.nullable().default(null),
+  // Effective availability is computed (a package inherits the most restrictive
+  // status of its courses); this field is the package's own default.
+  status: CatalogStatusSchema.default("available"),
 });
 export type Package = z.infer<typeof PackageSchema>;
+/** Authoring type for package data — defaulted fields (e.g. `status`) optional. */
+export type PackageInput = z.input<typeof PackageSchema>;
 
 export const ProviderSchema = z.object({
   id: z.string(),

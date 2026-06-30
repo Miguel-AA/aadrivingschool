@@ -29,6 +29,9 @@
     "askWhatINeed": "Preguntar qué necesito",
     "contactUs": "Contáctanos"
   },
+  "catalog": {
+    "consultationNote": "El precio se confirma en la consulta"
+  },
   "languageToggle": {
     "label": "Idioma",
     "en": "English",
@@ -40,8 +43,9 @@
     "exploreHeading": "Explorar",
     "supportHeading": "Soporte",
     "legalHeading": "Legal",
-    "privacy": "Privacidad",
-    "terms": "Términos",
+    "privacy": "Política de privacidad",
+    "terms": "Términos del servicio",
+    "refund": "Reembolso y cancelación",
     "rights": "© {year} {name}. Todos los derechos reservados."
   },
   "whatsapp": {
@@ -53,7 +57,7 @@
     "label": "Chatea con Leon",
     "title": "Leon",
     "status": "Asistente IA",
-    "welcome": "¡Hola! Soy Leon, tu asistente de Florida Top 1 Driving School. 🚗 Pregúntame lo que quieras sobre nuestros cursos, permisos o cómo empezar.",
+    "welcome": "¡Hola! Soy Leon, tu asistente de A&A Driving School. 🚗 Pregúntame lo que quieras sobre nuestros cursos, permisos o cómo empezar.",
     "ack": "¡Gracias por tu mensaje! 🙌 Nuestro equipo recibirá tu pregunta y te responderá muy pronto.",
     "placeholder": "Escribe tu mensaje…",
     "send": "Enviar mensaje",

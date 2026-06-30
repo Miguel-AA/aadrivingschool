@@ -17,7 +17,8 @@ Conventions:
 - Route components live in `src/pages/`; shared UI in `src/components/`.
 - Static content (courses, packages, FAQs, quiz) is in `src/content/*.ts`,
   validated by Zod at import. Bilingual fields use `{ en, es }` + `getLocalized`.
-- The lead form is **mocked** for the investor demo (no backend) — wire it to a
-  real CRM/API before launch.
+- The lead form posts to a Cloudflare Pages Function at `/api/lead`
+  (`functions/api/lead.ts`), which validates server-side and forwards leads to
+  the `LEAD_WEBHOOK_URL` env var. Set that var in Cloudflare before launch.
 - `npm run build` → `dist/`. SPA deep-link routing relies on `public/_redirects`
   (`/* /index.html 200`). Cloudflare Pages: build `npm run build`, output `dist`.

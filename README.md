@@ -1,7 +1,7 @@
-# Florida Top 1 Driving School
+# A&A Driving School
 
-A Florida driving education & license-support platform
-(`floridatop1drivingschool.com`) — a bilingual (English/Spanish) site that helps
+A Florida driving education & license-support site
+(`aadrivingschool.com`) — a bilingual (English/Spanish) site that helps
 drivers and families understand the right next step (TLSAE, permit prep, ticket
 help, license support), packages official/partner courses with proprietary prep
 and guidance, and includes a Course Finder quiz and lead capture.
@@ -13,9 +13,9 @@ and guidance, and includes a Course Finder quiz and lead capture.
 > delivered through approved providers. These rules are enforced in code (see
 > "Compliance" below) — keep them intact.
 
-This is a **frontend-only React + Vite SPA** (investor demo). It deploys as
-static files to Cloudflare Pages — no server, SSR, or API routes. External
-integrations (payments, CRM, email, analytics) are stubbed/mocked behind clean
+This is a **React + Vite SPA** that deploys as static files to Cloudflare Pages,
+plus a single Cloudflare Pages Function (`functions/api/lead.ts`) for lead
+delivery. Other integrations (payments, CRM, analytics) are stubbed behind clean
 interfaces and ready to wire up.
 
 ## Stack
@@ -56,7 +56,7 @@ src/
   lib/seo/            # JSON-LD helpers
   lib/hooks/          # usePageTitle
   i18n/               # locale provider + translations/navigation shims (no Next)
-  messages/{en,es}/   # message dictionaries (EN complete; ES = [ES] placeholders)
+  messages/{en,es}/   # message dictionaries (EN + ES complete)
 ```
 
 ## Deployment (Cloudflare Pages)
@@ -91,9 +91,10 @@ locale in React state — no reload, URLs stay clean.
 
 ## Integrations (stubbed/mocked)
 
-`analytics.trackEvent` is a console stub. The **lead form is mocked** for the
-demo: it validates with Zod and resolves to a success state client-side (no
-backend). Wire `LeadForm`'s `onSubmit` to a real CRM/API endpoint before launch.
+`analytics.trackEvent` is a console stub. The **lead form** validates with Zod
+and posts to the `/api/lead` Cloudflare Pages Function, which re-validates
+server-side and forwards the lead to the `LEAD_WEBHOOK_URL` env var. Set that
+var (and the `VITE_*` contact vars) in Cloudflare before launch.
 
 ## What's intentionally out of scope (later phases)
 

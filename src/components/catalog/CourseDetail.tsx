@@ -7,6 +7,7 @@ import {
 } from "@/content";
 import { getLocalized } from "@/lib/utils/locale";
 import { formatPrice } from "@/lib/utils/price";
+import { courseAvailability } from "@/lib/catalog/availability";
 import { EVENTS } from "@/lib/services/analytics";
 import { faqJsonLd, courseJsonLd } from "@/lib/seo/jsonld";
 import { Section, SectionHeading } from "@/components/content/Section";
@@ -27,7 +28,8 @@ export function CourseDetail({ course }: { course: Course }) {
   const tc = useTranslations("common");
 
   const title = getLocalized(course.title, locale);
-  const price = formatPrice(course.priceUsd, locale);
+  const { showPrice, canCheckout, gated } = courseAvailability(course);
+  const price = showPrice ? formatPrice(course.priceUsd, locale) : null;
   const faqs = getFaqsForCourse(course);
   const relatedPackages = allPackages.filter((p) =>
     p.courseIds.includes(course.id),
@@ -52,7 +54,8 @@ export function CourseDetail({ course }: { course: Course }) {
           <div className="mt-6 flex flex-wrap items-center gap-x-6 gap-y-2 text-sm text-slate-700">
             <span className="inline-flex items-center gap-1.5">
               <Tag className="h-4 w-4 text-brand-700" aria-hidden="true" />
-              {t("priceLabel")}: {price ?? tc("cta.requestInfo")}
+              {t("priceLabel")}:{" "}
+              {price ?? tc(gated ? "catalog.consultationNote" : "cta.requestInfo")}
             </span>
             {course.durationLabel && (
               <span className="inline-flex items-center gap-1.5">
@@ -65,7 +68,7 @@ export function CourseDetail({ course }: { course: Course }) {
           <div className="mt-8 flex flex-wrap items-center gap-3">
             <CTAButton
               href={
-                price
+                canCheckout
                   ? `/checkout?item=course:${course.slug}`
                   : `/contact?intent=course:${course.slug}`
               }
@@ -73,7 +76,7 @@ export function CourseDetail({ course }: { course: Course }) {
               eventProps={{ kind: "course", id: course.id }}
               size="lg"
             >
-              {price ? tc("cta.getStarted") : tc("cta.requestInfo")}
+              {canCheckout ? tc("cta.getStarted") : tc("cta.requestInfo")}
             </CTAButton>
             <WhatsAppCTA kind="course" item={title} size="lg" />
           </div>

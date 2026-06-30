@@ -4,6 +4,7 @@ import type { ComplianceLabelKey, Package } from "@/lib/schemas/content";
 import { getCoursesForPackage } from "@/content";
 import { getLocalized } from "@/lib/utils/locale";
 import { formatPrice } from "@/lib/utils/price";
+import { packageAvailability } from "@/lib/catalog/availability";
 import { EVENTS } from "@/lib/services/analytics";
 import { Section, SectionHeading } from "@/components/content/Section";
 import { Disclaimer } from "@/components/compliance/Disclaimer";
@@ -20,8 +21,12 @@ export function PackageDetail({ pkg }: { pkg: Package }) {
   const tc = useTranslations("common");
 
   const title = getLocalized(pkg.title, locale);
-  const price = formatPrice(pkg.priceUsd, locale);
   const includedCourses = getCoursesForPackage(pkg);
+  const { showPrice, canCheckout, gated } = packageAvailability(
+    pkg,
+    includedCourses,
+  );
+  const price = showPrice ? formatPrice(pkg.priceUsd, locale) : null;
 
   // Union of compliance labels across included courses, so the bundle carries
   // every required statement. Provider id taken from any regulated course.
@@ -46,12 +51,12 @@ export function PackageDetail({ pkg }: { pkg: Package }) {
             {getLocalized(pkg.shortDescription, locale)}
           </p>
           <div className="mt-6 text-sm font-semibold text-slate-900">
-            {price ?? tc("cta.requestInfo")}
+            {price ?? tc(gated ? "catalog.consultationNote" : "cta.requestInfo")}
           </div>
           <div className="mt-8 flex flex-wrap items-center gap-3">
             <CTAButton
               href={
-                price
+                canCheckout
                   ? `/checkout?item=package:${pkg.slug}`
                   : `/contact?intent=package:${pkg.slug}`
               }
@@ -59,7 +64,7 @@ export function PackageDetail({ pkg }: { pkg: Package }) {
               eventProps={{ kind: "package", id: pkg.id }}
               size="lg"
             >
-              {price ? tc("cta.getStarted") : tc("cta.requestInfo")}
+              {canCheckout ? tc("cta.getStarted") : tc("cta.requestInfo")}
             </CTAButton>
             <WhatsAppCTA kind="recommendation" item={title} size="lg" />
           </div>

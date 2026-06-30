@@ -4,10 +4,9 @@ import { useTranslations } from "@/i18n";
 type Row = { label: string; value: string };
 
 /**
- * Decorative hero product card (desktop only). Presents a polished "Student
- * Pathway" dashboard — profile, progress, support language, next DMV step, and
- * completion status — so the hero reads as a platform preview, not a quiz.
- * Purely visual; the parent marks it `aria-hidden`.
+ * Decorative hero card (desktop only). Shows an illustrative "Your Driving
+ * Plan" example — goal, progress, support language, and next step — so the hero
+ * has a friendly visual. Purely decorative; the parent marks it `aria-hidden`.
  */
 export function HeroShowcase() {
   const t = useTranslations("home");
@@ -25,8 +24,8 @@ export function HeroShowcase() {
         {/* header: profile */}
         <div className="flex items-center justify-between gap-3">
           <div className="flex items-center gap-3">
-            <span className="grid h-10 w-10 place-items-center rounded-xl bg-gradient-to-br from-brand-700 to-brand-900 text-sm font-bold text-white shadow-sm">
-              FT
+            <span className="grid h-10 w-10 place-items-center rounded-xl bg-gradient-to-br from-brand-700 to-brand-900 text-xs font-bold text-white shadow-sm">
+              A&amp;A
             </span>
             <div className="leading-tight">
               <p className="text-sm font-bold text-brand-900">

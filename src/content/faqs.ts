@@ -11,12 +11,12 @@ const faqs: Faq[] = [
   {
     id: "global-official",
     question: loc(
-      "Are regulated courses included in the platform roadmap?",
-      "¿Los cursos regulados están incluidos en la hoja de ruta de la plataforma?",
+      "Do you offer regulated Florida driving courses?",
+      "¿Ofrecen cursos de manejo regulados en Florida?",
     ),
     answer: loc(
-      "Yes. Florida Top 1 Driving School is being built with a compliance-aware roadmap for regulated driving education. Any regulated course delivery will follow applicable Florida approval, licensing, and operating requirements before being offered as an official state-regulated course. The platform is an independent service and is not the Florida DMV/FLHSMV, a court, or a testing site.",
-      "Sí. Florida Top 1 Driving School se está construyendo con una hoja de ruta consciente de cumplimiento para la educación vial regulada. Cualquier curso regulado seguirá los requisitos aplicables de aprobación, licencia y operación de Florida antes de ofrecerse como un curso oficial regulado por el estado. La plataforma es un servicio independiente y no es el DMV/FLHSMV de Florida, ni un tribunal, ni un sitio de exámenes.",
+      "A&A Driving School helps Florida drivers understand course options and request information. Where required, some regulated courses may be offered through approved providers or partners, and eligibility may vary. A&A Driving School is an independent service and is not the Florida DMV/FLHSMV, a court, or a testing site.",
+      "A&A Driving School ayuda a los conductores de Florida a entender las opciones de cursos y a solicitar información. Cuando se requiere, algunos cursos regulados pueden ofrecerse a través de proveedores o socios aprobados, y la elegibilidad puede variar. A&A Driving School es un servicio independiente y no es el DMV/FLHSMV de Florida, ni un tribunal, ni un sitio de exámenes.",
     ),
     scope: "global",
     sortOrder: 1,
@@ -24,12 +24,12 @@ const faqs: Faq[] = [
   {
     id: "global-spanish",
     question: loc(
-      "Is the platform bilingual (English & Spanish)?",
-      "¿La plataforma es bilingüe (inglés y español)?",
+      "Do you offer help in English and Spanish?",
+      "¿Ofrecen ayuda en inglés y español?",
     ),
     answer: loc(
-      "Yes. English and Spanish are part of the core experience — the site, guides, course finder, and concierge support, including WhatsApp. Spanish-first learning paths are on the roadmap.",
-      "Sí. El inglés y el español son parte del núcleo de la experiencia — el sitio, las guías, el buscador de cursos y el soporte personalizado, incluido WhatsApp. Las rutas de aprendizaje pensadas primero en español están en la hoja de ruta.",
+      "Yes. We help in both English and Spanish — across the site, our guides, the course finder, and support, including WhatsApp.",
+      "Sí. Ayudamos en inglés y español — en el sitio, nuestras guías, el buscador de cursos y el soporte, incluido WhatsApp.",
     ),
     scope: "global",
     sortOrder: 2,
@@ -37,12 +37,12 @@ const faqs: Faq[] = [
   {
     id: "global-guarantee",
     question: loc(
-      "Does the platform guarantee exam or ticket outcomes?",
-      "¿La plataforma garantiza resultados de exámenes o multas?",
+      "Do you guarantee exam or ticket outcomes?",
+      "¿Garantizan resultados de exámenes o multas?",
     ),
     answer: loc(
-      "No. Exam results, ticket dismissal, point removal, reinstatement, and insurance discounts are decided by the state, courts, or your insurer. The platform provides structured preparation, guidance, and a compliance-aware path to approved course delivery.",
-      "No. Los resultados de exámenes, la desestimación de multas, la eliminación de puntos, la reinstalación y los descuentos de seguro los deciden el estado, los tribunales o tu aseguradora. La plataforma ofrece preparación estructurada, orientación y una ruta consciente de cumplimiento hacia la entrega de cursos aprobados.",
+      "No. Exam results, ticket dismissal, point removal, reinstatement, and insurance discounts are decided by the state, courts, or your insurer. A&A Driving School provides preparation, guidance, and help connecting you to the right option.",
+      "No. Los resultados de exámenes, la desestimación de multas, la eliminación de puntos, la reinstalación y los descuentos de seguro los deciden el estado, los tribunales o tu aseguradora. A&A Driving School ofrece preparación, orientación y ayuda para conectarte con la opción correcta.",
     ),
     scope: "global",
     sortOrder: 3,

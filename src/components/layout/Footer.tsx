@@ -1,7 +1,7 @@
 import { Mail, MessageCircle, Phone } from "lucide-react";
 import { useTranslations } from "@/i18n";
 import { Link } from "@/i18n/navigation";
-import { siteConfig } from "@/config/site";
+import { siteConfig, contact } from "@/config/site";
 import { footerLinks } from "./navLinks";
 import { Logo } from "./Logo";
 
@@ -28,7 +28,7 @@ export function Footer() {
       </div>
 
       <div className="relative z-10 mx-auto w-full max-w-6xl px-4 pt-14 pb-28 sm:px-6 lg:px-8 lg:pb-14">
-        <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-4">
+        <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-5">
           <div className="lg:col-span-2">
             <Logo tone="dark" size="lg" />
             <p className="mt-4 max-w-sm text-sm text-slate-400">
@@ -67,34 +67,72 @@ export function Footer() {
                   {t("nav.contact")}
                 </Link>
               </li>
+              {contact.hasPhone && (
+                <li>
+                  <a
+                    href={contact.telHref}
+                    className="flex items-center gap-2 text-slate-400 transition-colors hover:text-brand-200"
+                  >
+                    <Phone className="h-4 w-4" aria-hidden="true" />
+                    {siteConfig.supportPhone}
+                  </a>
+                </li>
+              )}
+              {contact.hasEmail && (
+                <li>
+                  <a
+                    href={contact.mailtoHref}
+                    className="flex items-center gap-2 text-slate-400 transition-colors hover:text-brand-200"
+                  >
+                    <Mail className="h-4 w-4" aria-hidden="true" />
+                    {siteConfig.supportEmail}
+                  </a>
+                </li>
+              )}
+              {contact.hasWhatsapp && (
+                <li>
+                  <a
+                    href={contact.whatsappHref()}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center gap-2 text-slate-400 transition-colors hover:text-brand-200"
+                  >
+                    <MessageCircle className="h-4 w-4" aria-hidden="true" />
+                    {t("cta.chatWhatsApp")}
+                  </a>
+                </li>
+              )}
+            </ul>
+          </div>
+
+          <div>
+            <h2 className="text-sm font-semibold text-white">
+              {t("footer.legalHeading")}
+            </h2>
+            <ul className="mt-4 space-y-2.5 text-sm">
               <li>
-                <a
-                  href={`tel:${siteConfig.supportPhone}`}
-                  className="flex items-center gap-2 text-slate-400 transition-colors hover:text-brand-200"
+                <Link
+                  href="/privacy"
+                  className="text-slate-400 transition-colors hover:text-brand-200"
                 >
-                  <Phone className="h-4 w-4" aria-hidden="true" />
-                  {siteConfig.supportPhone}
-                </a>
+                  {t("footer.privacy")}
+                </Link>
               </li>
               <li>
-                <a
-                  href={`mailto:${siteConfig.supportEmail}`}
-                  className="flex items-center gap-2 text-slate-400 transition-colors hover:text-brand-200"
+                <Link
+                  href="/terms"
+                  className="text-slate-400 transition-colors hover:text-brand-200"
                 >
-                  <Mail className="h-4 w-4" aria-hidden="true" />
-                  {siteConfig.supportEmail}
-                </a>
+                  {t("footer.terms")}
+                </Link>
               </li>
               <li>
-                <a
-                  href={`https://wa.me/${siteConfig.whatsappNumber}`}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex items-center gap-2 text-slate-400 transition-colors hover:text-brand-200"
+                <Link
+                  href="/refund"
+                  className="text-slate-400 transition-colors hover:text-brand-200"
                 >
-                  <MessageCircle className="h-4 w-4" aria-hidden="true" />
-                  {t("cta.chatWhatsApp")}
-                </a>
+                  {t("footer.refund")}
+                </Link>
               </li>
             </ul>
           </div>

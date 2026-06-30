@@ -3,7 +3,7 @@
     "metaTitle": "Florida Driving Courses & Permit Prep",
     "metaDescription": "Browse Florida driving courses and prep — TLSAE, teen driver education, driver improvement, 55+, permit test prep, and bilingual support.",
     "title": "Driver Education Pathways & Prep Tools",
-    "subtitle": "Explore the learning paths, preparation tools, and support experiences Florida Top 1 Driving School is building for Florida drivers.",
+    "subtitle": "Explore the learning paths, preparation tools, and bilingual support A&A Driving School offers Florida drivers.",
     "filtersLabel": "Filter by your situation",
     "filters": {
       "all": "All",
@@ -34,20 +34,20 @@
   "contact": {
     "metaTitle": "Contact Us",
     "metaDescription": "Get bilingual help choosing the right Florida driving course. Contact us by form, phone, email, or WhatsApp.",
-    "title": "Contact Florida Top 1 Driving School",
-    "subtitle": "Tell us whether you need driver support, Spanish help, permit preparation, or want to learn more about the platform demo.",
+    "title": "Contact A&A Driving School",
+    "subtitle": "Tell us whether you need driver support, Spanish help, or permit preparation — we'll help you find the right next step.",
     "formHeading": "Send us your request",
     "otherWaysHeading": "Other ways to reach us"
   },
   "checkout": {
-    "metaTitle": "Checkout",
-    "metaDescription": "Review your selection and get started with Florida Top 1 Driving School.",
-    "title": "Review & get started",
-    "summaryHeading": "Order summary",
+    "metaTitle": "Request Enrollment",
+    "metaDescription": "Review your selection and request enrollment with A&A Driving School. No payment is collected on this page.",
+    "title": "Request enrollment",
+    "summaryHeading": "Your selection",
     "includesHeading": "What's included",
-    "priceLabel": "Price",
-    "totalLabel": "Total",
-    "note": "Secure online payment is coming soon. Request enrollment now and our team will follow up to help you complete the next step.",
+    "priceLabel": "Reference price",
+    "priceCaption": "Pricing shown for reference only — no payment is collected on this page.",
+    "note": "No payment is collected on this page. Submit the request form and A&A Driving School will contact you with the next steps.",
     "continueCta": "Request enrollment",
     "whatsappCta": "Ask on WhatsApp",
     "emptyTitle": "Nothing selected yet",
@@ -73,6 +73,148 @@
       "situation": "Situation",
       "recommendation": "Recommendation",
       "source": "Source"
+    }
+  },
+  "legal": {
+    "lastUpdatedLabel": "Last updated",
+    "privacy": {
+      "title": "Privacy Policy",
+      "updated": "June 30, 2026",
+      "intro": "A&A Driving School (\"A&A Driving School\", \"we\", \"us\") is a Florida driving-course information and lead-generation service. This Privacy Policy explains what information we collect when you contact us and how we use it. It is a practical policy for our current website and may be updated.",
+      "sections": [
+        {
+          "heading": "Information we collect",
+          "body": [
+            "When you submit a request form, we collect the information you provide: your name, phone number, email address, city, preferred language (English or Spanish), and any message or details you share about your situation.",
+            "We also record which course or page your request came from (for example, a recommendation from our Course Finder) so we can follow up with relevant help.",
+            "We do not ask for payment information on this website."
+          ]
+        },
+        {
+          "heading": "How we use your information",
+          "body": [
+            "We use your information to respond to your inquiry, provide information about courses and help options, follow up with you manually, and improve our website.",
+            "We do not sell your personal information."
+          ]
+        },
+        {
+          "heading": "How your request is delivered",
+          "body": [
+            "When you submit a request, it is sent to our team through a configured delivery service (such as an email or webhook provider) so that we can contact you. We share your information with service providers only as needed to receive and respond to your request."
+          ]
+        },
+        {
+          "heading": "Cookies and analytics",
+          "body": [
+            "Our website does not currently run third-party advertising trackers. If we add analytics in the future, we will update this policy."
+          ]
+        },
+        {
+          "heading": "Your choices",
+          "body": [
+            "You may ask us to review, update, or delete the information you submitted. To make a request, contact us using the details on our Contact page."
+          ]
+        },
+        {
+          "heading": "Not affiliated with the DMV",
+          "body": [
+            "A&A Driving School is an independent service. We are not the Florida DMV/FLHSMV, a court, or a testing site."
+          ]
+        },
+        {
+          "heading": "Changes to this policy",
+          "body": [
+            "We may update this Privacy Policy from time to time. Please review it periodically."
+          ]
+        },
+        {
+          "heading": "Contact us",
+          "body": [
+            "If you have questions about this policy, please reach us through our Contact page."
+          ]
+        }
+      ]
+    },
+    "terms": {
+      "title": "Terms of Service",
+      "updated": "June 30, 2026",
+      "intro": "These Terms of Service apply to your use of the A&A Driving School website. By using the site or submitting a request, you agree to these terms. They are a practical set of terms for our current website and may be updated.",
+      "sections": [
+        {
+          "heading": "About this website",
+          "body": [
+            "A&A Driving School provides information about Florida driving courses and help options and lets you request information or assistance. The website is informational and lead-generation only."
+          ]
+        },
+        {
+          "heading": "No guarantees",
+          "body": [
+            "We do not guarantee any specific outcome, including license approval, ticket dismissal, point removal, license reinstatement, insurance discounts, or test results. Those outcomes are decided by the state, the courts, your insurer, or an approved provider."
+          ]
+        },
+        {
+          "heading": "Regulated courses and providers",
+          "body": [
+            "Some courses are regulated in Florida and may be offered through approved providers or partners where required. Availability and eligibility may vary, and pricing for those courses is confirmed during a consultation."
+          ]
+        },
+        {
+          "heading": "Your responsibilities",
+          "body": [
+            "You are responsible for confirming your eligibility and current requirements with the Florida DMV/FLHSMV, the court or clerk handling your case, your insurer, or an approved provider, as applicable.",
+            "You agree to provide accurate information and not to misuse our forms or submit false or automated requests."
+          ]
+        },
+        {
+          "heading": "Content and changes",
+          "body": [
+            "Website content is provided for general informational purposes and may change at any time without notice."
+          ]
+        },
+        {
+          "heading": "Payments",
+          "body": [
+            "No payment is collected on this website. Submitting a request form does not create a paid order."
+          ]
+        },
+        {
+          "heading": "Contact us",
+          "body": [
+            "If you have questions about these terms, please reach us through our Contact page."
+          ]
+        }
+      ]
+    },
+    "refund": {
+      "title": "Refund & Cancellation Policy",
+      "updated": "June 30, 2026",
+      "intro": "This policy explains how payments, refunds, and cancellations work for the A&A Driving School website today. It may be updated as our services change.",
+      "sections": [
+        {
+          "heading": "No payment on this website",
+          "body": [
+            "A&A Driving School does not collect payment on this website. Submitting a request form is a request for information or enrollment help — it is not a purchase and does not create a paid order."
+          ]
+        },
+        {
+          "heading": "If you pay later",
+          "body": [
+            "If you later choose to pay A&A Driving School or an approved provider for a service or course, the refund and cancellation terms for that specific service or provider will be disclosed to you before you pay."
+          ]
+        },
+        {
+          "heading": "Regulated courses",
+          "body": [
+            "Regulated courses may be delivered by approved providers. Those providers may have their own refund and cancellation terms, which would apply to their courses."
+          ]
+        },
+        {
+          "heading": "Questions",
+          "body": [
+            "If you have questions about payments, refunds, or cancellations, please reach us through our Contact page before making any payment."
+          ]
+        }
+      ]
     }
   }
 }

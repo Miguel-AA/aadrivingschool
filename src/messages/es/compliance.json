@@ -1,7 +1,7 @@
 {
   "heading": "Nota sobre la hoja de ruta de cumplimiento",
   "roadmapLabel": "Nota sobre la hoja de ruta de cumplimiento",
-  "roadmapNote": "Florida Top 1 Driving School se está desarrollando con una hoja de ruta enfocada en el cumplimiento. Cualquier curso regulado seguirá los requisitos aplicables de aprobación, licencia y operación de Florida antes de ofrecerse como un curso oficial regulado por el estado.",
+  "roadmapNote": "A&A Driving School ofrece orientación sobre cursos de manejo y soporte bilingüe. Algunos cursos regulados pueden ofrecerse a través de proveedores aprobados, y la elegibilidad puede variar. No somos el DMV/FLHSMV de Florida y no garantizamos resultados específicos.",
   "labels": {
     "partner-provided": "Provisto por un socio",
     "educational-guide": "Guía educativa",
@@ -15,6 +15,6 @@
     "no-guarantee": "No garantizamos resultados de exámenes, desestimación de multas, eliminación de puntos, reinstalación de la licencia ni descuentos de seguro. Esos resultados los deciden el estado, los tribunales o tu aseguradora."
   },
   "providerAttribution": "Curso provisto por {provider}.",
-  "globalFooter": "Florida Top 1 Driving School se está desarrollando con una hoja de ruta enfocada en el cumplimiento. Cualquier curso regulado seguirá los requisitos aplicables de aprobación, licencia y operación de Florida antes de ofrecerse como un curso oficial regulado por el estado. Confirma siempre los requisitos vigentes con las fuentes oficiales del estado.",
-  "globalFooterShort": "Florida Top 1 Driving School se está desarrollando con una hoja de ruta enfocada en el cumplimiento. Los cursos regulados seguirán los requisitos de aprobación de Florida antes de ofrecerse como cursos oficiales regulados."
+  "globalFooter": "A&A Driving School ofrece orientación sobre cursos de manejo y soporte bilingüe. Algunos cursos regulados pueden ofrecerse a través de proveedores aprobados, y la elegibilidad puede variar. No somos el DMV/FLHSMV de Florida y no garantizamos resultados específicos. Confirma siempre los requisitos vigentes con las fuentes oficiales del estado.",
+  "globalFooterShort": "A&A Driving School ofrece orientación sobre cursos y soporte bilingüe. Algunos cursos regulados pueden ofrecerse a través de proveedores aprobados; la elegibilidad puede variar. No somos el DMV/FLHSMV de Florida y no garantizamos resultados específicos."
 }
