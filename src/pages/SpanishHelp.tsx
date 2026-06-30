@@ -54,7 +54,7 @@ export function SpanishHelp() {
       ctaHeading={t("spanish.ctaHeading")}
       ctaBody={t("spanish.ctaBody")}
       theme="violet"
-      heroImage="/herobg-poster.jpg"
+      heroImage="/spanishhelp.jpg"
       leadSourcePage="/spanish-help"
     />
   );

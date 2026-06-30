@@ -34,7 +34,11 @@ export function Contact() {
 
   return (
     <>
-      <Hero title={t("contact.title")} subtitle={t("contact.subtitle")} />
+      <Hero
+        title={t("contact.title")}
+        subtitle={t("contact.subtitle")}
+        imageSrc="/contacthero.jpg"
+      />
 
       <Section>
         <div className="grid gap-8 lg:grid-cols-3 lg:gap-10">

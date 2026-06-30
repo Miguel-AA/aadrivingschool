@@ -52,7 +52,7 @@ export function TicketHelp() {
       ctaHeading={t("ticket.ctaHeading")}
       ctaBody={t("ticket.ctaBody")}
       theme="amber"
-      heroImage="/herobg-poster.jpg"
+      heroImage="/tickethelphero.jpg"
       leadSourcePage="/ticket-help"
     />
   );

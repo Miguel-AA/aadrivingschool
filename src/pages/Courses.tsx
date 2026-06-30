@@ -11,7 +11,11 @@ export function Courses() {
 
   return (
     <>
-      <Hero title={t("courses.title")} subtitle={t("courses.subtitle")} />
+      <Hero
+        title={t("courses.title")}
+        subtitle={t("courses.subtitle")}
+        imageSrc="/courseshero.jpg"
+      />
       <Section>
         <CoursesExplorer courses={courses} packages={packages} />
       </Section>
