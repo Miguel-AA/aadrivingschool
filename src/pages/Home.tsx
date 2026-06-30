@@ -56,7 +56,7 @@ export function Home() {
         highlight="Online Driving School Platform"
         subtitle={t("hero.subtitle")}
         badges={trust}
-        videoSrc="/herobgschool-loop.mp4"
+        videoSrc="/testhero-loop.mp4"
         videoPoster="/herobg-poster.jpg"
         aside={<HeroShowcase />}
         actions={

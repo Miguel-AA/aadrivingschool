@@ -138,16 +138,41 @@ h4 {
 
 /* Gradient text helper — warm orange highlight on navy headlines */
 .text-gradient {
-  /* Metallic gold sheen: bright highlight fading to deep gold. */
-  background-image: linear-gradient(
-    100deg,
-    var(--color-accent-400),
-    var(--color-accent-600) 55%,
-    var(--color-accent-700)
-  );
+  /* Metallic gold base with a bright glint that sweeps across the text.
+     Top layer = moving white sheen; bottom layer = static deep-gold gradient. */
+  background-image:
+    linear-gradient(
+      110deg,
+      transparent 28%,
+      rgba(255, 255, 255, 0.4) 50%,
+      transparent 72%
+    ),
+    linear-gradient(
+      100deg,
+      var(--color-accent-400),
+      var(--color-accent-600) 55%,
+      var(--color-accent-700)
+    );
+  background-size: 250% 100%, 100% 100%;
+  background-position: 150% 0, 0 0;
+  background-repeat: no-repeat;
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
+  animation: text-shine 9s ease-in-out infinite;
+}
+
+@keyframes text-shine {
+  to {
+    background-position: -150% 0, 0 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .text-gradient {
+    animation: none;
+    background-position: 0 0, 0 0;
+  }
 }
 
 /* Dotted decorative grid (hero backgrounds) */
