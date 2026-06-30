@@ -49,6 +49,16 @@
     "courseMessage": "Hi! I have a question about the {item} course.",
     "recommendationMessage": "Hi! The Course Finder recommended {item}. Can you help me get started?"
   },
+  "leon": {
+    "label": "Chat with Leon",
+    "title": "Leon",
+    "status": "AI Assistant",
+    "welcome": "Hi! I'm Leon, your AA Driving School assistant. 🚗 Ask me anything about our courses, permits, or how to get started.",
+    "ack": "Thanks for your message! 🙌 Our team will receive your question and get back to you shortly.",
+    "placeholder": "Type your message…",
+    "send": "Send message",
+    "close": "Close chat"
+  },
   "notFound": {
     "title": "Page not found",
     "body": "Sorry, we couldn't find that page. Let's get you back on track.",

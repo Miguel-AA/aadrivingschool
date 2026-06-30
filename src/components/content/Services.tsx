@@ -28,12 +28,12 @@ const META: Record<string, { icon: LucideIcon; href: string }> = {
 };
 
 /** "Services We Help With" — professional solution list (not an ecommerce grid). */
-export function Services() {
+export function Services({ tone = "white" }: { tone?: "white" | "muted" } = {}) {
   const t = useTranslations("home");
   const items = t.raw("services.items") as ServiceItem[];
 
   return (
-    <Section>
+    <Section tone={tone}>
       <Reveal>
         <SectionHeading
           eyebrow={t("services.heading")}

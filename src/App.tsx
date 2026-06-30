@@ -3,7 +3,7 @@ import { useTranslations } from "@/i18n";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { MobileCTABar } from "@/components/cta/MobileCTABar";
-import { FloatingWhatsApp } from "@/components/cta/FloatingWhatsApp";
+import { FloatingChat } from "@/components/cta/FloatingChat";
 import { ScrollToTop } from "@/components/util/ScrollToTop";
 import { Home } from "@/pages/Home";
 import { Courses } from "@/pages/Courses";
@@ -52,7 +52,7 @@ export function App() {
         </Routes>
       </main>
       <Footer />
-      <FloatingWhatsApp />
+      <FloatingChat />
       <MobileCTABar />
     </div>
   );

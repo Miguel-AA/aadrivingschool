@@ -49,6 +49,16 @@
     "courseMessage": "[ES] Hi! I have a question about the {item} course.",
     "recommendationMessage": "[ES] Hi! The Course Finder recommended {item}. Can you help me get started?"
   },
+  "leon": {
+    "label": "Chatea con Leon",
+    "title": "Leon",
+    "status": "Asistente IA",
+    "welcome": "¡Hola! Soy Leon, tu asistente de AA Driving School. 🚗 Pregúntame lo que quieras sobre nuestros cursos, permisos o cómo empezar.",
+    "ack": "¡Gracias por tu mensaje! 🙌 Nuestro equipo recibirá tu pregunta y te responderá muy pronto.",
+    "placeholder": "Escribe tu mensaje…",
+    "send": "Enviar mensaje",
+    "close": "Cerrar chat"
+  },
   "notFound": {
     "title": "[ES] Page not found",
     "body": "[ES] Sorry, we couldn't find that page. Let's get you back on track.",

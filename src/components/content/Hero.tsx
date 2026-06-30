@@ -13,6 +13,10 @@ interface HeroProps {
   badges?: string[];
   /** Optional visual rendered in a right column on desktop only (hidden on mobile). */
   aside?: ReactNode;
+  /** Optional looping background video (home hero). Softened behind frosted glass. */
+  videoSrc?: string;
+  /** Poster shown before the video loads. */
+  videoPoster?: string;
   className?: string;
 }
 
@@ -37,6 +41,8 @@ export function Hero({
   actions,
   badges,
   aside,
+  videoSrc,
+  videoPoster,
   className,
 }: HeroProps) {
   return (
@@ -46,6 +52,30 @@ export function Hero({
         className,
       )}
     >
+      {videoSrc && (
+        <>
+          {/* Looping background video */}
+          <video
+            className="absolute inset-0 -z-30 h-full w-full object-cover"
+            autoPlay
+            muted
+            loop
+            playsInline
+            preload="auto"
+            poster={videoPoster}
+            aria-hidden="true"
+          >
+            <source src={videoSrc} type="video/mp4" />
+          </video>
+          {/* Soft frosted glass: blurs the video (hides low resolution) and keeps
+              text readable — heavier white on the text side, lighter on the right. */}
+          <div
+            aria-hidden="true"
+            className="absolute inset-0 -z-20 bg-gradient-to-r from-white/92 via-white/82 to-white/68 backdrop-blur-md backdrop-saturate-150"
+          />
+        </>
+      )}
+
       {/* Decorative animated blobs + warm orange glow */}
       <div aria-hidden="true" className="pointer-events-none absolute inset-0 -z-10">
         <div className="absolute -left-24 -top-24 h-72 w-72 rounded-full bg-brand-300/40 blur-3xl animate-float" />
@@ -58,7 +88,7 @@ export function Hero({
         <div className="absolute inset-x-0 bottom-0 h-32 bg-gradient-to-b from-transparent to-white" />
       </div>
 
-      <div className="mx-auto w-full max-w-6xl px-5 py-12 sm:px-6 sm:py-20 lg:grid lg:grid-cols-[1.05fr_0.95fr] lg:items-center lg:gap-12 lg:px-8 lg:py-24">
+      <div className="mx-auto w-full max-w-6xl px-5 py-20 sm:px-6 sm:py-32 lg:grid lg:grid-cols-[1.05fr_0.95fr] lg:items-center lg:gap-12 lg:px-8 lg:py-44">
         <div className="min-w-0 max-w-2xl text-balance text-center sm:text-left">
           {eyebrow && (
             <span className="inline-flex max-w-full items-center gap-2 rounded-full border border-brand-200 bg-white/70 px-3 py-1 text-[11px] font-semibold text-brand-700 shadow-sm backdrop-blur sm:text-xs">
@@ -66,7 +96,7 @@ export function Hero({
               {eyebrow}
             </span>
           )}
-          <h1 className="mt-5 text-[2.2rem] font-extrabold leading-[1.05] tracking-tight text-slate-900 sm:text-5xl sm:leading-[1.05] lg:text-[3.5rem]">
+          <h1 className="mt-5 text-[2.4rem] font-extrabold leading-[1.07] tracking-tight text-slate-900 sm:text-5xl sm:leading-[1.05] lg:text-[3.5rem]">
             {renderTitle(title, highlight)}
           </h1>
           {subtitle && (
@@ -107,6 +137,18 @@ export function Hero({
           </div>
         )}
       </div>
+
+      {/* Curved bottom edge: a white shape that arcs up into the hero so it
+          flows into the section below without a hard horizontal seam. */}
+      <svg
+        aria-hidden="true"
+        className="pointer-events-none absolute inset-x-0 bottom-[-1px] z-0 block h-10 w-full text-white sm:h-14 lg:h-20"
+        viewBox="0 0 1440 100"
+        preserveAspectRatio="none"
+        fill="none"
+      >
+        <path d="M0 100 L0 55 Q720 -5 1440 55 L1440 100 Z" fill="currentColor" />
+      </svg>
     </div>
   );
 }

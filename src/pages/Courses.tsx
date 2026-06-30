@@ -11,11 +11,7 @@ export function Courses() {
 
   return (
     <>
-      <Hero
-        eyebrow={t("courses.title")}
-        title={t("courses.title")}
-        subtitle={t("courses.subtitle")}
-      />
+      <Hero title={t("courses.title")} subtitle={t("courses.subtitle")} />
       <Section>
         <CoursesExplorer courses={courses} packages={packages} />
       </Section>

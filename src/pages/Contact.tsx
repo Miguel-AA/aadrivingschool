@@ -34,11 +34,7 @@ export function Contact() {
 
   return (
     <>
-      <Hero
-        eyebrow={t("contact.title")}
-        title={t("contact.title")}
-        subtitle={t("contact.subtitle")}
-      />
+      <Hero title={t("contact.title")} subtitle={t("contact.subtitle")} />
 
       <Section>
         <div className="grid gap-8 lg:grid-cols-3 lg:gap-10">
