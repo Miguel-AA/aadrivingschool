@@ -86,6 +86,8 @@ interface HeroProps {
   imageSrc?: string;
   /** Per-page color identity for the backdrop. Defaults to `brand`. */
   theme?: HeroTheme;
+  /** Extra classes for the `<h1>` title (e.g. `text-metallic` on the home hero). */
+  titleClassName?: string;
   className?: string;
 }
 
@@ -114,6 +116,7 @@ export function Hero({
   videoPoster,
   imageSrc,
   theme = "brand",
+  titleClassName,
   className,
 }: HeroProps) {
   const palette = HERO_THEMES[theme];
@@ -123,6 +126,10 @@ export function Hero({
       className={cn(
         "relative isolate overflow-hidden bg-gradient-to-b via-white to-white",
         palette.base,
+        // Mobile only: stretch the hero (and its inset-0 background video) to
+        // fill the screen. Content stays top-anchored by its padding, so the
+        // text/CTAs don't move — only the video grows. Reset from `sm` up.
+        videoSrc && "min-h-[100dvh] sm:min-h-0",
         className,
       )}
     >
@@ -177,7 +184,12 @@ export function Hero({
               {eyebrow}
             </span>
           )}
-          <h1 className="mt-5 text-[2.4rem] font-extrabold leading-[1.07] tracking-tight text-brand-900 sm:text-5xl sm:leading-[1.05] lg:text-[3.5rem]">
+          <h1
+            className={cn(
+              "mt-5 text-[2.4rem] font-extrabold leading-[1.07] tracking-tight text-brand-900 sm:text-5xl sm:leading-[1.05] lg:text-[3.5rem]",
+              titleClassName,
+            )}
+          >
             {renderTitle(title, highlight)}
           </h1>
           {subtitle && (

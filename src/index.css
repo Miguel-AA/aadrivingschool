@@ -190,6 +190,22 @@ h4 {
   }
 }
 
+/* Metallic glow headline — brushed steel/chrome fill with a sweeping glint and
+   a soft halo. Stays readable on the light hero. `-webkit-text-fill-color`
+   guarantees the gradient wins over any `text-*` color utility on the element. */
+.text-metallic {
+  /* Simple, calm brand-blue gradient — subtle depth, no sheen or glow. */
+  background-image: linear-gradient(
+    180deg,
+    var(--color-brand-700) 0%,
+    var(--color-brand-900) 100%
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  -webkit-text-fill-color: transparent;
+}
+
 /* Dotted decorative grid (hero backgrounds) */
 .bg-dot-grid {
   background-image: radial-gradient(currentColor 1px, transparent 1px);

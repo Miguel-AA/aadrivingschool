@@ -53,6 +53,7 @@ export function Home() {
       <Hero
         eyebrow={t("hero.eyebrow")}
         title={t("hero.title")}
+        titleClassName="text-metallic"
         subtitle={t("hero.subtitle")}
         badges={trust}
         videoSrc="/testhero-loop.mp4"
