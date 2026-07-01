@@ -194,9 +194,11 @@ export function Hero({
             aria-hidden="true"
             className={cn(
               "absolute inset-0 -z-20 backdrop-blur-sm backdrop-saturate-150",
+              // Mobile shows ~30% less white over the media so the photo/video
+              // reads through more; desktop (sm+) keeps the stronger wash.
               videoSrc
-                ? "bg-gradient-to-r from-white/52 via-white/34 to-white/16"
-                : "bg-gradient-to-r from-white/72 via-white/54 to-white/34",
+                ? "bg-gradient-to-r from-white/36 via-white/24 to-white/11 sm:from-white/52 sm:via-white/34 sm:to-white/16"
+                : "bg-gradient-to-r from-white/50 via-white/38 to-white/24 sm:from-white/72 sm:via-white/54 sm:to-white/34",
             )}
           />
         </>
