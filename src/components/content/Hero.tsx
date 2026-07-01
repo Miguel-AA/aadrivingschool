@@ -1,4 +1,4 @@
-import type { CSSProperties, ReactNode } from "react";
+import { useEffect, useState, type CSSProperties, type ReactNode } from "react";
 import { Check } from "lucide-react";
 import { cn } from "@/lib/utils/cn";
 
@@ -86,6 +86,8 @@ interface HeroProps {
   aside?: ReactNode;
   /** Optional looping background video (home hero). Softened behind frosted glass. */
   videoSrc?: string;
+  /** Optional lighter portrait video used on phones (< sm). Falls back to `videoSrc`. */
+  videoSrcMobile?: string;
   /** Poster shown before the video loads. */
   videoPoster?: string;
   /** Optional still background image (lighter than video). Ignored if `videoSrc` is set. */
@@ -119,6 +121,7 @@ export function Hero({
   badges,
   aside,
   videoSrc,
+  videoSrcMobile,
   videoPoster,
   imageSrc,
   theme = "brand",
@@ -126,6 +129,23 @@ export function Hero({
   className,
 }: HeroProps) {
   const palette = HERO_THEMES[theme];
+
+  // Serve the lighter portrait video on phones. Initialized from matchMedia so
+  // phones never download the heavier desktop clip first.
+  const [isMobile, setIsMobile] = useState(
+    () =>
+      typeof window !== "undefined" &&
+      window.matchMedia("(max-width: 639px)").matches,
+  );
+  useEffect(() => {
+    const mq = window.matchMedia("(max-width: 639px)");
+    const update = () => setIsMobile(mq.matches);
+    update();
+    mq.addEventListener("change", update);
+    return () => mq.removeEventListener("change", update);
+  }, []);
+  const effectiveVideo =
+    videoSrcMobile && isMobile ? videoSrcMobile : videoSrc;
   return (
     <div className="relative">
     <div
@@ -142,9 +162,10 @@ export function Hero({
     >
       {(videoSrc || imageSrc) && (
         <>
-          {videoSrc ? (
-            /* Looping background video */
+          {effectiveVideo ? (
+            /* Looping background video (portrait clip on phones) */
             <video
+              key={effectiveVideo}
               className="absolute inset-0 -z-30 h-full w-full object-cover"
               autoPlay
               muted
@@ -154,7 +175,7 @@ export function Hero({
               poster={videoPoster}
               aria-hidden="true"
             >
-              <source src={videoSrc} type="video/mp4" />
+              <source src={effectiveVideo} type="video/mp4" />
             </video>
           ) : (
             /* Still background image */

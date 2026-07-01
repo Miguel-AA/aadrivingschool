@@ -57,6 +57,7 @@ export function Home() {
         subtitle={t("hero.subtitle")}
         badges={trust}
         videoSrc="/testhero-loop.mp4"
+        videoSrcMobile="/herobgmobile-loop.mp4"
         videoPoster="/herobg-poster.jpg"
         aside={<HeroShowcase />}
         actions={
