@@ -48,6 +48,17 @@
   /* Slow, organic drift for the page-level decorative blobs. */
   --animate-blob: blob 22s ease-in-out infinite;
   --animate-blob-slow: blob 32s ease-in-out infinite;
+  /* Leon chat: spring-open and collapse (origin = bottom-right launcher). */
+  --animate-chat-in: chat-in 0.3s cubic-bezier(0.22, 1, 0.36, 1) both;
+  --animate-chat-out: chat-out 0.2s cubic-bezier(0.4, 0, 1, 1) both;
+}
+
+/* Rotating angle for the chat's gold border comet. Declared as a typed custom
+   property so it can be smoothly animated (plain custom props don't tween). */
+@property --chat-angle {
+  syntax: "<angle>";
+  inherits: false;
+  initial-value: 0deg;
 }
 
 @keyframes fade-up {
@@ -87,6 +98,41 @@
   }
   66% {
     transform: translate3d(-36px, 28px, 0) scale(0.92);
+  }
+}
+@keyframes chat-in {
+  from {
+    opacity: 0;
+    transform: translateY(14px) scale(0.94);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+@keyframes chat-out {
+  from {
+    opacity: 1;
+    transform: none;
+  }
+  to {
+    opacity: 0;
+    transform: translateY(14px) scale(0.94);
+  }
+}
+@keyframes chat-border-spin {
+  to {
+    --chat-angle: 360deg;
+  }
+}
+/* A gold dash that travels along the hero's bottom curve (an indeterminate
+   "loading line"). pathLength is normalized to 100 on the <path>. */
+@keyframes hero-line-travel {
+  from {
+    stroke-dashoffset: 100;
+  }
+  to {
+    stroke-dashoffset: -100;
   }
 }
 @keyframes gradient-shift {
@@ -204,6 +250,57 @@ h4 {
   background-clip: text;
   color: transparent;
   -webkit-text-fill-color: transparent;
+}
+
+/* Chat panel gold "comet" border — a bright gold arc that travels around the
+   rounded edge at a medium pace. Drawn on a masked ::before so only a thin
+   border ring shows; sits above the panel content but ignores pointer events. */
+.chat-comet-border::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 5;
+  pointer-events: none;
+  border-radius: inherit;
+  padding: 4px; /* border thickness */
+  background: conic-gradient(
+    from var(--chat-angle),
+    transparent 0deg,
+    transparent 280deg,
+    rgba(247, 207, 77, 0.35) 320deg,
+    var(--color-accent-400) 344deg,
+    #fff6d8 352deg,
+    var(--color-accent-400) 356deg,
+    transparent 360deg
+  );
+  -webkit-mask:
+    linear-gradient(#000 0 0) content-box,
+    linear-gradient(#000 0 0);
+  -webkit-mask-composite: xor;
+  mask:
+    linear-gradient(#000 0 0) content-box,
+    linear-gradient(#000 0 0);
+  mask-composite: exclude;
+  animation: chat-border-spin 3.5s linear infinite;
+}
+@media (prefers-reduced-motion: reduce) {
+  .chat-comet-border::before {
+    animation: none;
+  }
+}
+
+/* Hero bottom "loading line": faint gold track + a bright dash sweeping along
+   the wave curve at a medium pace. */
+.hero-loading-line {
+  stroke-dasharray: 22 78;
+  animation: hero-line-travel 3s linear infinite;
+}
+@media (prefers-reduced-motion: reduce) {
+  .hero-loading-line {
+    animation: none;
+    stroke-dasharray: none;
+    opacity: 0.5;
+  }
 }
 
 /* Dotted decorative grid (hero backgrounds) */

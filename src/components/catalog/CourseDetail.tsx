@@ -5,12 +5,16 @@ import {
   getFaqsForCourse,
   packages as allPackages,
 } from "@/content";
+import { hasLearnTrack } from "@/content/learn";
 import { getLocalized } from "@/lib/utils/locale";
 import { formatPrice } from "@/lib/utils/price";
+import { Link } from "@/i18n/navigation";
+import { buttonClasses } from "@/components/cta/buttonStyles";
 import { courseAvailability } from "@/lib/catalog/availability";
 import { EVENTS } from "@/lib/services/analytics";
 import { faqJsonLd, courseJsonLd } from "@/lib/seo/jsonld";
 import { Section, SectionHeading } from "@/components/content/Section";
+import { heroMaskStyle } from "@/components/content/Hero";
 import { Disclaimer } from "@/components/compliance/Disclaimer";
 import { ComplianceLabelRow } from "@/components/compliance/ComplianceLabel";
 import { FAQAccordion } from "@/components/content/FAQAccordion";
@@ -26,6 +30,7 @@ export function CourseDetail({ course }: { course: Course }) {
   const locale = useLocale();
   const t = useTranslations("pages.courseDetail");
   const tc = useTranslations("common");
+  const tl = useTranslations("learn");
 
   const title = getLocalized(course.title, locale);
   const { showPrice, canCheckout, gated } = courseAvailability(course);
@@ -40,18 +45,21 @@ export function CourseDetail({ course }: { course: Course }) {
       <JsonLd data={courseJsonLd(course, locale)} />
       {faqs.length > 0 && <JsonLd data={faqJsonLd(faqs, locale)} />}
 
-      {/* Header */}
-      <div className="bg-gradient-to-b from-brand-50 to-white">
-        <div className="mx-auto w-full max-w-6xl px-4 py-12 sm:px-6 lg:px-8">
-          <ComplianceLabelRow labels={course.complianceLabels} className="mb-4" />
-          <h1 className="max-w-3xl text-3xl font-bold tracking-tight text-slate-900 sm:text-4xl">
+      {/* Header — curved bottom edge (shared hero wave), centered on mobile. */}
+      <div style={heroMaskStyle} className="bg-gradient-to-b from-brand-50 to-white">
+        <div className="mx-auto w-full max-w-6xl px-4 py-12 pb-20 text-center sm:px-6 sm:pb-20 sm:text-left lg:px-8">
+          <ComplianceLabelRow
+            labels={course.complianceLabels}
+            className="mb-4 justify-center sm:justify-start"
+          />
+          <h1 className="mx-auto max-w-3xl text-3xl font-bold tracking-tight text-slate-900 sm:mx-0 sm:text-4xl">
             {title}
           </h1>
-          <p className="mt-4 max-w-2xl text-lg text-slate-600">
+          <p className="mx-auto mt-4 max-w-2xl text-lg text-slate-600 sm:mx-0">
             {getLocalized(course.shortDescription, locale)}
           </p>
 
-          <div className="mt-6 flex flex-wrap items-center gap-x-6 gap-y-2 text-sm text-slate-700">
+          <div className="mt-6 flex flex-wrap items-center justify-center gap-x-6 gap-y-2 text-sm text-slate-700 sm:justify-start">
             <span className="inline-flex items-center gap-1.5">
               <Tag className="h-4 w-4 text-brand-700" aria-hidden="true" />
               {t("priceLabel")}:{" "}
@@ -65,7 +73,7 @@ export function CourseDetail({ course }: { course: Course }) {
             )}
           </div>
 
-          <div className="mt-8 flex flex-wrap items-center gap-3">
+          <div className="mt-8 flex flex-wrap items-center justify-center gap-3 sm:justify-start">
             <CTAButton
               href={
                 canCheckout
@@ -79,6 +87,14 @@ export function CourseDetail({ course }: { course: Course }) {
               {canCheckout ? tc("cta.getStarted") : tc("cta.requestInfo")}
             </CTAButton>
             <WhatsAppCTA kind="course" item={title} size="lg" />
+            {hasLearnTrack(course.slug) && (
+              <Link
+                href={`/learn/${course.slug}`}
+                className={buttonClasses("secondary", "lg")}
+              >
+                {tl("startLearning")}
+              </Link>
+            )}
           </div>
         </div>
       </div>
@@ -86,7 +102,7 @@ export function CourseDetail({ course }: { course: Course }) {
       {/* Body */}
       <Section>
         <div className="grid gap-10 lg:grid-cols-3">
-          <div className="lg:col-span-2">
+          <div className="text-center sm:text-left lg:col-span-2">
             <p className="text-base leading-relaxed text-slate-700">
               {getLocalized(course.longDescription, locale)}
             </p>
@@ -105,7 +121,10 @@ export function CourseDetail({ course }: { course: Course }) {
                 </h2>
                 <ul className="mt-3 space-y-2">
                   {course.bullets.map((bullet, i) => (
-                    <li key={i} className="flex items-start gap-2 text-slate-700">
+                    <li
+                      key={i}
+                      className="flex items-start justify-center gap-2 text-slate-700 sm:justify-start"
+                    >
                       <Check
                         className="mt-1 h-4 w-4 shrink-0 text-brand-600"
                         aria-hidden="true"

@@ -8,7 +8,13 @@ const HERO_BOTTOM_WAVE = `url("data:image/svg+xml,${encodeURIComponent(
   "<svg xmlns='http://www.w3.org/2000/svg' preserveAspectRatio='none' viewBox='0 0 1440 100'><path d='M0 0 L1440 0 L1440 55 Q720 -5 0 55 Z' fill='#000'/></svg>",
 )}")`;
 const HERO_WAVE_H = "4rem"; // 64px curved band
-const heroMaskStyle: CSSProperties = {
+/**
+ * Concave "smile" mask that carves the curved bottom edge shared by the page
+ * heroes and the course/package detail headers. Apply to a full-bleed block
+ * whose background fades to white; leave ≥5rem of bottom padding so content
+ * clears the ~3rem the curve removes at the horizontal center.
+ */
+export const heroMaskStyle: CSSProperties = {
   WebkitMaskImage: `linear-gradient(#000, #000), ${HERO_BOTTOM_WAVE}`,
   maskImage: `linear-gradient(#000, #000), ${HERO_BOTTOM_WAVE}`,
   WebkitMaskRepeat: "no-repeat",
@@ -121,6 +127,7 @@ export function Hero({
 }: HeroProps) {
   const palette = HERO_THEMES[theme];
   return (
+    <div className="relative">
     <div
       style={heroMaskStyle}
       className={cn(
@@ -159,10 +166,17 @@ export function Hero({
             />
           )}
           {/* Soft frosted glass: blurs the media (hides low resolution) and keeps
-              text readable — heavier white on the text side, lighter on the right. */}
+              text readable — heavier white on the text side, lighter on the right.
+              The video hero (home) gets a lighter veil so the footage shows
+              through more; image heroes (interior pages) keep the stronger wash. */}
           <div
             aria-hidden="true"
-            className="absolute inset-0 -z-20 bg-gradient-to-r from-white/72 via-white/54 to-white/34 backdrop-blur-sm backdrop-saturate-150"
+            className={cn(
+              "absolute inset-0 -z-20 backdrop-blur-sm backdrop-saturate-150",
+              videoSrc
+                ? "bg-gradient-to-r from-white/52 via-white/34 to-white/16"
+                : "bg-gradient-to-r from-white/72 via-white/54 to-white/34",
+            )}
           />
         </>
       )}
@@ -186,7 +200,7 @@ export function Hero({
           )}
           <h1
             className={cn(
-              "mt-5 text-[2.4rem] font-extrabold leading-[1.07] tracking-tight text-brand-900 sm:text-5xl sm:leading-[1.05] lg:text-[3.5rem]",
+              "mt-5 hyphens-none text-[2.4rem] font-extrabold leading-[1.07] tracking-tight text-brand-900 sm:text-5xl sm:leading-[1.05] lg:text-[3.5rem]",
               titleClassName,
             )}
           >
@@ -224,12 +238,41 @@ export function Hero({
           )}
         </div>
 
-        {aside && (
-          <div className="hidden lg:block" aria-hidden="true">
-            {aside}
-          </div>
-        )}
+        {aside && <div className="hidden lg:block">{aside}</div>}
       </div>
+    </div>
+
+      {/* Animated gold "loading line" tracing the hero's bottom wave curve.
+          Rendered outside the masked layer so it isn't clipped; the path uses
+          the same curve as `heroMaskStyle`, so it sits exactly on the edge. */}
+      <svg
+        aria-hidden="true"
+        viewBox="0 0 1440 100"
+        preserveAspectRatio="none"
+        className="pointer-events-none absolute inset-x-0 bottom-0 z-10 h-16 w-full"
+      >
+        {/* faint static track */}
+        <path
+          d="M0 55 Q720 -5 1440 55"
+          fill="none"
+          stroke="var(--color-accent-400)"
+          strokeWidth={1}
+          vectorEffect="non-scaling-stroke"
+          className="opacity-20"
+        />
+        {/* bright gold dash sweeping along the curve */}
+        <path
+          d="M0 55 Q720 -5 1440 55"
+          fill="none"
+          stroke="var(--color-accent-400)"
+          strokeWidth={3}
+          strokeLinecap="round"
+          pathLength={100}
+          vectorEffect="non-scaling-stroke"
+          className="hero-loading-line"
+          style={{ filter: "drop-shadow(0 0 5px var(--color-accent-400))" }}
+        />
+      </svg>
     </div>
   );
 }

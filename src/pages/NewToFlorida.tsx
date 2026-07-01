@@ -39,7 +39,7 @@ export function NewToFlorida() {
             href="/spanish-help"
             eventName={EVENTS.CTA_CLICK}
             eventProps={{ source: "new-to-florida", target: "spanish-help" }}
-            variant="secondary"
+            variant="accent"
             size="lg"
           >
             {t("newfl.secondaryCta")}

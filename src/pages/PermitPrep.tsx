@@ -43,7 +43,7 @@ export function PermitPrep() {
             href="/courses/spanish-permit-bootcamp"
             eventName={EVENTS.CTA_CLICK}
             eventProps={{ source: "permit-test-prep", target: "spanish-prep" }}
-            variant="secondary"
+            variant="accent"
             size="lg"
           >
             {t("permit.secondaryCta")}

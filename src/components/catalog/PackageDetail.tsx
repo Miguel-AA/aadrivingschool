@@ -4,9 +4,11 @@ import type { ComplianceLabelKey, Package } from "@/lib/schemas/content";
 import { getCoursesForPackage } from "@/content";
 import { getLocalized } from "@/lib/utils/locale";
 import { formatPrice } from "@/lib/utils/price";
+import { cn } from "@/lib/utils/cn";
 import { packageAvailability } from "@/lib/catalog/availability";
 import { EVENTS } from "@/lib/services/analytics";
 import { Section, SectionHeading } from "@/components/content/Section";
+import { heroMaskStyle } from "@/components/content/Hero";
 import { Disclaimer } from "@/components/compliance/Disclaimer";
 import { CatalogGrid } from "@/components/catalog/CatalogGrid";
 import { CourseCard } from "@/components/catalog/CourseCard";
@@ -39,21 +41,22 @@ export function PackageDetail({ pkg }: { pkg: Package }) {
 
   return (
     <>
-      <div className="bg-gradient-to-b from-brand-50 to-white">
-        <div className="mx-auto w-full max-w-6xl px-4 py-12 sm:px-6 lg:px-8">
+      {/* Header — curved bottom edge (shared hero wave), centered on mobile. */}
+      <div style={heroMaskStyle} className="bg-gradient-to-b from-brand-50 to-white">
+        <div className="mx-auto w-full max-w-6xl px-4 py-12 pb-20 text-center sm:px-6 sm:pb-20 sm:text-left lg:px-8">
           <p className="text-sm font-semibold uppercase tracking-wide text-brand-700">
             {getLocalized(pkg.targetUser, locale)}
           </p>
-          <h1 className="mt-2 max-w-3xl text-3xl font-bold tracking-tight text-slate-900 sm:text-4xl">
+          <h1 className="mx-auto mt-2 max-w-3xl text-3xl font-bold tracking-tight text-slate-900 sm:mx-0 sm:text-4xl">
             {title}
           </h1>
-          <p className="mt-4 max-w-2xl text-lg text-slate-600">
+          <p className="mx-auto mt-4 max-w-2xl text-lg text-slate-600 sm:mx-0">
             {getLocalized(pkg.shortDescription, locale)}
           </p>
           <div className="mt-6 text-sm font-semibold text-slate-900">
             {price ?? tc(gated ? "catalog.consultationNote" : "cta.requestInfo")}
           </div>
-          <div className="mt-8 flex flex-wrap items-center gap-3">
+          <div className="mt-8 flex flex-wrap items-center justify-center gap-3 sm:justify-start">
             <CTAButton
               href={
                 canCheckout
@@ -72,12 +75,18 @@ export function PackageDetail({ pkg }: { pkg: Package }) {
       </div>
 
       <Section>
-        <div className="grid gap-10 lg:grid-cols-3">
-          <div className="lg:col-span-2">
-            {pkg.benefits.length > 0 && (
-              <ul className="space-y-2">
+        <div className="mx-auto max-w-4xl text-center sm:text-left">
+          {pkg.benefits.length > 0 && (
+            <>
+              <h2 className="text-xl font-semibold text-slate-900">
+                {t("includesHeading")}
+              </h2>
+              <ul className="mt-4 grid gap-x-8 gap-y-2.5 sm:grid-cols-2">
                 {pkg.benefits.map((benefit, i) => (
-                  <li key={i} className="flex items-start gap-2 text-slate-700">
+                  <li
+                    key={i}
+                    className="flex items-start justify-center gap-2 text-left text-slate-700 sm:justify-start"
+                  >
                     <Check
                       className="mt-1 h-4 w-4 shrink-0 text-brand-600"
                       aria-hidden="true"
@@ -86,11 +95,14 @@ export function PackageDetail({ pkg }: { pkg: Package }) {
                   </li>
                 ))}
               </ul>
-            )}
-          </div>
-          <div className="lg:col-span-1">
-            <Disclaimer labels={labels} providerId={providerId} />
-          </div>
+            </>
+          )}
+          <Disclaimer
+            labels={labels}
+            providerId={providerId}
+            columns={2}
+            className={cn("text-left", pkg.benefits.length > 0 && "mt-10")}
+          />
         </div>
       </Section>
 

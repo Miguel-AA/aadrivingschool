@@ -38,7 +38,7 @@ export function SpanishHelp() {
             href="/quiz"
             eventName={EVENTS.CTA_CLICK}
             eventProps={{ source: "spanish-help", target: "quiz" }}
-            variant="secondary"
+            variant="accent"
             size="lg"
           >
             {tc("cta.findMyCourse")}

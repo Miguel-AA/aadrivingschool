@@ -5,6 +5,7 @@ import { Footer } from "@/components/layout/Footer";
 import { PageBackground } from "@/components/layout/PageBackground";
 import { MobileCTABar } from "@/components/cta/MobileCTABar";
 import { FloatingChat } from "@/components/cta/FloatingChat";
+import { ChatProvider } from "@/components/cta/chatStore";
 import { ScrollToTop } from "@/components/util/ScrollToTop";
 import { Home } from "@/pages/Home";
 import { Courses } from "@/pages/Courses";
@@ -21,11 +22,18 @@ import { LicenseReinstatement } from "@/pages/LicenseReinstatement";
 import { Privacy } from "@/pages/Privacy";
 import { Terms } from "@/pages/Terms";
 import { Refund } from "@/pages/Refund";
+import { LearnLayout } from "@/pages/learn/LearnLayout";
+import { LearnHome } from "@/pages/learn/LearnHome";
+import { LessonPage } from "@/pages/learn/LessonPage";
+import { Review } from "@/pages/learn/Review";
+import { MockTest } from "@/pages/learn/MockTest";
+import { Complete } from "@/pages/learn/Complete";
 import { NotFound } from "@/pages/NotFound";
 
 export function App() {
   const t = useTranslations("common");
   return (
+    <ChatProvider>
     <div className="flex min-h-screen flex-col text-slate-900">
       <PageBackground />
       <ScrollToTop />
@@ -56,6 +64,15 @@ export function App() {
           <Route path="/privacy" element={<Privacy />} />
           <Route path="/terms" element={<Terms />} />
           <Route path="/refund" element={<Refund />} />
+          {/* Learn / course-engine player (unlisted-public). Static child paths
+              are declared before :lessonSlug so they win the match. */}
+          <Route path="/learn/:courseSlug" element={<LearnLayout />}>
+            <Route index element={<LearnHome />} />
+            <Route path="review" element={<Review />} />
+            <Route path="mock-test" element={<MockTest />} />
+            <Route path="complete" element={<Complete />} />
+            <Route path=":lessonSlug" element={<LessonPage />} />
+          </Route>
           <Route path="*" element={<NotFound />} />
         </Routes>
       </main>
@@ -63,5 +80,6 @@ export function App() {
       <FloatingChat />
       <MobileCTABar />
     </div>
+    </ChatProvider>
   );
 }

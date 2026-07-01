@@ -74,7 +74,7 @@ export function Home() {
               href="/courses"
               eventName={EVENTS.CTA_CLICK}
               eventProps={{ source: "home_hero", target: "courses" }}
-              variant="secondary"
+              variant="accent"
               size="lg"
               className="w-full sm:w-auto"
             >
@@ -225,46 +225,71 @@ export function Home() {
         <FAQAccordion faqs={faqs} mobileLimit={3} />
       </Section>
 
-      {/* 8. Final CTA */}
-      <Section tone="brand" blendBottom={false}>
-        <Reveal className="mx-auto max-w-3xl text-center">
-          <h2 className="text-2xl font-bold sm:text-3xl lg:text-4xl">
-            {t("finalCta.heading")}
-          </h2>
-          <p className="mx-auto mt-3 max-w-2xl text-brand-100">
-            {t("finalCta.body")}
-          </p>
-          <div className="mt-7 flex flex-col justify-center gap-3 sm:flex-row sm:flex-wrap">
-            <CTAButton
-              href="/quiz"
-              eventName={EVENTS.CTA_CLICK}
-              eventProps={{ source: "home_final", target: "quiz" }}
-              variant="primary"
-              size="lg"
-              className="w-full sm:w-auto"
+      {/* 8. Final CTA — premium closing card (navy + gold, matches the menu). */}
+      <Section>
+        <Reveal>
+          <div className="relative isolate overflow-hidden rounded-[2rem] bg-gradient-to-br from-brand-900 via-brand-900 to-brand-950 px-6 py-14 text-center shadow-xl shadow-brand-950/25 ring-1 ring-white/10 sm:px-10 sm:py-16">
+            {/* Ambient brand glow + dotted texture. */}
+            <div
+              aria-hidden="true"
+              className="pointer-events-none absolute inset-0 overflow-hidden"
             >
-              {t("finalCta.primaryCta")}
-            </CTAButton>
-            <CTAButton
-              href="/courses"
-              eventName={EVENTS.CTA_CLICK}
-              eventProps={{ source: "home_final", target: "courses" }}
-              variant="secondary"
-              size="lg"
-              className="hidden w-full sm:inline-flex sm:w-auto"
-            >
-              {t("finalCta.secondaryCta")}
-            </CTAButton>
-            <CTAButton
-              href="/contact"
-              eventName={EVENTS.CTA_CLICK}
-              eventProps={{ source: "home_final", target: "contact" }}
-              variant="secondary"
-              size="lg"
-              className="w-full border-white/30 bg-transparent text-white hover:border-white/50 hover:bg-white/10 sm:w-auto"
-            >
-              {t("finalCta.tertiaryCta")}
-            </CTAButton>
+              <div className="absolute -top-20 left-1/2 h-64 w-2/3 -translate-x-1/2 rounded-full bg-ocean-500/25 blur-3xl" />
+              <div className="absolute -bottom-24 right-0 h-72 w-1/2 rounded-full bg-accent-500/12 blur-3xl" />
+              <div className="absolute inset-0 bg-dot-grid text-white/[0.05]" />
+            </div>
+            {/* Gold hairline along the top edge. */}
+            <span
+              aria-hidden="true"
+              className="pointer-events-none absolute inset-x-10 top-0 h-px bg-gradient-to-r from-transparent via-accent-400/70 to-transparent"
+            />
+
+            <div className="relative mx-auto max-w-2xl">
+              <span className="inline-flex items-center gap-2 rounded-full bg-white/10 px-3 py-1 text-xs font-semibold uppercase tracking-wide text-brand-100 ring-1 ring-white/15">
+                <span className="h-1.5 w-1.5 rounded-full bg-accent-400" />
+                {t("finalCta.eyebrow")}
+              </span>
+              <h2 className="mt-5 text-2xl font-bold text-white sm:text-3xl lg:text-4xl">
+                {t("finalCta.heading")}
+              </h2>
+              <p className="mx-auto mt-3 max-w-xl text-brand-100">
+                {t("finalCta.body")}
+              </p>
+
+              <div className="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row sm:flex-wrap">
+                <CTAButton
+                  href="/quiz"
+                  eventName={EVENTS.CTA_CLICK}
+                  eventProps={{ source: "home_final", target: "quiz" }}
+                  variant="primary"
+                  size="lg"
+                  className="w-full sm:w-auto"
+                >
+                  <Compass className="h-5 w-5" aria-hidden="true" />
+                  {t("finalCta.primaryCta")}
+                </CTAButton>
+                <CTAButton
+                  href="/courses"
+                  eventName={EVENTS.CTA_CLICK}
+                  eventProps={{ source: "home_final", target: "courses" }}
+                  variant="secondary"
+                  size="lg"
+                  className="hidden w-full border-white/30 bg-transparent text-white shadow-none hover:border-white/50 hover:bg-white/10 sm:inline-flex sm:w-auto"
+                >
+                  {t("finalCta.secondaryCta")}
+                </CTAButton>
+                <CTAButton
+                  href="/contact"
+                  eventName={EVENTS.CTA_CLICK}
+                  eventProps={{ source: "home_final", target: "contact" }}
+                  variant="secondary"
+                  size="lg"
+                  className="w-full border-white/30 bg-transparent text-white shadow-none hover:border-white/50 hover:bg-white/10 sm:w-auto"
+                >
+                  {t("finalCta.tertiaryCta")}
+                </CTAButton>
+              </div>
+            </div>
           </div>
         </Reveal>
       </Section>

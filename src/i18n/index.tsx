@@ -54,6 +54,7 @@ import enLanding from "@/messages/en/landing.json";
 import enLeadForm from "@/messages/en/leadForm.json";
 import enPages from "@/messages/en/pages.json";
 import enQuiz from "@/messages/en/quiz.json";
+import enLearn from "@/messages/en/learn.json";
 import esCommon from "@/messages/es/common.json";
 import esHome from "@/messages/es/home.json";
 import esCompliance from "@/messages/es/compliance.json";
@@ -61,6 +62,7 @@ import esLanding from "@/messages/es/landing.json";
 import esLeadForm from "@/messages/es/leadForm.json";
 import esPages from "@/messages/es/pages.json";
 import esQuiz from "@/messages/es/quiz.json";
+import esLearn from "@/messages/es/learn.json";
 
 type Dict = Record<string, unknown>;
 
@@ -73,6 +75,7 @@ const MESSAGES: Record<Locale, Record<string, Dict>> = {
     leadForm: enLeadForm,
     pages: enPages,
     quiz: enQuiz,
+    learn: enLearn,
   },
   es: {
     common: esCommon,
@@ -82,6 +85,7 @@ const MESSAGES: Record<Locale, Record<string, Dict>> = {
     leadForm: esLeadForm,
     pages: esPages,
     quiz: esQuiz,
+    learn: esLearn,
   },
 };
 

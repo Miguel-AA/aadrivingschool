@@ -1,9 +1,9 @@
 {
   "hero": {
     "eyebrow": "A&A Driving School · West Palm Beach y todo Florida",
-    "title": "Cursos de manejo y ayuda con tu licencia en Florida — en inglés y español",
-    "highlight": "inglés y español",
-    "subtitle": "Desde la preparación del permiso hasta la orientación sobre multas y licencias, A&A Driving School ayuda a conductores y familias en Florida a encontrar el siguiente paso correcto, con apoyo amable en inglés y español.",
+    "title": "Cursos de manejo y ayuda con licencias en Florida",
+    "highlight": "licencias",
+    "subtitle": "A&A Driving School ayuda a conductores en Florida a encontrar el siguiente paso correcto, desde el permiso hasta ayuda con multas y licencias, en inglés y español.",
     "primaryCta": "Encontrar mi curso",
     "secondaryCta": "Ver cursos",
     "trust": [
@@ -13,18 +13,39 @@
       "Orientación amable, paso a paso"
     ],
     "showcase": {
-      "title": "Tu plan de manejo",
-      "badge": "Ejemplo",
-      "footnote": "Un camino sencillo, paso a paso, en inglés o español",
-      "profileLabel": "Tu objetivo",
-      "profileValue": "Primera licencia",
-      "progressLabel": "Avance de preparación del permiso",
-      "completionLabel": "Estado",
-      "completionValue": "En buen camino",
-      "rows": [
-        { "label": "Tu camino", "value": "Conductor primerizo" },
-        { "label": "Soporte", "value": "Inglés / Español" },
-        { "label": "Próximo paso", "value": "Preparación del permiso" }
+      "title": "Arma tu plan de manejo",
+      "prompt": "¿Con qué necesitas ayuda?",
+      "pathLabel": "Tu camino",
+      "nextLabel": "Próximo paso",
+      "supportLabel": "Soporte",
+      "supportValue": "Inglés / Español",
+      "cta": "Ver mi plan",
+      "footnote": "Un camino sencillo, paso a paso — elige un objetivo para empezar.",
+      "goals": [
+        {
+          "chip": "Primera licencia",
+          "path": "Conductor primerizo",
+          "next": "Preparación del permiso",
+          "href": "/new-to-florida"
+        },
+        {
+          "chip": "Examen del permiso",
+          "path": "Preparación del permiso",
+          "next": "Preguntas de práctica",
+          "href": "/permit-test-prep"
+        },
+        {
+          "chip": "Multa de tránsito",
+          "path": "Resolver la multa",
+          "next": "Opciones de curso",
+          "href": "/ticket-help"
+        },
+        {
+          "chip": "Conductor 55+",
+          "path": "Conductor mayor",
+          "next": "Curso 55+",
+          "href": "/55-plus-driver"
+        }
       ]
     }
   },
@@ -177,6 +198,7 @@
     "heading": "Preguntas frecuentes"
   },
   "finalCta": {
+    "eyebrow": "¿No sabes por dónde empezar?",
     "heading": "¿Listo para encontrar tu curso de manejo en Florida?",
     "body": "Cuéntanos tu situación y te ayudamos a encontrar el siguiente paso correcto — en inglés o español.",
     "primaryCta": "Encontrar mi curso",

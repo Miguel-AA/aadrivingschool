@@ -42,7 +42,7 @@ export function LicenseReinstatement() {
           </CTAButton>
           <WhatsAppCTA
             kind="default"
-            variant="secondary"
+            variant="accent"
             size="lg"
             label={t("reinstatement.secondaryCta")}
           />

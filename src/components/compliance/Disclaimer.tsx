@@ -9,6 +9,12 @@ interface DisclaimerProps {
   labels: ComplianceLabelKey[];
   providerId?: string | null;
   className?: string;
+  /**
+   * Statement layout. `1` (default) is the narrow sidebar list; `2` flows the
+   * statements into two columns on wider screens for a compact full-width panel
+   * (avoids a tall, skinny card with dead space next to it).
+   */
+  columns?: 1 | 2;
 }
 
 /**
@@ -16,7 +22,12 @@ interface DisclaimerProps {
  * label plus partner attribution when a provider is set. Driven entirely by the
  * data on a course/page, so regulated pages can't ship without it.
  */
-export function Disclaimer({ labels, providerId, className }: DisclaimerProps) {
+export function Disclaimer({
+  labels,
+  providerId,
+  className,
+  columns = 1,
+}: DisclaimerProps) {
   const t = useTranslations("compliance");
   const locale = useLocale();
   const provider = getProviderById(providerId ?? null);
@@ -35,7 +46,14 @@ export function Disclaimer({ labels, providerId, className }: DisclaimerProps) {
         <ShieldCheck className="h-4 w-4 text-slate-400" aria-hidden="true" />
         {t("heading")}
       </div>
-      <ul className="space-y-1.5 text-xs leading-relaxed text-slate-500">
+      <ul
+        className={cn(
+          "text-xs leading-relaxed text-slate-500",
+          columns === 2
+            ? "grid gap-x-8 gap-y-1.5 sm:grid-cols-2"
+            : "space-y-1.5",
+        )}
+      >
         {labels.map((key) => (
           <li key={key}>{t(`statements.${key}`)}</li>
         ))}

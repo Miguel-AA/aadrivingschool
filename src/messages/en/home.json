@@ -1,9 +1,9 @@
 {
   "hero": {
     "eyebrow": "A&A Driving School · West Palm Beach & Florida statewide",
-    "title": "Florida driving courses and license help — in English and Spanish",
-    "highlight": "English and Spanish",
-    "subtitle": "From permit prep to ticket and license guidance, A&A Driving School helps Florida drivers and families find the right next step — with friendly support in English and Spanish.",
+    "title": "Florida driving courses & license help",
+    "highlight": "license help",
+    "subtitle": "A&A Driving School helps Florida drivers find the right next step, from permit prep to ticket and license help, in English and Spanish.",
     "primaryCta": "Find My Course",
     "secondaryCta": "Browse Courses",
     "trust": [
@@ -13,18 +13,39 @@
       "Friendly, step-by-step guidance"
     ],
     "showcase": {
-      "title": "Your Driving Plan",
-      "badge": "Example",
-      "footnote": "A simple, step-by-step path in English or Spanish",
-      "profileLabel": "Your goal",
-      "profileValue": "First-time license",
-      "progressLabel": "Permit prep progress",
-      "completionLabel": "Status",
-      "completionValue": "On track",
-      "rows": [
-        { "label": "Your path", "value": "First-time driver" },
-        { "label": "Support", "value": "English / Español" },
-        { "label": "Next step", "value": "Permit test prep" }
+      "title": "Build your driving plan",
+      "prompt": "What do you need help with?",
+      "pathLabel": "Your path",
+      "nextLabel": "Next step",
+      "supportLabel": "Support",
+      "supportValue": "English / Español",
+      "cta": "See my plan",
+      "footnote": "A simple, step-by-step path — pick a goal to start.",
+      "goals": [
+        {
+          "chip": "First license",
+          "path": "First-time driver",
+          "next": "Permit test prep",
+          "href": "/new-to-florida"
+        },
+        {
+          "chip": "Permit test",
+          "path": "Permit prep",
+          "next": "Practice questions",
+          "href": "/permit-test-prep"
+        },
+        {
+          "chip": "Traffic ticket",
+          "path": "Ticket resolution",
+          "next": "Course options",
+          "href": "/ticket-help"
+        },
+        {
+          "chip": "Driver 55+",
+          "path": "Mature driver",
+          "next": "55+ course",
+          "href": "/55-plus-driver"
+        }
       ]
     }
   },
@@ -177,6 +198,7 @@
     "heading": "Common questions"
   },
   "finalCta": {
+    "eyebrow": "Not sure where to start?",
     "heading": "Ready to find your Florida driving course?",
     "body": "Tell us your situation and we'll help you find the right next step — in English or Spanish.",
     "primaryCta": "Find My Course",
